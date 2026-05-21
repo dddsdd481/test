@@ -1,2050 +1,1840 @@
 === P0.S0 ===
 Supervised Machine Learning
-=== P3.S0 ===
-Machine Learning  The field of study that gives computers the ability to learn without being explicitly programmed.Arthur SamuelMachine Learning  The field of study that gives computers the ability to learn without being explicitly programmed.Arthur Samuel
-=== P4.S0 ===
-Machine Learning
-=== P5.S0 ===
-The field of study that gives computers the ability to learn without being explicitly programmed.
-=== P7.S0 ===
-Arthur Samuel
-=== P8.S0 ===
-Machine Learning
-=== P9.S0 ===
-The field of study that gives computers the ability to learn without being explicitly programmed.
-=== P11.S0 ===
-Arthur Samuel
-=== P12.S0 ===
-Contents
-=== P13.S0 ===
-Week 1 - Introduction to Machine Learning	3
-=== P14.S0 ===
-Supervised learning: Regression	3
 === P15.S0 ===
-Supervised learning: Classification	4
-=== P16.S0 ===
-Unsupervised learning	5
-=== P17.S0 ===
-Example 1: Clustering in google news	6
-=== P18.S0 ===
-Example 2: Clustering in google news	6
-=== P19.S0 ===
-Linear regression model	6
-=== P20.S0 ===
-Training a Machine Learning Model	7
-=== P21.S0 ===
-Cost Function in Linear Regression	8
-=== P22.S0 ===
-Visualizing the Cost Function in Linear Regression	11
-=== P23.S0 ===
-Visualizing examples	12
-=== P24.S0 ===
-Lab: plt_intuition - plt_stationary - plt_update_onclick - soup_bowl()	12
-=== P25.S0 ===
-Introduction to Gradient Descent	13
-=== P26.S0 ===
-Gradient Descent Algorithm	14
-=== P27.S0 ===
-Gradient descent intuition	14
-=== P28.S0 ===
-The Learning Rate	15
-=== P29.S0 ===
-Lab: math lib - plt.subplots - np.arange - plt.subplots - plt_contour_wgrad - plt_divergence	16
-=== P30.S0 ===
-Week 2: Regression with multiple input variables	17
-=== P31.S0 ===
-Linear Regression with Multiple Variables	17
-=== P32.S0 ===
-Vectorization	18
-=== P33.S0 ===
-C1_W2_Lab01_Python_Numpy_Vectorization	20
-=== P34.S0 ===
-Gradient Descent for Multiple Regression	20
-=== P35.S0 ===
-C1_W2_Lab02_Multiple_Variable	21
-=== P36.S0 ===
-Feature Scaling - Methods for Scaling Features	21
-=== P37.S0 ===
-Checking Gradient Descent for Convergence	23
-=== P38.S0 ===
-Choosing Learning Rate	23
-=== P39.S0 ===
-C1_W2_Lab03_Feature_Scaling_and_Learning_Rate	24
-=== P40.S0 ===
-Feature Engineering	24
-=== P41.S0 ===
-Polynomial Regression	25
-=== P42.S0 ===
-C1_W2_Lab04_FeatEng_PolyReg: explore feature engineering and polynomial regression	25
-=== P43.S0 ===
-C1_W2_Lab05_Sklearn_GD: Utilize scikit-learn to implement linear regression using Gradient Descent	26
-=== P44.S0 ===
-Programming Assignment Week 2 practice lab Linear regression	26
-=== P45.S0 ===
-Week 3: Classification	27
-=== P46.S0 ===
-Motivations	27
-=== P47.S0 ===
-lab: Classification	27
-=== P48.S0 ===
-Logistic Regression	28
-=== P49.S0 ===
-lab: Sigmoid function and logistic regression	29
-=== P50.S0 ===
-Decision boundary	29
-=== P51.S0 ===
-Cost function for logistic regression	29
-=== P52.S0 ===
-lab: Logistic loss	30
-=== P53.S0 ===
-Simplified Cost Function for Logistic Regression:	30
-=== P54.S0 ===
-lab: Cost function for logistic regression	31
-=== P55.S0 ===
-Gradient descent for logistic regression	31
-=== P56.S0 ===
-lab: Gradient descent for logistic regression	32
-=== P57.S0 ===
-lab: Logistic regression with scikit-learn	32
-=== P70.S0 ===
 Week 1 - Introduction to Machine Learning
-=== P71.S0 ===
+=== P16.S0 ===
 Machine learning algorithms
-=== P72.S0 ===
+=== P17.S0 ===
 Supervised learning
-=== P73.S0 ===
+=== P18.S0 ===
 Unsupervised learning
-=== P74.S0 ===
+=== P19.S0 ===
 Recommender systems
-=== P75.S0 ===
+=== P20.S0 ===
 Reinforcement learning.
-=== P76.S0 ===
+=== P21.S0 ===
 Supervised learning: Regression
-=== P77.S0 ===
+=== P22.S0 ===
 Supervised machine learning, refers to algorithms that learn x to y or input to output mappings.
-=== P77.S1 ===
+=== P22.S1 ===
 The key characteristic of supervised learning is that you give your learning algorithm examples to learn from.
-=== P77.S2 ===
+=== P22.S2 ===
 That includes the right answers, whereby right answer, I mean, the correct label y for a given input x, and is by seeing correct pairs of input x and desired output label y that the learning algorithm eventually learns to take just the input alone without the output label and gives a reasonably accurate prediction or guess of the output.
-=== P78.S0 ===
+=== P23.S0 ===
 Let's look at some examples.
-=== P80.S0 ===
+=== P25.S0 ===
 In all of these applications, you will first train your model with examples of inputs x and the right answers, that is the labels y.
-=== P80.S1 ===
+=== P25.S1 ===
 After the model has learned from these input, output, or x and y pairs, they can then take a brand new input x, something it has never seen before, and try to produce the appropriate corresponding output y.
-=== P82.S0 ===
+=== P27.S0 ===
 Say you want to predict housing prices based on the size of the house.
-=== P82.S1 ===
+=== P27.S1 ===
 You've collected some data and say you plot the data and it looks like this.
-=== P84.S0 ===
+=== P29.S0 ===
 With this data, let's say a friend wants to know what's the price for their 750 square foot house.
-=== P84.S1 ===
+=== P29.S1 ===
 How can the learning algorithm help you?
-=== P84.S2 ===
-One thing a learning algorithm might be able to do is say, for the straight line to the data and reading off the straight line, it looks like your friend's house could be sold for maybe about $150,000.
-=== P84.S3 ===
-this housing price prediction is the particular type of supervised learning called regression.
-=== P84.S4 ===
+=== P29.S2 ===
+One thing a learning algorithm might be able to do is say, for the straight line to the data and reading off the straight line, it looks like your friend's house could be sold for maybe about $150,000. this housing price prediction is the particular type of supervised learning called regression.
+=== P29.S3 ===
 By regression, I mean we're trying to predict a number from infinitely many possible numbers such as the house prices in our example, which could be 150,000 or 70,000 or 183,000 or any other number in between.
-=== P86.S0 ===
+=== P31.S0 ===
 Supervised learning: Classification
-=== P87.S0 ===
+=== P32.S0 ===
 There's a second major type of supervised learning algorithm called a classification algorithm.
-=== P88.S0 ===
+=== P33.S0 ===
 Take breast cancer detection as an example of a classification problem.
-=== P88.S1 ===
+=== P33.S1 ===
 Say you're building a machine learning system so that doctors can have a diagnostic tool to detect breast cancer.
-=== P88.S2 ===
+=== P33.S2 ===
 This is important because early detection could potentially save a patient's life.
-=== P88.S3 ===
+=== P33.S3 ===
 Using a patient's medical records your machine learning system tries to figure out if a tumor that is a lump is malignant meaning cancerous or dangerous.
-=== P88.S4 ===
+=== P33.S4 ===
 Or if that tumor, that lump is benign, meaning that it's just a lump that isn't cancerous and isn't that dangerous?
-=== P89.S0 ===
+=== P34.S0 ===
 So maybe your dataset has tumors of various sizes.
-=== P89.S1 ===
+=== P34.S1 ===
 And these tumors are labeled as either benign, which I will designate in this example with a 0 or malignant, which will designate in this example with a 1.
-=== P89.S2 ===
+=== P34.S2 ===
 One reason that this is different from regression is that we're trying to predict only a small number of possible outputs or categories.
-=== P89.S3 ===
+=== P34.S3 ===
 In this case two possible outputs 0 or 1, benign or malignant.
-=== P89.S4 ===
+=== P34.S4 ===
 This is different from regression which tries to predict any number, all of the infinitely many number of possible numbers.
-=== P89.S5 ===
+=== P34.S5 ===
 And so the fact that there are only two possible outputs is what makes this classification.
-=== P89.S6 ===
+=== P34.S6 ===
 Because there are only two possible outputs or two possible categories in this example, you can also plot this data set on a line like this.
-=== P89.S7 ===
+=== P34.S7 ===
 Right now, I'm going to use two different symbols to denote the category using a circle an O to denote the benign examples and a cross to denote the malignant examples.
-=== P89.S8 ===
+=== P34.S8 ===
 And if new patients walks in for a diagnosis and they have a lump that is this size, then the question is, will your system classify this tumor as benign or malignant?
-=== P89.S9 ===
+=== P34.S9 ===
 It turns out that in classification problems you can also have more than two possible output categories.
-=== P89.S10 ===
+=== P34.S10 ===
 Maybe you're learning algorithm can output multiple types of cancer diagnosis if it turns out to be malignant.
-=== P89.S11 ===
+=== P34.S11 ===
 So let's call two different types of cancer type 1 and type 2.
-=== P89.S12 ===
+=== P34.S12 ===
 In this case the average would have three possible output categories it could predict.
-=== P90.S0 ===
+=== P35.S0 ===
 In the example we had only one input value the size of the tumor.
-=== P90.S1 ===
+=== P35.S1 ===
 But you can also use more than one input value to predict an output.
-=== P90.S2 ===
+=== P35.S2 ===
 Here's an example, instead of just knowing the tumor size, say you also have each patient's age in years.
-=== P91.S0 ===
+=== P36.S0 ===
 So when a new patient comes in, the doctor can measure the patient's tumor size and also record the patient's age.
-=== P91.S1 ===
+=== P36.S1 ===
 And so given this, how can we predict if this patient's tumor is benign or malignant?
-=== P91.S2 ===
+=== P36.S2 ===
 Well, given the day said like this, what the learning algorithm might do is find some boundary that  separates out the malignant tumors from the benign ones.
-=== P91.S3 ===
+=== P36.S3 ===
 So the learning algorithm has to decide how to fit a boundary line through this data.
-=== P91.S4 ===
+=== P36.S4 ===
 The boundary line found by the learning algorithm would help the doctor with the diagnosis.
-=== P91.S5 ===
+=== P36.S5 ===
 In this case the tumor is more likely to be benign.
-=== P91.S6 ===
+=== P36.S6 ===
 From this example we have seen how to inputs the patient's age and tumor size can be used.
-=== P93.S0 ===
+=== P38.S0 ===
 So to recap supervised learning maps input x to output y, where the learning algorithm learns from the quote right answers.
-=== P93.S1 ===
+=== P38.S1 ===
 The two major types of supervised learning our regression and classification.
-=== P93.S2 ===
+=== P38.S2 ===
 In a regression application like predicting prices of houses, the learning algorithm has to predict numbers from infinitely many possible output numbers.
-=== P93.S3 ===
+=== P38.S3 ===
 Whereas in classification the learning algorithm has to make a prediction of a category, all of a small set of possible outputs.
-=== P95.S0 ===
+=== P40.S0 ===
 Unsupervised learning
-=== P96.S0 ===
+=== P41.S0 ===
 Say you're given data on patients and their tumor size and the patient's age.
-=== P96.S1 ===
+=== P41.S1 ===
 But not whether the tumor was benign or malignant, so the dataset looks like this on the right.
-=== P96.S2 ===
+=== P41.S2 ===
 We're not asked to diagnose whether the tumor is benign or malignant, because we're not given any labels.
-=== P96.S3 ===
+=== P41.S3 ===
 Why in the dataset, instead, our job is to find some structure or some pattern or just find something interesting in the data.
-=== P98.S0 ===
+=== P43.S0 ===
 This is unsupervised learning, we call it unsupervised because we're not trying to supervise the algorithm.
-=== P98.S1 ===
+=== P43.S1 ===
 To give some quote right answer for every input, instead, we asked the our room to figure out all by yourself what's interesting.
-=== P98.S2 ===
+=== P43.S2 ===
 Or what patterns or structures that might be in this data, with this particular data set.
-=== P99.S0 ===
+=== P44.S0 ===
 An unsupervised learning algorithm, might decide that the data can be assigned to two different groups or two different clusters.
-=== P99.S1 ===
+=== P44.S1 ===
 And so it might decide, that there's one cluster what group over here, and there's another cluster or group over here.
-=== P99.S2 ===
+=== P44.S2 ===
 This is a particular type of unsupervised learning, called a clustering algorithm.
-=== P99.S3 ===
+=== P44.S3 ===
 Because it places the unlabeled data, into different clusters and this turns out to be used in many applications.
-=== P101.S0 ===
+=== P46.S0 ===
 Example 1: Clustering in google news
-=== P102.S0 ===
+=== P47.S0 ===
 P22
-=== P103.S0 ===
+=== P48.S0 ===
 Clustering is used in google news, what google news does is every day it goes.
-=== P103.S1 ===
+=== P48.S1 ===
 And looks at hundreds of thousands of news articles on the internet, and groups related stories together.
-=== P103.S2 ===
+=== P48.S2 ===
 For example, here is a sample from Google News, where the headline of the top article, is giant panda gives birth to rear twin cubs at Japan's oldest zoo.
-=== P103.S3 ===
+=== P48.S3 ===
 This article has actually caught my eye, because my daughter loves pandas and so there are a lot of stuff panda toys.
-=== P103.S4 ===
+=== P48.S4 ===
 And watching panda videos in my house, and looking at this, you might notice that below this are other related articles.
-=== P103.S5 ===
+=== P48.S5 ===
 Maybe from the headlines alone, you can start to guess what clustering might be doing.
-=== P103.S6 ===
+=== P48.S6 ===
 Notice that the word panda appears here here, here, here and here and notice that the word twin also appears in all five articles.
-=== P103.S7 ===
+=== P48.S7 ===
 And the word Zoo also appears in all of these articles, so the clustering algorithm is finding articles.
-=== P103.S8 ===
+=== P48.S8 ===
 All of all the hundreds of thousands of news articles on the internet that day, finding the articles that mention similar words and grouping them into clusters.
-=== P103.S9 ===
+=== P48.S9 ===
 Now, what's cool is that this clustering algorithm figures out on his own which words suggest, that certain articles are in the same group.
-=== P103.S10 ===
+=== P48.S10 ===
 What I mean is there isn't an employee at google news who's telling the algorithm to find articles that the word panda.
-=== P103.S11 ===
+=== P48.S11 ===
 And twins and zoo to put them into the same cluster, the news topics change every day.
-=== P103.S12 ===
+=== P48.S12 ===
 And there are so many news stories, it just isn't feasible to people doing this every single day for all the topics that use covers.
-=== P103.S13 ===
+=== P48.S13 ===
 Instead the algorithm has to figure out on his own without supervision, what are the clusters of news articles today.
-=== P103.S14 ===
+=== P48.S14 ===
 So that's why this clustering algorithm, is a type of unsupervised learning algorithm.
-=== P105.S0 ===
+=== P50.S0 ===
 Example 2: Clustering in google news
-=== P106.S0 ===
+=== P51.S0 ===
 P23
-=== P107.S0 ===
+=== P52.S0 ===
 Let's look at the second example of unsupervised learning applied to clustering genetic or DNA data.
-=== P107.S1 ===
+=== P52.S1 ===
 This image shows a picture of DNA micro array data, these look like tiny grids of a spreadsheet.
-=== P107.S2 ===
+=== P52.S2 ===
 And each tiny column represents the genetic or DNA activity of one person, So for example, this entire Column here is from one person's DNA.
-=== P107.S3 ===
+=== P52.S3 ===
 And this other column is of another person, each row represents a particular gene.
-=== P107.S4 ===
+=== P52.S4 ===
 So just as an example, perhaps this role here might represent a gene that affects eye color, or this role here is a gene that affects how tall someone is.
-=== P107.S5 ===
+=== P52.S5 ===
 Researchers have even found a genetic link to whether someone dislikes certain vegetables, such as broccoli, or brussels sprouts, or asparagus.
-=== P107.S6 ===
+=== P52.S6 ===
 So next time someone asks you why didn't you finish your salad, you can tell them, maybe it's genetic for DNA micro race.
-=== P107.S7 ===
+=== P52.S7 ===
 The idea is to measure how much certain genes, are expressed for each individual person.
-=== P107.S8 ===
+=== P52.S8 ===
 So these colors red, green, gray, and so on, show the degree to which different individuals do, or do not have a specific gene active.
-=== P107.S9 ===
+=== P52.S9 ===
 And what you can do is then run a clustering algorithm to group individuals into different categories.
-=== P107.S10 ===
+=== P52.S10 ===
 Or different types of people like maybe these individuals that group together, and let's just call this type one.
-=== P107.S11 ===
+=== P52.S11 ===
 And these people are grouped into type two, and these people are groups as type three.
-=== P107.S12 ===
+=== P52.S12 ===
 This is unsupervised learning, because we're not telling the algorithm in advance, that there is a type one person with certain characteristics.
-=== P107.S13 ===
+=== P52.S13 ===
 Or a type two person with certain characteristics, instead what we're saying is here's a bunch of data.
-=== P107.S14 ===
+=== P52.S14 ===
 I don't know what the different types of people are but can you automatically find structure into data.
-=== P107.S15 ===
+=== P52.S15 ===
 And automatically figure out whether the major types of individuals, since we're not giving the algorithm the right answer for the examples in advance.
-=== P109.S0 ===
+=== P54.S0 ===
 Linear regression model
-=== P110.S0 ===
+=== P55.S0 ===
 P30
-=== P111.S0 ===
+=== P56.S0 ===
 Linear Regression Model means fitting a straight line to your data.
-=== P111.S1 ===
+=== P56.S1 ===
 It's probably the most widely used learning algorithm in the world today.
-=== P112.S0 ===
+=== P57.S0 ===
 We call this supervised learning because you are first training a model by giving a data that has right answers because you get the model examples of houses with both the size of the house, as well as the price that the model should predict for each house.
-=== P112.S1 ===
+=== P57.S1 ===
 Well, here are the prices, that is, the right answers are given for every house in the dataset.
-=== P112.S2 ===
+=== P57.S2 ===
 This linear regression model is a particular type of supervised learning model.
-=== P112.S3 ===
+=== P57.S3 ===
 It's called regression model because it predicts numbers as the output like prices in dollars.
-=== P113.S0 ===
+=== P58.S0 ===
 Any supervised learning model that predicts a number such as 220,000 or 1.5 or negative 33.2 is addressing what's called a regression problem.
-=== P114.S0 ===
+=== P59.S0 ===
 the other most common type of supervised learning model is called a classification model.
-=== P114.S1 ===
+=== P59.S1 ===
 Classification model predicts categories or discrete categories, such as predicting if a picture is of a cat or a dog, or if given medical record, it has to predict if a patient has a particular disease.
-=== P115.S0 ===
+=== P60.S0 ===
 the difference between classification and regression, in classification, there are only a small number of possible outputs.
-=== P115.S1 ===
+=== P60.S1 ===
 If your model is recognizing cats versus dogs, that's two possible outputs.
-=== P115.S2 ===
+=== P60.S2 ===
 Or maybe you're trying to recognize any of 10 possible medical conditions in a patient, so there's a discrete, finite set of possible outputs.
-=== P115.S3 ===
+=== P60.S3 ===
 We call it classification problem, whereas in regression, there are infinitely many possible numbers that the model could output.
-=== P116.S0 ===
+=== P61.S0 ===
 P32
-=== P117.S0 ===
+=== P62.S0 ===
 The dataset that you just saw and that is used to train the model is called a training set.
-=== P117.S1 ===
+=== P62.S1 ===
 Note that your client's house is not in this dataset because it's not yet sold, so no one knows what the price is.
-=== P117.S2 ===
+=== P62.S2 ===
 To predict the price of your client's house, you first train your model to learn from the training set and that model can then predict your client's houses price.
-=== P117.S3 ===
+=== P62.S3 ===
 In Machine Learning, the standard notation to denote the input here is lowercase x, and we call this the input variable, is also called a feature or an input feature.
-=== P117.S4 ===
+=== P62.S4 ===
 For example, for the first house in your training set, x is the size of the house, so x equals 2,104.
-=== P117.S5 ===
+=== P62.S5 ===
 The standard notation to denote the output variable which you're trying to predict, which is also sometimes called the target variable, is lowercase y.
-=== P117.S6 ===
+=== P62.S6 ===
 Here, y is the price of the house, and for the first training example, this is equal to 400, so y equals 400.
-=== P117.S7 ===
+=== P62.S7 ===
 The dataset has one row for each house and in this training set, there are 47 rows with each row representing a different training example.
-=== P117.S8 ===
+=== P62.S8 ===
 We're going to use lowercase m to refer it to the total number of training examples, and so here m is equal to 47.
-=== P117.S9 ===
+=== P62.S9 ===
 To indicate the single training example, we're going to use the notation (x, y).
-=== P117.S10 ===
+=== P62.S10 ===
 For the first training example, (x, y), this pair of numbers is (2104, 400).
-=== P117.S11 ===
+=== P62.S11 ===
 Now we have a lot of different training examples.
-=== P118.S0 ===
+=== P63.S0 ===
 I'm going to use the notation ( x( i ), y( i ) ) tells us that this is the ith training example, such as the first, second, or third up to the 47th training example.
-=== P118.S1 ===
+=== P63.S1 ===
 I here, refers to a specific row in the table.
-=== P119.S0 ===
+=== P64.S0 ===
 Note: this superscript i in parentheses is not exponentiation this is not x squared i.
-=== P119.S1 ===
+=== P64.S1 ===
 This i, is just an index into the training set and refers to row i in the table.
-=== P121.S0 ===
+=== P66.S0 ===
 Training a Machine Learning Model
-=== P122.S0 ===
+=== P67.S0 ===
 To train a machine learning model, you begin by feeding it a training set, which consists of input features and output targets.
-=== P122.S1 ===
+=== P67.S1 ===
 The goal of a supervised learning algorithm is to produce a function, denoted as f.
-=== P122.S2 ===
+=== P67.S2 ===
 This function, historically called a hypothesis, is used to predict outcomes based on new inputs.
-=== P123.S0 ===
+=== P68.S0 ===
 P34
-=== P124.S0 ===
+=== P69.S0 ===
 Function and Prediction
-=== P125.S0 ===
+=== P70.S0 ===
 - The function f takes a new input x and generates an estimate or prediction, denoted as ŷ  (y-hat).
-=== P125.S1 ===
+=== P70.S1 ===
 The prediction ŷ  is the estimated value of the target variable y.
-=== P126.S0 ===
+=== P71.S0 ===
 - x represents the input feature, and the output of the model, ŷ  is the prediction.
-=== P127.S0 ===
+=== P72.S0 ===
 - The actual true value in the training set is referred to as y, while ŷ is an estimate, which might not match the true value.
-=== P128.S0 ===
+=== P73.S0 ===
 Example: Predicting House Prices
-=== P129.S0 ===
+=== P74.S0 ===
 In practical terms, for tasks like predicting house prices, the true price of a house isn't known until it's sold.
-=== P129.S1 ===
+=== P74.S1 ===
 The model f, given input data such as the size of the house, predicts the price, which is an estimation of the true value.
-=== P131.S0 ===
+=== P76.S0 ===
 Representing the Function
-=== P132.S0 ===
+=== P77.S0 ===
 A key aspect of designing a learning algorithm is determining how to represent the function f.
-=== P132.S1 ===
+=== P77.S1 ===
 For simplicity, we can start by assuming f is a straight line, represented as:
-=== P133.S0 ===
-fw,bx=w⋅x+b
-=== P134.S0 ===
+=== P79.S0 ===
 - w  and b are parameters that determine the prediction ŷ based on the input feature  x .
-=== P135.S0 ===
+=== P80.S0 ===
 - w  represents the weight (slope), and  b is the bias (intercept).
-=== P137.S0 ===
+=== P82.S0 ===
 Visualizing Linear Regression
-=== P138.S0 ===
+=== P83.S0 ===
 If we plot the training data on a graph, with x (input feature) on the horizontal axis and y (output target) on the vertical axis, the algorithm generates the best-fit line.
-=== P138.S1 ===
+=== P83.S1 ===
 This straight line is a linear function:
-=== P139.S0 ===
-- fx=w⋅x+b
-=== P140.S0 ===
+=== P84.S0 ===
+-
+=== P85.S0 ===
 - This function makes predictions for y based on x using a linear relationship.
-=== P142.S0 ===
+=== P87.S0 ===
 Why Use a Linear Function?
-=== P143.S0 ===
+=== P88.S0 ===
 A linear function (straight line) is simple and easy to work with.
-=== P143.S1 ===
+=== P88.S1 ===
 Though sometimes you may need to fit more complex, non-linear functions, starting with a linear model helps lay the foundation for understanding more advanced models.
-=== P144.S0 ===
+=== P89.S0 ===
 This model is called linear regression.
-=== P144.S1 ===
+=== P89.S1 ===
 Specifically, this is univariate linear regression, meaning there's only one input variable (feature x).
-=== P144.S2 ===
+=== P89.S2 ===
 In this case, x represents the size of a house.
-=== P144.S3 ===
+=== P89.S3 ===
 In future cases, you might predict based on multiple features, such as the number of bedrooms, etc.
-=== P146.S0 ===
+=== P91.S0 ===
 Cost Function in Linear Regression
-=== P147.S0 ===
+=== P92.S0 ===
 In order to implement linear regression, the first key step is to define a cost function.
-=== P147.S1 ===
+=== P92.S1 ===
 This function measures how well the model is performing and helps guide us to improve it.
-=== P147.S2 ===
+=== P92.S2 ===
 Let's break this down step by step.
-=== P148.S0 ===
+=== P93.S0 ===
 1.
-=== P148.S1 ===
+=== P93.S1 ===
 Model Setup:
-=== P149.S0 ===
+=== P94.S0 ===
 You start with a training set that contains input features ( x ) and corresponding output targets ( y ).
-=== P149.S1 ===
+=== P94.S1 ===
 The linear model used to fit this data is represented by the equation:
-=== P150.S0 ===
-fw,bx=w⋅x+b
-=== P151.S0 ===
+=== P96.S0 ===
 Here:
-=== P152.S0 ===
+=== P97.S0 ===
 ( w ) (the weight) is the slope of the line.
-=== P153.S0 ===
+=== P98.S0 ===
 ( b ) (the bias) is the intercept, or where the line crosses the y-axis.
-=== P154.S0 ===
+=== P99.S0 ===
 These two variables, ( w ) and ( b ), are the parameters of the model, and they determine how the line looks on a graph.
-=== P154.S1 ===
+=== P99.S1 ===
 The goal of linear regression is to find the best values for ( w ) and ( b ) that result in a line fitting the data well.
-=== P155.S0 ===
+=== P100.S0 ===
 2.
-=== P155.S1 ===
+=== P100.S1 ===
 Understanding the Role of ( w ) and ( b ):
-=== P156.S0 ===
+=== P101.S0 ===
 ( w ) (the slope): Changing the value of ( w ) alters the steepness of the line.
-=== P156.S1 ===
+=== P101.S1 ===
 A higher ( w ) results in a steeper slope, while a smaller ( w ) makes the line flatter.
-=== P157.S0 ===
+=== P102.S0 ===
 ( b ) (the intercept): This shifts the line up or down.
-=== P157.S1 ===
+=== P102.S1 ===
 Changing ( b ) moves the line without affecting its slope.
-=== P158.S0 ===
+=== P103.S0 ===
 For instance: P37
-=== P159.S0 ===
+=== P104.S0 ===
 If ( w = 0 ) and ( b = 1.5 ), the line is horizontal at ( y = 1.5 ).
-=== P160.S0 ===
+=== P105.S0 ===
 If ( w = 0.5 ) and ( b = 0 ), the line goes through the origin with a slope of 0.5.
-=== P161.S0 ===
+=== P106.S0 ===
 3.
-=== P161.S1 ===
+=== P106.S1 ===
 Measuring the Error:
-=== P162.S0 ===
+=== P107.S0 ===
 To figure out how well a line fits the training data, we need to measure the error.
-=== P162.S1 ===
-For any training example  xi,yi, the model makes a prediction ( yi ), which is calculated by:
-=== P163.S0 ===
-yi=fw,bxi
-=== P164.S0 ===
-The error for a single example is the difference between the predicted value ( yi ) and the actual value ( yi ), given by:
-=== P165.S0 ===
-Error=yi-yi
-=== P166.S0 ===
+=== P107.S1 ===
+For any training example  , the model makes a prediction (  ), which is calculated by:
+=== P109.S0 ===
+The error for a single example is the difference between the predicted value (  ) and the actual value (  ), given by:
+=== P111.S0 ===
 4.
-=== P166.S1 ===
+=== P111.S1 ===
 Constructing the Cost Function:
-=== P167.S0 ===
+=== P112.S0 ===
 To evaluate the performance of the model across all training examples, we sum the squared errors for each example.
-=== P167.S1 ===
+=== P112.S1 ===
 The squared error ensures that both over-predictions and under-predictions contribute positively to the total error.
-=== P168.S0 ===
+=== P113.S0 ===
 The cost function ( J(w, b) ), also known as the squared error cost function, is defined as:
-=== P169.S0 ===
-Jw,b=12mi=1myi-yi2 =  12mi=1mfw,bxi-yi2
-=== P170.S0 ===
+=== P115.S0 ===
 Where:
-=== P171.S0 ===
+=== P116.S0 ===
 ( m ) is the number of training examples.
-=== P172.S0 ===
-( yi ) is the predicted value for the i-th example.
-=== P173.S0 ===
-( yi ) is the true value for the i-th example.
-=== P174.S0 ===
+=== P117.S0 ===
+(  ) is the predicted value for the i-th example.
+=== P118.S0 ===
+(  ) is the true value for the i-th example.
+=== P119.S0 ===
 When the cost is relatively small, closer to zero, it means the model fits the data better compared to other choices for w and b.
-=== P176.S0 ===
-The factor of  12  is included for mathematical convenience, as it simplifies the derivatives in optimization algorithms.
-=== P177.S0 ===
+=== P121.S0 ===
+The factor of    is included for mathematical convenience, as it simplifies the derivatives in optimization algorithms.
+=== P122.S0 ===
 5.
-=== P177.S1 ===
+=== P122.S1 ===
 Interpretation of the Cost Function:
-=== P178.S0 ===
+=== P123.S0 ===
 When ( J(w, b) ) is large: The predictions are from the true values, meaning the model is performing poorly.
-=== P179.S0 ===
+=== P124.S0 ===
 When ( J(w, b) ) is small: The predictions are close to the actual values, indicating a good fit.
-=== P180.S0 ===
+=== P125.S0 ===
 6.
-=== P180.S1 ===
+=== P125.S1 ===
 The Goal of Linear Regression:
-=== P181.S0 ===
+=== P126.S0 ===
 The objective is to find the values of ( w ) and ( b ) that minimize the cost function ( J(w, b) ).
-=== P181.S1 ===
+=== P126.S1 ===
 By minimizing the cost, we ensure that the model's predictions are as close as possible to the actual data points, resulting in the best-fitting line.
-=== P183.S0 ===
+=== P128.S0 ===
 Understanding the Cost Function in Linear Regression P40
-=== P184.S0 ===
+=== P129.S0 ===
 In this section, we explore the cost function in linear regression and how it helps in finding the best parameters for the model.
-=== P185.S0 ===
+=== P130.S0 ===
 The goal is to choose values for ( w ) and ( b ) that allow the line to fit the training data well.
-=== P185.S1 ===
-To measure this fit, we use a cost function denoted by ( Jw,b ), which calculates the difference between the model's predictions ( y ) (or ( fx )) and the actual true values ( y ).
-=== P187.S0 ===
+=== P130.S1 ===
+To measure this fit, we use a cost function denoted by (  ), which calculates the difference between the model's predictions (  ) (or (  )) and the actual true values ( y ).
+=== P132.S0 ===
 Simplifying the Model
-=== P188.S0 ===
+=== P133.S0 ===
 To make it easier to understand, let's simplify the model by setting ( b = 0 ).
-=== P188.S1 ===
+=== P133.S1 ===
 Thus, the function becomes:
-=== P189.S0 ===
-fwx=w⋅x
-=== P190.S0 ===
+=== P135.S0 ===
 Now, there's only one parameter to adjust, ( w ), and the cost function ( J(w) ) reflects how well a particular value of ( w ) fits the training data.
-=== P192.S0 ===
+=== P137.S0 ===
 Visualizing the Cost Function
-=== P193.S0 ===
+=== P138.S0 ===
 To build intuition, consider how different values of ( w ) affect both the model and the cost function.
-=== P193.S1 ===
+=== P138.S1 ===
 Let's explore three examples:
-=== P195.S0 ===
+=== P140.S0 ===
 Training Set: Suppose we have three data points: ( (1, 1) ), ( (2, 2) ), and ( (3, 3) ).
-=== P196.S0 ===
+=== P141.S0 ===
 Choosing ( w = 1 ):
-=== P197.S0 ===
-The function ( fwx) becomes a line with a slope of 1, perfectly passing through all the points.
-=== P198.S0 ===
+=== P142.S0 ===
+The function ( ) becomes a line with a slope of 1, perfectly passing through all the points.
+=== P143.S0 ===
 The predicted values match the actual values, so the cost function ( J(1) = 0 ) (no error).
-=== P199.S0 ===
+=== P144.S0 ===
 Choosing ( w = 0.5 ):
-=== P200.S0 ===
-The function fwx now has a slope of 0.5, resulting in some error between the predicted and actual values.
-=== P201.S0 ===
-The squared errors for each point are calculated and summed, giving a cost (J0.5≈0.58 ).
-=== P202.S0 ===
+=== P145.S0 ===
+The function  now has a slope of 0.5, resulting in some error between the predicted and actual values.
+=== P146.S0 ===
+The squared errors for each point are calculated and summed, giving a cost ( ).
+=== P147.S0 ===
 Choosing ( w = 0 ):
-=== P203.S0 ===
-The function becomes a flat line, ( fwx=0 ), leading to larger prediction errors.
-=== P204.S0 ===
-The cost  J0≈2.33 , which is much higher than when ( w = 1 ).
-=== P206.S0 ===
+=== P148.S0 ===
+The function becomes a flat line, (  ), leading to larger prediction errors.
+=== P149.S0 ===
+The cost   , which is much higher than when ( w = 1 ).
+=== P151.S0 ===
 Plotting the Cost Function
-=== P207.S0 ===
+=== P152.S0 ===
 For each value of ( w ), the corresponding cost ( J(w) ) is computed.
-=== P207.S1 ===
+=== P152.S1 ===
 If we plot these points, the resulting cost function typically forms a U-shaped curve.
-=== P207.S2 ===
+=== P152.S2 ===
 The goal of linear regression is to find the value of ( w ) that minimizes ( J(w) ), providing the best fit for the data.
-=== P209.S0 ===
+=== P154.S0 ===
 Minimizing the Cost Function
-=== P210.S0 ===
+=== P155.S0 ===
 In this example, ( w = 1 ) gives the lowest possible cost, ( J(w) = 0 ), which means it is the optimal parameter for the data.
-=== P210.S1 ===
+=== P155.S1 ===
 The process of minimizing the cost function allows the model to learn the best parameters for making accurate predictions.
-=== P213.S0 ===
+=== P158.S0 ===
 Moving Forward
-=== P214.S0 ===
+=== P159.S0 ===
 In more complex cases where both ( w ) and ( b ) are used, the objective remains the same: to minimize ( J(w, b) ).
-=== P214.S1 ===
+=== P159.S1 ===
 Future lessons will cover how to visualize the cost function in 3D, which will help in understanding how changes in both ( w ) and ( b ) impact the model.
-=== P216.S0 ===
+=== P161.S0 ===
 Visualizing the Cost Function in Linear Regression
-=== P217.S0 ===
+=== P162.S0 ===
 P45
-=== P218.S0 ===
+=== P163.S0 ===
 In the previous section, we explored a simple visualization of the cost function (J(w)) or (J(w, b)).
-=== P218.S1 ===
+=== P163.S1 ===
 Now, let's dive deeper into richer visualizations to help you develop a stronger intuition about the cost function's behavior.
-=== P220.S0 ===
+=== P165.S0 ===
 Recap of Key Concepts
-=== P221.S0 ===
+=== P166.S0 ===
 We’ve already introduced the model and its parameters, (w) and (b), as well as the cost function, (J(w, b)).
-=== P221.S1 ===
+=== P166.S1 ===
 The goal of linear regression is to minimize this cost function over the parameters (w) and (b).
-=== P221.S2 ===
+=== P166.S2 ===
 In our last visualization, we simplified things by setting (b = 0), allowing us to focus solely on the parameter (w).
-=== P223.S0 ===
+=== P168.S0 ===
 Revisiting the Model P47
-=== P224.S0 ===
+=== P169.S0 ===
 Now, let's return to the original model with both parameters, (w) and (b).
-=== P224.S1 ===
+=== P169.S1 ===
 As before, we want to gain a visual understanding of the model function, (f(x)), and its relationship to the cost function (J(w, b)).
-=== P225.S0 ===
+=== P170.S0 ===
 Here's a training set of house sizes and prices.
-=== P225.S1 ===
-For example, we can select a possible function (f(x)) with (w = 0.06) and (b = 50), giving us the function: [ fx=0.06x+50 ] This particular model consistently underestimates housing prices, making it a poor fit for the data.
-=== P227.S0 ===
+=== P170.S1 ===
+For example, we can select a possible function (f(x)) with (w = 0.06) and (b = 50), giving us the function: [  ] This particular model consistently underestimates housing prices, making it a poor fit for the data.
+=== P172.S0 ===
 The Shape of the Cost Function
-=== P228.S0 ===
+=== P173.S0 ===
 With these values for (w) and (b), let's examine the cost function (J(w, b)).
-=== P228.S1 ===
+=== P173.S1 ===
 Previously, when we considered only (w), the cost function formed a U-shaped curve, reminiscent of a soup bowl.
-=== P228.S2 ===
+=== P173.S2 ===
 Now, with two parameters, (w) and (b), the plot becomes more complex, though it retains a similar bowl shape—this time in three dimensions.
-=== P229.S0 ===
+=== P174.S0 ===
 The 3D plot of the cost function (J(w, b)) resembles a stretched-out soup bowl, a curved dinner plate, or perhaps even a hammock.
-=== P229.S1 ===
+=== P174.S1 ===
 As you vary (w) and (b), you obtain different values for the cost function.
-=== P229.S2 ===
+=== P174.S2 ===
 Each point on this surface represents a specific pair of (w) and (b), with the height above the surface corresponding to the value of (J(w, b)).
-=== P231.S0 ===
+=== P176.S0 ===
 Introducing Contour Plots
-=== P232.S0 ===
+=== P177.S0 ===
 To better visualize this, we can use a contour plot, which provides a 2D representation of the 3D cost function.
-=== P232.S1 ===
+=== P177.S1 ===
 Contour plots are similar to topographical maps, where each contour represents points of equal height.
-=== P233.S0 ===
+=== P178.S0 ===
 For instance, on the plot of Mount Fuji, you can see horizontal slices of the mountain.
-=== P233.S1 ===
+=== P178.S1 ===
 Similarly, a contour plot of (J(w, b)) slices the cost function horizontally, resulting in ellipses or ovals that represent points where the cost function has the same value.
-=== P234.S0 ===
+=== P179.S0 ===
 On the contour plot, the axes represent (w) and (b), while the concentric ovals represent levels of the cost function (J(w, b)).
-=== P234.S1 ===
+=== P179.S1 ===
 The center of these ovals is the point where (J(w, b)) reaches its minimum, representing the optimal values of (w) and (b).
-=== P236.S0 ===
+=== P181.S0 ===
 Visualizing the 3D Surface as a Contour Plot
-=== P237.S0 ===
+=== P182.S0 ===
 Imagine you're flying above the 3D surface of the cost function and looking straight down.
-=== P237.S1 ===
+=== P182.S1 ===
 This is how a contour plot simplifies the 3D structure into a 2D visualization, with each oval indicating a different height of the cost function.
-=== P238.S0 ===
+=== P183.S0 ===
 At the center of the smallest oval lies the minimum of the bowl, where the cost function is minimized.
-=== P238.S1 ===
+=== P183.S1 ===
 Contour plots are a useful tool because they allow us to visualize the 3D cost function in a two-dimensional space, making it easier to interpret and analyze.
-=== P240.S0 ===
+=== P185.S0 ===
 Visualizing examples
-=== P241.S0 ===
+=== P186.S0 ===
 Let's explore how different values of (w) and (b) affect the fit and the cost function (J).
-=== P242.S0 ===
+=== P187.S0 ===
 Example 1:
-=== P243.S0 ===
+=== P188.S0 ===
 Consider a point on the graph (J) where (w = -0.15) and (b = 800).
-=== P243.S1 ===
+=== P188.S1 ===
 This pair of values corresponds to a function (f(x)) that intersects the vertical axis at 800 and has a slope of (-0.15).
-=== P243.S2 ===
+=== P188.S2 ===
 However, this line poorly fits the data, resulting in a high cost (J), far from the minimum.
-=== P245.S0 ===
+=== P190.S0 ===
 Example 2:
-=== P246.S0 ===
+=== P191.S0 ===
 Another example uses (w = 0) and (b = 360).
-=== P246.S1 ===
+=== P191.S1 ===
 This results in a flat line (f(x) = 360), which still doesn't fit well but is slightly better.
-=== P246.S2 ===
+=== P191.S2 ===
 The cost is still high, indicating room for improvement.
-=== P248.S0 ===
+=== P193.S0 ===
 Example 3:
-=== P249.S0 ===
+=== P194.S0 ===
 Yet another set of parameters produces a line (f(x)) that fits even worse, moving further from the cost function's minimum.
-=== P249.S1 ===
+=== P194.S1 ===
 This demonstrates how crucial the choice of (w) and (b) is.
-=== P251.S0 ===
+=== P196.S0 ===
 Example 4:
-=== P252.S0 ===
+=== P197.S0 ===
 In the final example, (f(x)) closely fits the training set, with the cost point near the minimum of the cost function.
-=== P252.S1 ===
+=== P197.S1 ===
 This line minimizes the sum of squared errors, offering a much better fit.
-=== P254.S0 ===
+=== P199.S0 ===
 Insights on Parameters and Cost
-=== P255.S0 ===
+=== P200.S0 ===
 These visualizations illustrate how different parameter choices affect the line (f(x)) and the cost (J).
-=== P255.S1 ===
+=== P200.S1 ===
 A better fit corresponds to points on the cost graph closer to the minimum.
-=== P257.S0 ===
+=== P202.S0 ===
 Lab: plt_intuition - plt_stationary - plt_update_onclick - soup_bowl()
-=== P258.S0 ===
+=== P203.S0 ===
 The optional lab provides practical experience.
-=== P258.S1 ===
+=== P203.S1 ===
 You can run code to see how varying parameters affect the cost and use interactive plots to visualize the changes.
-=== P271.S0 ===
+=== P216.S0 ===
 Introduction to Gradient Descent
-=== P272.S0 ===
+=== P217.S0 ===
 We explored how different values of the parameters (w) and (b) impact the cost function (J(w, b)) in linear regression.
-=== P272.S1 ===
+=== P217.S1 ===
 While manually selecting these parameters can help you understand the process, we need a systematic approach to minimize the cost function.
-=== P272.S2 ===
+=== P217.S2 ===
 This is where Gradient Descent comes in.
-=== P274.S0 ===
+=== P219.S0 ===
 What is Gradient Descent?
-=== P275.S0 ===
+=== P220.S0 ===
 Gradient Descent is an optimization algorithm used to minimize cost functions.
-=== P275.S1 ===
+=== P220.S1 ===
 It’s widely used in machine learning, not just for linear regression but also for training complex models like neural networks (deep learning).
-=== P275.S2 ===
+=== P220.S2 ===
 Understanding gradient descent is foundational in learning how machine learning models optimize their parameters.
-=== P277.S0 ===
+=== P222.S0 ===
 Overview of the Gradient Descent Process
-=== P278.S0 ===
+=== P223.S0 ===
 Initial Guesses: The algorithm begins by initializing the parameters (w) and (b) with initial guesses (often set to zero).
-=== P279.S0 ===
+=== P224.S0 ===
 Iterative Updates: The parameters are updated in small steps, aiming to reduce the cost function (J(w, b)).
-=== P279.S1 ===
+=== P224.S1 ===
 The goal is to make incremental changes that move (w) and (b) towards values that minimize (J(w, b)).
-=== P280.S0 ===
+=== P225.S0 ===
 Minimizing the Cost: By repeatedly adjusting the parameters, the cost gradually decreases until it reaches a minimum or near-minimum value.
-=== P282.S0 ===
+=== P227.S0 ===
 Generalization Beyond Linear Regression
-=== P283.S0 ===
+=== P228.S0 ===
 Gradient descent is not limited to linear regression or models with just two parameters.
-=== P283.S1 ===
-You can apply it to more complex models where the cost function depends on many parameters w1,w2,…,wn along with (b).
-=== P283.S2 ===
+=== P228.S1 ===
+You can apply it to more complex models where the cost function depends on many parameters  along with (b).
+=== P228.S2 ===
 The same process is followed to minimize the cost function in these cases.
-=== P285.S0 ===
+=== P230.S0 ===
 Visualizing Gradient Descent on a Surface Plot P60
-=== P286.S0 ===
+=== P231.S0 ===
 Imagine a 3D surface plot where the axes represent (w) and (b), and the height represents the cost (J(w, b)).
-=== P286.S1 ===
+=== P231.S1 ===
 The goal of gradient descent is to navigate this "landscape" by taking steps towards the lowest points (valleys) on the plot.
-=== P287.S0 ===
+=== P232.S0 ===
 Steepest Descent: At each step, you choose the direction that leads most steeply downhill (the direction of the steepest descent).
-=== P288.S0 ===
+=== P233.S0 ===
 Moving Towards a Minimum: With each step, you move closer to a local minimum, which is a low point in the cost function.
-=== P289.S0 ===
+=== P234.S0 ===
 Local Minima and Starting Points
-=== P290.S0 ===
+=== P235.S0 ===
 Local Minima: Gradient descent may lead to different local minima depending on the starting point.
-=== P290.S1 ===
+=== P235.S1 ===
 These local minima represent valleys on the surface plot.
-=== P290.S2 ===
+=== P235.S2 ===
 If the function has multiple minima, the starting point determines which valley you end up in.
-=== P291.S0 ===
+=== P236.S0 ===
 Interesting Property: Starting gradient descent from different points can lead you to different local minima, as the algorithm follows the path of steepest descent.
-=== P293.S0 ===
+=== P238.S0 ===
 Gradient Descent Algorithm
-=== P294.S0 ===
+=== P239.S0 ===
 The algorithm updates the parameters w and b iteratively:
-=== P295.S0 ===
-w=w-α⋅∂dwJw,b
-=== P296.S0 ===
-b=b-α⋅∂dbJw,b
-=== P297.S0 ===
+=== P242.S0 ===
 Where:
-=== P298.S0 ===
-- α is the learning rate, controlling the size of each step.
-=== P298.S1 ===
+=== P243.S0 ===
+- is the learning rate, controlling the size of each step.
+=== P243.S1 ===
 It’s a small positive number (e.g., 0.01) that determines how quickly or slowly the algorithm descends.
-=== P298.S2 ===
-α∈[0,1]
-=== P299.S0 ===
-- The derivative term (partial derivatives ∂dw and ∂db) indicates the direction to move the parameters for reducing the cost.
-=== P301.S0 ===
+=== P244.S0 ===
+- The derivative term (partial derivatives  and ) indicates the direction to move the parameters for reducing the cost.
+=== P246.S0 ===
 Understanding the Equation
-=== P302.S0 ===
+=== P247.S0 ===
 1.
-=== P302.S1 ===
+=== P247.S1 ===
 Assignment Operator: In code, the equation represents updating the parameter by assigning a new value based on its current value minus a step in the gradient direction.
-=== P303.S0 ===
+=== P248.S0 ===
 2.
-=== P303.S1 ===
-Learning Rate (α): Controls the step size.
-=== P303.S2 ===
-A small α results in slow progress (baby steps), while a large α may cause the algorithm to overshoot the minimum.
-=== P304.S0 ===
+=== P248.S1 ===
+Learning Rate (): Controls the step size.
+=== P248.S2 ===
+A small  results in slow progress (baby steps), while a large  may cause the algorithm to overshoot the minimum.
+=== P249.S0 ===
 3.
-=== P304.S1 ===
+=== P249.S1 ===
 Simultaneous Updates: Both w and b should be updated simultaneously in each iteration for the correct implementation.
-=== P304.S2 ===
+=== P249.S2 ===
 This ensures that both parameters are adjusted based on their current values before any changes are applied.
-=== P307.S0 ===
+=== P252.S0 ===
 Correct vs Incorrect Implementation
-=== P308.S0 ===
+=== P253.S0 ===
 - Correct Implementation: Calculate the new values for w and b  using temporary variables.
-=== P308.S1 ===
+=== P253.S1 ===
 Once both new values are computed, assign them to w and b simultaneously.
-=== P310.S0 ===
+=== P255.S0 ===
 Example:
-=== P311.S0 ===
-tmp_w = w - α    (derivative of J with respect to w)tmp_b = b - α      (derivative of J with respect to b)w = tmp_wb = tmp_btmp_w = w - α    (derivative of J with respect to w)tmp_b = b - α      (derivative of J with respect to b)w = tmp_wb = tmp_b
-=== P312.S0 ===
-tmp_w = w - α    (derivative of J with respect to w)
-=== P313.S0 ===
-tmp_b = b - α      (derivative of J with respect to b)
-=== P314.S0 ===
-w = tmp_w
-=== P315.S0 ===
-b = tmp_b
-=== P316.S0 ===
-tmp_w = w - α    (derivative of J with respect to w)
-=== P317.S0 ===
-tmp_b = b - α      (derivative of J with respect to b)
-=== P318.S0 ===
-w = tmp_w
-=== P319.S0 ===
-b = tmp_b
-=== P324.S0 ===
+=== P261.S0 ===
 - Incorrect Implementation: If you update w first, then use the updated value of w to compute the new b, this breaks the simultaneous update rule, leading to inaccuracies.
-=== P326.S0 ===
+=== P263.S0 ===
 Convergence
-=== P327.S0 ===
+=== P264.S0 ===
 The algorithm continues to update w and b until the cost function J(w, b) reaches a minimum or stops changing significantly.
-=== P327.S1 ===
+=== P264.S1 ===
 At this point, the algorithm has converged.
-=== P329.S0 ===
+=== P266.S0 ===
 Gradient descent intuition
-=== P330.S0 ===
-The term ∂dw  represents the derivative (or more accurately, the partial derivative) of the cost function with respect to w.
-=== P330.S1 ===
+=== P267.S0 ===
+The term   represents the derivative (or more accurately, the partial derivative) of the cost function with respect to w.
+=== P267.S1 ===
 While technically this is a partial derivative, we'll simply refer to it as the derivative for ease.
-=== P332.S0 ===
+=== P269.S0 ===
 Gradient Descent with One Parameter
-=== P333.S0 ===
+=== P270.S0 ===
 To simplify, consider a scenario with just one parameter, w.
-=== P333.S1 ===
+=== P270.S1 ===
 The goal is to minimize a cost function J(w).
-=== P333.S2 ===
-The update rule becomes:		 w=w-αddwJw
-=== P335.S0 ===
+=== P270.S2 ===
+The update rule becomes:
+=== P272.S0 ===
 Here, the gradient descent seeks to minimize J(w) by adjusting w.
-=== P335.S1 ===
+=== P272.S1 ===
 Imagine plotting w on the horizontal axis and J(w) on the vertical axis.
-=== P335.S2 ===
+=== P272.S2 ===
 Starting from a specific point on this graph, gradient descent updates w by moving in the direction that reduces the cost.
-=== P337.S0 ===
+=== P274.S0 ===
 Positive Derivative Example P65
-=== P338.S0 ===
+=== P275.S0 ===
 If the slope (derivative) at a point is positive, meaning the tangent line to the curve is sloping upwards, subtracting α times the derivative decreases w.
-=== P338.S1 ===
+=== P275.S1 ===
 This moves the parameter to the left on the graph, reducing the cost, bringing it closer to the minimum value of J.
-=== P342.S0 ===
+=== P279.S0 ===
 Negative Derivative Example
-=== P343.S0 ===
+=== P280.S0 ===
 Conversely, if the slope is negative, meaning the tangent slopes downward, subtracting α times a negative value increases w.
-=== P343.S1 ===
+=== P280.S1 ===
 This moves the parameter to the right, again reducing the cost and moving closer to the minimum of J.
-=== P344.S0 ===
+=== P281.S0 ===
 These examples illustrate how the derivative guides the updates in w and ensures that each step moves towards minimizing the cost.
-=== P346.S0 ===
+=== P283.S0 ===
 The Learning Rate
-=== P347.S0 ===
+=== P284.S0 ===
 One key factor in the gradient descent algorithm is the choice of the learning rate α.
-=== P347.S1 ===
+=== P284.S1 ===
 A learning rate that's too small may cause the algorithm to take excessively long to converge, while one that's too large can cause overshooting and failure to converge.
-=== P349.S0 ===
+=== P286.S0 ===
 Choosing the Learning Rate in Gradient Descent
-=== P350.S0 ===
+=== P287.S0 ===
 The choice of the learning rate, α, significantly impacts the efficiency of gradient descent.
-=== P350.S1 ===
+=== P287.S1 ===
 A poorly chosen learning rate can either make the algorithm inefficient or cause it to fail altogether.
-=== P350.S2 ===
+=== P287.S2 ===
 Let's explore what happens when the learning rate is either too small or too large and discuss how gradient descent behaves near a local minimum.
-=== P351.S0 ===
+=== P288.S0 ===
 When the Learning Rate is Too Small
-=== P352.S0 ===
+=== P289.S0 ===
 Consider a scenario where the learning rate is extremely small, such as α = 0.0000001.
-=== P352.S1 ===
+=== P289.S1 ===
 In this case, the updates to the parameter w will be tiny.
-=== P352.S2 ===
+=== P289.S2 ===
 Here's the outcome:
-=== P353.S0 ===
+=== P290.S0 ===
 Slow convergence: Each step moves very slightly, requiring many iterations to approach the minimum of the cost function J(w).
-=== P353.S1 ===
+=== P290.S1 ===
 While the algorithm still reduces the cost, the progress is painstakingly slow.
-=== P354.S0 ===
+=== P291.S0 ===
 When the Learning Rate is Too Large
-=== P355.S0 ===
+=== P292.S0 ===
 On the other hand, if the learning rate is too large, the updates can overshoot the minimum:
-=== P356.S0 ===
+=== P293.S0 ===
 Overshooting the minimum: In this case, each step might jump past the minimum, moving from one side of the graph to the other, potentially worsening the cost.
-=== P357.S0 ===
+=== P294.S0 ===
 Divergence: Repeated overshooting can cause the algorithm to diverge, with the parameter w getting further from the minimum instead of closer.
-=== P358.S0 ===
+=== P295.S0 ===
 Gradient Descent at a Local Minimum
-=== P359.S0 ===
+=== P296.S0 ===
 When w reaches a local minimum, the gradient (the slope of the cost function) becomes zero.
-=== P359.S1 ===
+=== P296.S1 ===
 This results in no further updates:
-=== P360.S0 ===
+=== P297.S0 ===
 No change at the minimum: When the gradient is zero, the update rule becomes w = w – α.0, leaving w unchanged.
-=== P360.S1 ===
+=== P297.S1 ===
 This is the desired behavior, as w is already at a minimum, and further updates are unnecessary.
-=== P362.S0 ===
+=== P299.S0 ===
 Automatically Smaller Steps Near the Minimum
-=== P363.S0 ===
+=== P300.S0 ===
 As gradient descent approaches a local minimum, the derivative decreases, leading to smaller updates even with a fixed learning rate.
-=== P363.S1 ===
+=== P300.S1 ===
 This gradual reduction in step size helps the algorithm converge efficiently:
-=== P364.S0 ===
+=== P301.S0 ===
 Smaller steps near the minimum: Even with a constant learning rate, the closer you get to the minimum, the smaller the steps become, due to the decreasing derivative.
-=== P366.S0 ===
+=== P303.S0 ===
 Derivatives for Gradient Descent
-=== P367.S0 ===
+=== P304.S0 ===
 To implement gradient descent for linear regression, we need to compute the derivatives of the cost function with respect to w and b:
-=== P369.S0 ===
+=== P306.S0 ===
 Derivative with respect to w:
-=== P370.S0 ===
-∂Jw,b∂w=1mi=1mfw,bxi-yi⋅xi
-=== P371.S0 ===
+=== P308.S0 ===
 Derivative with respect to b:
-=== P372.S0 ===
-∂Jw,b∂b=1mi=1mfw,bxi-yi
-=== P374.S0 ===
+=== P311.S0 ===
 Global Minimum in Linear Regression
-=== P375.S0 ===
+=== P312.S0 ===
 One advantage of using the squared error cost function is that it is convex.
-=== P375.S1 ===
+=== P312.S1 ===
 Convex functions have only a single global minimum, so no matter where we start with w and b, gradient descent will always converge to this global minimum (as long as the learning rate is chosen properly).
-=== P377.S0 ===
+=== P314.S0 ===
 Batch Gradient Descent:
-=== P378.S0 ===
+=== P315.S0 ===
 This version of gradient descent is called batch gradient descent because it uses the entire dataset to compute the cost and update the parameters in each step.
-=== P379.S0 ===
+=== P316.S0 ===
 While it may seem counterintuitive, this method ensures accurate updates as it considers all data points.
-=== P380.S0 ===
+=== P317.S0 ===
 There are other types of gradient descent, such as stochastic gradient descent, which updates parameters based on small subsets of data at each step, offering a faster but noisier alternative.
-=== P382.S0 ===
+=== P319.S0 ===
 Lab: math lib - plt.subplots - np.arange - plt.subplots - plt_contour_wgrad - plt_divergence
-=== P409.S0 ===
+=== P346.S0 ===
 Week 2: Regression with multiple input variables
-=== P410.S0 ===
+=== P347.S0 ===
 C1_W2.pdf
-=== P411.S0 ===
+=== P348.S0 ===
 Linear Regression with Multiple Variables
-=== P412.S0 ===
+=== P349.S0 ===
 In this section, we delve into a more advanced version of linear regression, which allows for the use of multiple features to enhance prediction accuracy.
-=== P413.S0 ===
+=== P350.S0 ===
 Instead of relying on a single feature, such as house size, we can include additional attributes like the number of bedrooms, floors, and the house's age.
-=== P413.S1 ===
+=== P350.S1 ===
 This provides a richer dataset, making the model's predictions more robust.
-=== P415.S0 ===
+=== P352.S0 ===
 Notation Overview:
-=== P416.S0 ===
+=== P353.S0 ===
 Features:
-=== P417.S0 ===
-We denote features using (X1,X2,X3,…,Xn), where (n) is the total number of features.
-=== P417.S1 ===
+=== P354.S0 ===
+We denote features using (), where (n) is the total number of features.
+=== P354.S1 ===
 For instance:
-=== P418.S0 ===
-(X1): Size of the house.
-=== P419.S0 ===
-(X2): Number of bedrooms.
-=== P420.S0 ===
-(X3): Number of floors.
-=== P421.S0 ===
-(X4): Age of the house.
-=== P423.S0 ===
+=== P355.S0 ===
+(): Size of the house.
+=== P356.S0 ===
+(): Number of bedrooms.
+=== P357.S0 ===
+(): Number of floors.
+=== P358.S0 ===
+(): Age of the house.
+=== P360.S0 ===
 Training Examples:
-=== P424.S0 ===
-Each training example (Xi) consists of a vector of features.
-=== P424.S1 ===
-For example, (X2 = [1416, 3, 2, 40]) might represent a house with 1416 square feet, 3 bedrooms, 2 floors, and 40 years of age.
-=== P426.S0 ===
+=== P361.S0 ===
+Each training example () consists of a vector of features.
+=== P361.S1 ===
+For example, ( = [1416, 3, 2, 40]) might represent a house with 1416 square feet, 3 bedrooms, 2 floors, and 40 years of age.
+=== P363.S0 ===
 Model Representation:
-=== P427.S0 ===
+=== P364.S0 ===
 The model with multiple features is expressed as:
-=== P429.S0 ===
-fW,bX=W1X1+W2X2+W3X3+…+WnXn+b
-=== P431.S0 ===
-Here, (W1,W2,W3,…,Wn) are the weights assigned to each feature, and (b) is the bias term.
-=== P433.S0 ===
+=== P368.S0 ===
+Here, () are the weights assigned to each feature, and (b) is the bias term.
+=== P370.S0 ===
 Interpretation of Parameters:
-=== P434.S0 ===
-(W1=0.1): For every additional square foot, the house price increases by $100.
-=== P435.S0 ===
-(W2=4): Each additional bedroom increases the price by $4,000.
-=== P436.S0 ===
-(W3=10): Each additional floor adds $10,000 to the price.
-=== P437.S0 ===
-(W4=-2): Every year of the house's age decreases its price by $2,000.
-=== P438.S0 ===
-(b = 80): The base price of a house (with zero size, bedrooms, floors, and age) is $80,000.
-=== P440.S0 ===
+=== P371.S0 ===
+(): For every additional square foot, the house price increases by $100.
+=== P372.S0 ===
+(): Each additional bedroom increases the price by $4,000.
+=== P373.S0 ===
+(): Each additional floor adds $10,000 to the price.
+=== P374.S0 ===
+(): Every year of the house's age decreases its price by $2,000.
+=== P375.S0 ===
+(): The base price of a house (with zero size, bedrooms, floors, and age) is $80,000.
+=== P377.S0 ===
 Vectorized Form:
-=== P441.S0 ===
+=== P378.S0 ===
 To simplify the notation, we use vectors to represent the features and weights:
-=== P442.S0 ===
-(W=W1,W2,W3,…,Wn)
-=== P443.S0 ===
-X=X1,X2,X3,…,Xn
-=== P445.S0 ===
-The model can now be rewritten using the dot product:	 fW,bX=W⋅X+b
-=== P447.S0 ===
+=== P379.S0 ===
+()
+=== P382.S0 ===
+The model can now be rewritten using the dot product:
+=== P384.S0 ===
 The dot product computes the sum of the products of corresponding components from (W) and (X):
-=== P448.S0 ===
-W1X1 +W2X2 + … +WnXn
-=== P450.S0 ===
+=== P387.S0 ===
 Multiple Linear Regression:
-=== P451.S0 ===
+=== P388.S0 ===
 This method of using multiple features is called Multiple Linear Regression, distinguishing it from Univariate Linear Regression, which uses only one feature.
-=== P451.S1 ===
+=== P388.S1 ===
 Despite the similarity in terminology, it's important to note that Multivariate Regression refers to a different concept altogether.
-=== P453.S0 ===
+=== P390.S0 ===
 Vectorization
-=== P454.S0 ===
+=== P391.S0 ===
 Vectorization is a powerful technique that significantly improves the efficiency and performance of machine learning algorithms by optimizing both the code structure and computation speed.
-=== P454.S1 ===
+=== P391.S1 ===
 This concept leverages modern numerical libraries and hardware, such as GPUs (Graphics Processing Units), to perform large-scale computations efficiently.
-=== P455.S0 ===
+=== P392.S0 ===
 What is Vectorization?
-=== P456.S0 ===
+=== P393.S0 ===
 Vectorization allows operations that involve multiple computations (e.g., adding or multiplying multiple numbers) to be executed in a single step.
-=== P456.S1 ===
+=== P393.S1 ===
 When you write vectorized code, it is both shorter and optimized to run faster, as it can take advantage of parallel processing capabilities available in CPUs and GPUs.
-=== P457.S0 ===
+=== P394.S0 ===
 Example of Non-Vectorized Code
-=== P458.S0 ===
-Consider a simple model with parameters W and b, where W is a vector of weights, and x is a vector of features.
-=== P458.S1 ===
-Suppose you have three features, making n=3.
-=== P459.S0 ===
+=== P395.S0 ===
+Consider a simple model with parameters  and , where  is a vector of weights, and  is a vector of features.
+=== P395.S1 ===
+Suppose you have three features, making .
+=== P396.S0 ===
 In code, this could be done using a for-loop:
-=== P460.S0 ===
+=== P397.S0 ===
 python
-=== P461.S0 ===
+=== P398.S0 ===
 f = 0
-=== P462.S0 ===
+=== P399.S0 ===
 for j in range(n):
-=== P463.S0 ===
+=== P400.S0 ===
 f += W[j] * x[j]
-=== P464.S0 ===
+=== P401.S0 ===
 f += b
-=== P465.S0 ===
-This approach works, but it's inefficient, especially when n becomes large.
-=== P466.S0 ===
+=== P402.S0 ===
+This approach works, but it's inefficient, especially when  becomes large.
+=== P403.S0 ===
 Vectorized Approach
-=== P467.S0 ===
+=== P404.S0 ===
 Using vectorization, you can replace the for-loop with a single line of code that performs the same operation:
-=== P468.S0 ===
+=== P405.S0 ===
 python
-=== P469.S0 ===
+=== P406.S0 ===
 f = np.dot(W, x) + b
-=== P470.S0 ===
-Here, np.dot is a function from the NumPy library, which performs the dot product between the vectors W and x.
-=== P470.S1 ===
+=== P407.S0 ===
+Here, np.dot is a function from the NumPy library, which performs the dot product between the vectors  and .
+=== P407.S1 ===
 The benefits of this approach are:
-=== P471.S0 ===
+=== P408.S0 ===
 Shorter code: One line instead of a loop.
-=== P472.S0 ===
-Faster execution: The np.dot function uses optimized linear algebra routines and can leverage hardware acceleration, especially when n is large.
-=== P474.S0 ===
+=== P409.S0 ===
+Faster execution: The np.dot function uses optimized linear algebra routines and can leverage hardware acceleration, especially when  is large.
+=== P411.S0 ===
 Benefits of Vectorization
-=== P475.S0 ===
+=== P412.S0 ===
 Code Efficiency: Vectorization makes your code more concise, reducing the risk of errors and making it easier to maintain and debug.
-=== P476.S0 ===
+=== P413.S0 ===
 Performance Boost: By using optimized libraries like NumPy, vectorized code runs significantly faster than code relying on loops, especially for large datasets.
-=== P476.S1 ===
+=== P413.S1 ===
 This is because vectorized code can use parallel processing hardware (like CPUs and GPUs), which allows many calculations to be executed simultaneously.
-=== P478.S0 ===
+=== P415.S0 ===
 Why is Vectorization Faster?
-=== P479.S0 ===
+=== P416.S0 ===
 Behind the scenes, functions like np.dot are highly optimized.
-=== P479.S1 ===
+=== P416.S1 ===
 They take advantage of your computer’s hardware by running multiple computations in parallel.
-=== P479.S2 ===
+=== P416.S2 ===
 On systems with GPUs, which are designed for parallel computation, vectorized code can see massive performance gains, especially for tasks like machine learning.
-=== P481.S0 ===
+=== P418.S0 ===
 The Parallel Power of Vectorization
-=== P482.S0 ===
+=== P419.S0 ===
 Vectorization leverages hardware designed for parallel processing, such as GPUs.
-=== P482.S1 ===
-Instead of performing operations sequentially, the computer processes all values of W and x in parallel.
-=== P482.S2 ===
-For example, it multiplies all pairs of values between W and x at the same time, and then uses specialized hardware to add the results together in a highly efficient manner.
-=== P482.S3 ===
+=== P419.S1 ===
+Instead of performing operations sequentially, the computer processes all values of  and  in parallel.
+=== P419.S2 ===
+For example, it multiplies all pairs of values between  and  at the same time, and then uses specialized hardware to add the results together in a highly efficient manner.
+=== P419.S3 ===
 This parallel execution is a key reason why vectorized code runs significantly faster than non-vectorized code, particularly for large datasets.
-=== P483.S0 ===
+=== P420.S0 ===
 Example: Linear Regression with Multiple Features
-=== P484.S0 ===
-Consider a scenario with 16 features, where you need to update 16 weights (parameters W1 through W16) during gradient descent.
-=== P484.S1 ===
+=== P421.S0 ===
+Consider a scenario with 16 features, where you need to update 16 weights (parameters  through ) during gradient descent.
+=== P421.S1 ===
 Without vectorization, you would update each weight one by one in a for loop:
-=== P485.S0 ===
+=== P422.S0 ===
 python
-=== P486.S0 ===
+=== P423.S0 ===
 for j in range(16):
-=== P487.S0 ===
+=== P424.S0 ===
 W[j] = W[j] - 0.1 * D[j]
-=== P488.S0 ===
+=== P425.S0 ===
 However, with vectorization, you can perform all 16 updates simultaneously:
-=== P489.S0 ===
+=== P426.S0 ===
 python
-=== P490.S0 ===
+=== P427.S0 ===
 W = W - 0.1 * D
-=== P491.S0 ===
+=== P428.S0 ===
 This single line of code performs all updates in parallel, making it far more efficient.
-=== P491.S1 ===
+=== P428.S1 ===
 While the speed difference might not be significant with just 16 features, it becomes crucial when dealing with thousands of features or large datasets.
-=== P491.S2 ===
+=== P428.S2 ===
 In such cases, vectorization can reduce computation times from hours to mere minutes.
-=== P492.S0 ===
+=== P429.S0 ===
 C1_W2_Lab01_Python_Numpy_Vectorization
-=== P494.S0 ===
+=== P431.S0 ===
 Gradient Descent for Multiple Regression
-=== P495.S0 ===
+=== P432.S0 ===
 Let's break down the implementation of gradient descent for multiple linear regression with vectorization, using Python's NumPy library and vector operations.
-=== P496.S0 ===
+=== P433.S0 ===
 For multiple linear regression, the model can be expressed as:
-=== P497.S0 ===
-fw,bx=w·x+b
-=== P498.S0 ===
+=== P435.S0 ===
 Where:
-=== P499.S0 ===
-w is a vector of parameters of length n.
-=== P500.S0 ===
-x is the input feature vector of length n.
-=== P501.S0 ===
-b is the bias term (a scalar).
-=== P502.S0 ===
-The dot product w·x represents the weighted sum of the features.
-=== P504.S0 ===
+=== P436.S0 ===
+is a vector of parameters of length .
+=== P437.S0 ===
+is the input feature vector of length .
+=== P438.S0 ===
+is the bias term (a scalar).
+=== P439.S0 ===
+The dot product  represents the weighted sum of the features.
+=== P441.S0 ===
 Gradient Descent Update Rules
-=== P505.S0 ===
-The gradient descent algorithm updates the parameters w and b to minimize the cost function.
-=== P505.S1 ===
+=== P442.S0 ===
+The gradient descent algorithm updates the parameters  and  to minimize the cost function.
+=== P442.S1 ===
 The update rules are:
-=== P506.S0 ===
-wj=wj-α∂∂wjJw1,w2,w3,…,wn,b
-=== P507.S0 ===
-b=b-α∂∂bJw1,w2,w3,…,wn,b
-=== P509.S0 ===
-Where α is the learning rate, and the partial derivatives (gradients) for w and b are computed as:
-=== P510.S0 ===
-For wj:
-=== P511.S0 ===
-∂∂wjJw,b=1mi=1mfw,bxi-yi·xji
-=== P512.S0 ===
-For b:
-=== P513.S0 ===
-∂∂bJw,b=1mi=1mfw,bxi-yi
-=== P515.S0 ===
+=== P446.S0 ===
+Where  is the learning rate, and the partial derivatives (gradients) for  and  are computed as:
+=== P447.S0 ===
+For :
+=== P449.S0 ===
+For :
+=== P452.S0 ===
 Normal Equation Method (Quick Aside)
-=== P516.S0 ===
+=== P453.S0 ===
 The normal equation provides a closed-form solution to linear regression without needing gradient descent:
-=== P517.S0 ===
-w=XTX-1XTy
-=== P518.S0 ===
-However, this method is only practical for smaller datasets because computing the inverse of XTX is computationally expensive for large n, making gradient descent the preferred method in most machine learning applications.
-=== P521.S0 ===
+=== P455.S0 ===
+However, this method is only practical for smaller datasets because computing the inverse of  is computationally expensive for large , making gradient descent the preferred method in most machine learning applications.
+=== P458.S0 ===
 C1_W2_Lab02_Multiple_Variable
-=== P524.S0 ===
+=== P461.S0 ===
 Feature Scaling - Methods for Scaling Features
-=== P525.S0 ===
+=== P462.S0 ===
 In gradient descent, the range of values that each feature takes on can significantly affect how efficiently the algorithm converges.
-=== P525.S1 ===
+=== P462.S1 ===
 A technique called feature scaling helps improve the speed of gradient descent, especially when dealing with features that have vastly different ranges of values.
-=== P526.S0 ===
+=== P463.S0 ===
 Example: Predicting House Prices
-=== P527.S0 ===
+=== P464.S0 ===
 Consider a model predicting house prices with two features:
-=== P528.S0 ===
-x1: Size of the house (ranges from 300 to 2000 square feet)
-=== P529.S0 ===
-x2: Number of bedrooms (ranges from 0 to 5)
-=== P530.S0 ===
-In this scenario, x1 has a much larger range of values than x2.
-=== P530.S1 ===
-This discrepancy leads to the parameters w1 (for size) and w2 (for bedrooms) behaving very differently.
-=== P530.S2 ===
-For example, if w1=50 and w2=0.1, the prediction is far off, whereas when w1=0.1 and w2=50, the prediction is accurate.
-=== P531.S0 ===
+=== P465.S0 ===
+: Size of the house (ranges from 300 to 2000 square feet)
+=== P466.S0 ===
+: Number of bedrooms (ranges from 0 to 5)
+=== P467.S0 ===
+In this scenario,  has a much larger range of values than .
+=== P467.S1 ===
+This discrepancy leads to the parameters  (for size) and  (for bedrooms) behaving very differently.
+=== P467.S2 ===
+For example, if  and , the prediction is far off, whereas when  and , the prediction is accurate.
+=== P468.S0 ===
 Impact on Gradient Descent
-=== P532.S0 ===
+=== P469.S0 ===
 When features have widely different scales, the cost function's contour plot forms elongated ellipses.
-=== P532.S1 ===
+=== P469.S1 ===
 This causes gradient descent to "bounce" around inefficiently before converging to the minimum, especially when one feature dominates in magnitude over the others.
-=== P533.S0 ===
+=== P470.S0 ===
 Solution: Feature Scaling
-=== P534.S0 ===
+=== P471.S0 ===
 By scaling features so they all take on similar ranges (e.g., between 0 and 1), the contour plot becomes more circular, and gradient descent can take a more direct path to the global minimum.
-=== P534.S1 ===
+=== P471.S1 ===
 This can significantly speed up convergence.
-=== P535.S0 ===
+=== P472.S0 ===
 Methods for Scaling Features
-=== P536.S0 ===
+=== P473.S0 ===
 Feature scaling is a technique used to normalize the range of features, especially when different features take on vastly different values.
-=== P536.S1 ===
+=== P473.S1 ===
 This is crucial in gradient descent to ensure that the algorithm converges faster and more efficiently.
-=== P537.S0 ===
+=== P474.S0 ===
 Simple Scaling by Max Value
-=== P538.S0 ===
+=== P475.S0 ===
 Take each feature and divide it by its maximum value.
-=== P539.S0 ===
+=== P476.S0 ===
 Example:
-=== P540.S0 ===
-If  300≤x1≤2000, divide each value of x1 by 2000.
-=== P540.S1 ===
-This scales x1 between 0.15 and 1.
-=== P540.S2 ===
-Similarly, for 0≤x2≤ 5, divide by its maximum 5 , scaling it between 0 and 1.
-=== P541.S0 ===
+=== P477.S0 ===
+If , divide each value of  by 2000.
+=== P477.S1 ===
+This scales  between 0.15 and 1.
+=== P477.S2 ===
+Similarly, for , divide by its maximum 5 , scaling it between 0 and 1.
+=== P478.S0 ===
 After scaling, the features are more comparable in range, leading to faster gradient descent.
-=== P542.S0 ===
+=== P479.S0 ===
 Mean Normalization
-=== P543.S0 ===
+=== P480.S0 ===
 Subtract the mean value of the feature and then divide by the range (max - min).
-=== P544.S0 ===
+=== P481.S0 ===
 Formula:
-=== P545.S0 ===
-x1=x1-μ1max1-min1
-=== P546.S0 ===
-where μ1 is the mean of x1, and max and min are its maximum and minimum values.
-=== P547.S0 ===
-Example: If x1 ranges from 300 to 2000 with a mean of 600, subtract 600 from each value of x1, then divide by (2000 - 300).
-=== P547.S1 ===
+=== P483.S0 ===
+where  is the mean of , and max and min are its maximum and minimum values.
+=== P484.S0 ===
+Example: If  ranges from 300 to 2000 with a mean of 600, subtract 600 from each value of , then divide by (2000 - 300).
+=== P484.S1 ===
 This centers the values around 0, ranging between approximately -0.18 and 0.82.
-=== P549.S0 ===
+=== P486.S0 ===
 Z-Score Normalization
-=== P550.S0 ===
+=== P487.S0 ===
 Standardizes the feature by subtracting the mean and dividing by the standard deviation.
-=== P551.S0 ===
+=== P488.S0 ===
 Formula:
-=== P552.S0 ===
-x1=x1-μ1σ1
-=== P553.S0 ===
-where σ1 is the standard deviation of x1.
-=== P554.S0 ===
-Example: If x1 has a mean of 600 and standard deviation of 450, the Z-score normalized x1 will range between -0.67 and 3.1.
-=== P555.S0 ===
+=== P490.S0 ===
+where  is the standard deviation of .
+=== P491.S0 ===
+Example: If  has a mean of 600 and standard deviation of 450, the Z-score normalized  will range between -0.67 and 3.1.
+=== P492.S0 ===
 This technique is useful when the features follow a normal distribution, but it is not a strict requirement for machine learning.
-=== P557.S0 ===
+=== P494.S0 ===
 Practical Considerations
-=== P558.S0 ===
+=== P495.S0 ===
 Aim to scale features to a range roughly between -1 and +1.
-=== P558.S1 ===
+=== P495.S1 ===
 However, small deviations like -3 to 3, or -0.3 to 0.3, are acceptable.
-=== P560.S0 ===
+=== P497.S0 ===
 If a feature’s range is very large (e.g., from -100 to +100 / from 98 to 105) or very small (e.g., -0.001 to 0.001), feature scaling becomes necessary to ensure the algorithm does not behave erratically.
-=== P562.S0 ===
+=== P499.S0 ===
 While some features with ranges between 0 and 3 or -2 and 0.5 may not require scaling, it's generally a good idea to perform feature scaling as it can rarely do harm and often speeds up convergence in gradient descent.
-=== P567.S0 ===
+=== P504.S0 ===
 Checking Gradient Descent for Convergence
-=== P568.S0 ===
-One of the best ways to track whether gradient descent is converging is to plot the cost function Jw,b over the iterations of the algorithm.
-=== P568.S1 ===
+=== P505.S0 ===
+One of the best ways to track whether gradient descent is converging is to plot the cost function  over the iterations of the algorithm.
+=== P505.S1 ===
 This plot, known as a learning curve, has the following characteristics:
-=== P569.S0 ===
+=== P506.S0 ===
 Horizontal axis: Number of iterations of gradient descent.
-=== P570.S0 ===
-Vertical axis: Cost function value Jw,b.
-=== P572.S0 ===
-Each point on the curve represents the cost function after a specific number of updates to the parameters w and b.
-=== P572.S1 ===
+=== P507.S0 ===
+Vertical axis: Cost function value .
+=== P509.S0 ===
+Each point on the curve represents the cost function after a specific number of updates to the parameters  and .
+=== P509.S1 ===
 Ideally, the cost should decrease with each iteration of gradient descent.
-=== P573.S0 ===
+=== P510.S0 ===
 What to Look for in a Learning Curve:
-=== P574.S0 ===
+=== P511.S0 ===
 Continuous Decrease in Cost:
-=== P575.S0 ===
+=== P512.S0 ===
 If gradient descent is working correctly, the value of the cost function should decrease after every iteration.
-=== P576.S0 ===
-If you observe an increase in the cost function at any iteration, it usually indicates that the learning rate α is too large or there is a bug in the implementation.
-=== P578.S0 ===
+=== P513.S0 ===
+If you observe an increase in the cost function at any iteration, it usually indicates that the learning rate  is too large or there is a bug in the implementation.
+=== P515.S0 ===
 Convergence Behavior:
-=== P579.S0 ===
+=== P516.S0 ===
 As the algorithm progresses, the curve will start to flatten, indicating that the cost function is no longer decreasing significantly.
-=== P580.S0 ===
-This is a sign that gradient descent has converged and that the current values of w and b are close to the optimal solution.
-=== P581.S0 ===
+=== P517.S0 ===
+This is a sign that gradient descent has converged and that the current values of  and  are close to the optimal solution.
+=== P518.S0 ===
 For example, after 300 iterations, you may notice that the cost value changes very little, meaning the algorithm is converging.
-=== P583.S0 ===
+=== P520.S0 ===
 Automatic Convergence Test:
-=== P584.S0 ===
+=== P521.S0 ===
 Instead of manually inspecting the learning curve, you can also use an automatic convergence test:
-=== P585.S0 ===
-Define a small threshold value ϵ (e.g., 0.001 or 10-3).
-=== P586.S0 ===
-If the decrease in the cost function between iterations is smaller than ϵ, gradient descent has likely converged.
-=== P587.S0 ===
-However, choosing the right ϵ can be tricky, and it's often easier to rely on visually inspecting the learning curve to ensure smooth convergence.
-=== P589.S0 ===
+=== P522.S0 ===
+Define a small threshold value  (e.g., 0.001 or ).
+=== P523.S0 ===
+If the decrease in the cost function between iterations is smaller than , gradient descent has likely converged.
+=== P524.S0 ===
+However, choosing the right  can be tricky, and it's often easier to rely on visually inspecting the learning curve to ensure smooth convergence.
+=== P526.S0 ===
 Note: The number of iterations needed for gradient descent to converge varies widely depending on the problem.
-=== P589.S1 ===
+=== P526.S1 ===
 Some applications may converge in 30 iterations, while others may require 1,000 or even 100,000 iterations
-=== P590.S0 ===
+=== P527.S0 ===
 Choosing Learning Rate
-=== P591.S0 ===
+=== P528.S0 ===
 Impact of Learning Rate on Convergence
-=== P592.S0 ===
-Too Small α: Gradient descent will converge, but it will do so very slowly, requiring many iterations to reach the minimum.
-=== P593.S0 ===
-Too Large α: The algorithm may overshoot the global minimum, causing the cost function to increase after some iterations, which can result in divergence.
-=== P594.S0 ===
+=== P529.S0 ===
+Too Small : Gradient descent will converge, but it will do so very slowly, requiring many iterations to reach the minimum.
+=== P530.S0 ===
+Too Large : The algorithm may overshoot the global minimum, causing the cost function to increase after some iterations, which can result in divergence.
+=== P531.S0 ===
 Signs of a Poor Learning Rate
-=== P595.S0 ===
+=== P532.S0 ===
 If the cost function increases after an iteration or oscillates up and down, it could be a sign of:
-=== P596.S0 ===
+=== P533.S0 ===
 A learning rate that is too large.
-=== P597.S0 ===
-A potential bug in the implementation (e.g., the wrong update rule for w).
-=== P598.S0 ===
-For example, when the cost function rises with each iteration, double-check your code to ensure that you're using the correct update rule for the parameters:  w1≝w1-α·∂∂w1Jw1
-=== P599.S0 ===
+=== P534.S0 ===
+A potential bug in the implementation (e.g., the wrong update rule for ).
+=== P535.S0 ===
+For example, when the cost function rises with each iteration, double-check your code to ensure that you're using the correct update rule for the parameters:
+=== P536.S0 ===
 The negative sign ensures you're moving in the direction that reduces the cost function.
-=== P600.S0 ===
-Debugging with Small α
-=== P601.S0 ===
+=== P537.S0 ===
+Debugging with Small
+=== P538.S0 ===
 A good debugging strategy is to set the learning rate to a very small value (e.g., 0.001).
-=== P601.S1 ===
-If the cost function does not decrease consistently with a small α, it's often a sign that there's a bug in the code.
-=== P602.S0 ===
+=== P538.S1 ===
+If the cost function does not decrease consistently with a small , it's often a sign that there's a bug in the code.
+=== P539.S0 ===
 While this small value helps debug, it is not recommended for efficient training, as it may slow down the convergence significantly.
-=== P604.S0 ===
+=== P541.S0 ===
 Choosing the Optimal Learning Rate
-=== P605.S0 ===
-Try several values for α and observe how quickly and consistently the cost function decreases.
-=== P605.S1 ===
+=== P542.S0 ===
+Try several values for  and observe how quickly and consistently the cost function decreases.
+=== P542.S1 ===
 A good approach is to start small and gradually increase:
-=== P606.S0 ===
-Start with α=0.001.
-=== P607.S0 ===
-Try increasing by factors of three (e.g., 0.001, 0.003, 0.01, etc.).
-=== P608.S0 ===
-Find the largest α that results in consistent decreases in the cost function.
-=== P609.S0 ===
-Plot the cost function against the number of iterations for each α.
-=== P609.S1 ===
+=== P543.S0 ===
+Start with .
+=== P544.S0 ===
+Try increasing by factors of three (e.g., , , , etc.).
+=== P545.S0 ===
+Find the largest  that results in consistent decreases in the cost function.
+=== P546.S0 ===
+Plot the cost function against the number of iterations for each .
+=== P546.S1 ===
 Choose the learning rate that decreases the cost function rapidly and consistently.
-=== P611.S0 ===
+=== P548.S0 ===
 C1_W2_Lab03_Feature_Scaling_and_Learning_Rate
-=== P614.S0 ===
+=== P551.S0 ===
 Feature Engineering
-=== P615.S0 ===
+=== P552.S0 ===
 Choosing the right features is crucial for optimizing the performance of a learning algorithm.
-=== P615.S1 ===
+=== P552.S1 ===
 For many real-world applications, feature engineering—creating or selecting the most appropriate features—can make the difference between a model that works well and one that doesn’t.
-=== P615.S2 ===
+=== P552.S2 ===
 Here's a breakdown of how feature engineering can significantly improve your learning algorithm:
-=== P616.S0 ===
+=== P553.S0 ===
 The Role of Feature Engineering
-=== P617.S0 ===
+=== P554.S0 ===
 Feature engineering involves transforming or combining existing features to create new ones that capture important patterns in the data.
-=== P618.S0 ===
+=== P555.S0 ===
 By carefully selecting and engineering features, you can help your model make better predictions.
-=== P620.S0 ===
+=== P557.S0 ===
 Example: Predicting House Prices
-=== P621.S0 ===
+=== P558.S0 ===
 Imagine you're predicting house prices using two features:
-=== P622.S0 ===
-x1: The width of the lot (also called the frontage).
-=== P623.S0 ===
-x2: The depth of the lot.
-=== P624.S0 ===
-A simple linear model might be:     fx=w1x1+w2x2+b
-=== P625.S0 ===
+=== P559.S0 ===
+: The width of the lot (also called the frontage).
+=== P560.S0 ===
+: The depth of the lot.
+=== P561.S0 ===
+A simple linear model might be:
+=== P562.S0 ===
 This model uses the frontage and depth separately, which may provide a decent prediction.
-=== P627.S0 ===
+=== P564.S0 ===
 Creating a New Feature
-=== P628.S0 ===
-You might notice that land area (width × depth) is more indicative of the price than width and depth alone.In this case, you can define a new feature:   x3=x1×x2
-=== P629.S0 ===
-This new feature, x3, represents the area of the lot, which is likely more predictive of house price.
-=== P630.S0 ===
+=== P565.S0 ===
+You might notice that land area (width × depth) is more indicative of the price than width and depth alone.In this case, you can define a new feature:
+=== P566.S0 ===
+This new feature, , represents the area of the lot, which is likely more predictive of house price.
+=== P567.S0 ===
 The updated model could be:
-=== P631.S0 ===
-fx=w1x1+w2x2+w3x3+b
-=== P632.S0 ===
+=== P569.S0 ===
 Now, the algorithm can automatically learn the importance of the area alongside the frontage and depth.
-=== P635.S0 ===
+=== P572.S0 ===
 Benefits of Feature Engineering
-=== P636.S0 ===
+=== P573.S0 ===
 By creating features that better represent the underlying data, you make it easier for the learning algorithm to find patterns, which can result in more accurate predictions.
-=== P637.S0 ===
+=== P574.S0 ===
 The choice of features can allow the model to capture more complex relationships within the data.
-=== P639.S0 ===
+=== P576.S0 ===
 In addition to combining features, you can also use feature engineering to enable your model to fit curves and non-linear relationships.This opens up the possibility of modeling more complex patterns that simple linear models might miss.
-=== P641.S0 ===
+=== P578.S0 ===
 Polynomial Regression
-=== P642.S0 ===
+=== P579.S0 ===
 Many real-world problems require fitting non-linear curves.
-=== P642.S1 ===
+=== P579.S1 ===
 By extending multiple linear regression and using feature engineering, we can introduce polynomial regression.
-=== P642.S2 ===
+=== P579.S2 ===
 This technique allows us to fit curves to the data by incorporating higher-order powers of the original features.
-=== P643.S0 ===
-Consider a dataset where the feature x represents the size of a house, and you're predicting the price.If you plot the data, it may not follow a straight line, so fitting a linear model won’t work well.
-=== P644.S0 ===
-fx=w1x+b
-=== P645.S0 ===
-To better fit the data, you can introduce polynomial features, such as x2 (size squared), to allow the model to fit curves.
-=== P646.S0 ===
+=== P580.S0 ===
+Consider a dataset where the feature  represents the size of a house, and you're predicting the price.If you plot the data, it may not follow a straight line, so fitting a linear model won’t work well.
+=== P582.S0 ===
+To better fit the data, you can introduce polynomial features, such as  (size squared), to allow the model to fit curves.
+=== P583.S0 ===
 Quadratic and Cubic Models
-=== P647.S0 ===
-A quadratic model includes x2, which can capture curves in the data:     fx=w1x+w2x2+b
-=== P648.S0 ===
+=== P584.S0 ===
+A quadratic model includes , which can capture curves in the data:
+=== P585.S0 ===
 However, a quadratic function eventually curves back down, which may not be realistic (e.g., house prices shouldn’t decrease as size increases).
-=== P649.S0 ===
-To address this, you can try a cubic model:         fx=w1x+w2x2+w3x3+b
-=== P650.S0 ===
+=== P586.S0 ===
+To address this, you can try a cubic model:
+=== P587.S0 ===
 The cubic model can capture more complex relationships, where the price increases as the size increases, without curving downward.
-=== P651.S0 ===
-You can also introduce other transformations, such as the square root of x.
-=== P651.S1 ===
-fx=w1x+w2x+b The square root function is less steep than x and doesn't curve back down, making it another useful transformation depending on the problem.
-=== P652.S0 ===
-In general, polynomial regression involves introducing higher-order terms (e.g., x2, x3, etc.) as new features.
-=== P652.S1 ===
+=== P588.S0 ===
+You can also introduce other transformations, such as the square root of .
+=== P588.S1 ===
+The square root function is less steep than  and doesn't curve back down, making it another useful transformation depending on the problem.
+=== P589.S0 ===
+In general, polynomial regression involves introducing higher-order terms (e.g., , , etc.) as new features.
+=== P589.S1 ===
 These features help the model capture more complex patterns in the data.
-=== P654.S0 ===
+=== P591.S0 ===
 Importance of Feature Scaling
-=== P655.S0 ===
+=== P592.S0 ===
 When using polynomial regression, feature scaling becomes crucial.
-=== P656.S0 ===
-For instance, if the feature x (size) ranges from 1 to 1,000, then x2 will range from 1 to 1,000,000, and x3 will range from 1 to 1 billion.
-=== P657.S0 ===
+=== P593.S0 ===
+For instance, if the feature  (size) ranges from 1 to 1,000, then  will range from 1 to 1,000,000, and  will range from 1 to 1 billion.
+=== P594.S0 ===
 These vastly different scales can lead to poor performance in gradient descent.
-=== P657.S1 ===
+=== P594.S1 ===
 You should apply feature scaling to ensure that all features have comparable ranges.
-=== P659.S0 ===
+=== P596.S0 ===
 C1_W2_Lab04_FeatEng_PolyReg: explore feature engineering and polynomial regression
-=== P663.S0 ===
+=== P600.S0 ===
 In practical machine learning, tools like Scikit-learn provide easy-to-use functions for implementing polynomial regression.
-=== P663.S1 ===
+=== P600.S1 ===
 In just a few lines of code, you can create and train polynomial models using this library.
-=== P664.S0 ===
+=== P601.S0 ===
 C1_W2_Lab05_Sklearn_GD: Utilize scikit-learn to implement linear regression using Gradient Descent
-=== P665.S0 ===
+=== P602.S0 ===
 Programming Assignment Week 2 practice lab Linear regression
-=== P701.S0 ===
+=== P638.S0 ===
 Week 3: Classification
-=== P702.S0 ===
+=== P639.S0 ===
 Motivations
-=== P703.S0 ===
+=== P640.S0 ===
 In the third week of this course, we move from linear regression, which predicts numerical values, to classification problems, where the output variable (denoted as y) can take on only one of a small set of possible values, unlike the infinite range in linear regression.
-=== P703.S1 ===
+=== P640.S1 ===
 This week introduces one of the most widely used algorithms for classification: logistic regression.
-=== P705.S0 ===
+=== P642.S0 ===
 Linear Regression's Limitations in Classification
-=== P706.S0 ===
+=== P643.S0 ===
 While linear regression works well for predicting continuous values, it struggles with classification tasks.
-=== P706.S1 ===
+=== P643.S1 ===
 In classification, we predict specific categories, such as whether an email is spam or not, or whether a financial transaction is fraudulent.
-=== P706.S2 ===
+=== P643.S2 ===
 For these tasks, linear regression is unsuitable because it predicts a range of values, which doesn't align with the discrete outcomes needed in classification problems.
-=== P708.S0 ===
+=== P645.S0 ===
 Binary Classification
-=== P709.S0 ===
+=== P646.S0 ===
 Most classification problems are binary, meaning they have only two possible outcomes, such as:
-=== P710.S0 ===
+=== P647.S0 ===
 Spam or not spam.
-=== P711.S0 ===
+=== P648.S0 ===
 Fraudulent or legitimate financial transaction.
-=== P712.S0 ===
+=== P649.S0 ===
 Malignant or benign tumor.
-=== P713.S0 ===
+=== P650.S0 ===
 In binary classification, we often label the two possible outcomes as "0" or "1", with 0 representing the negative class (absence of the condition) and 1 representing the positive class (presence of the condition).
-=== P715.S0 ===
+=== P652.S0 ===
 Attempting to Use Linear Regression for Classification
-=== P716.S0 ===
+=== P653.S0 ===
 We could try to apply linear regression to a classification problem by fitting a straight line to the data and using a threshold to classify the outcomes.
-=== P717.S0 ===
+=== P654.S0 ===
 For example, if the model outputs a value below 0.5, we classify the result as "0" (non-malignant), and if it's above 0.5, we classify it as "1" (malignant).
-=== P718.S0 ===
+=== P655.S0 ===
 However, linear regression can lead to poor results.
-=== P718.S1 ===
+=== P655.S1 ===
 For example, adding a single outlier data point might shift the entire regression line, leading to incorrect classifications.
-=== P718.S2 ===
+=== P655.S2 ===
 This happens because linear regression isn’t designed to handle discrete output labels and can produce values outside the desired range of 0 to 1, such as negative values or values greater than 1, which do not correspond to valid classifications.
-=== P720.S0 ===
+=== P657.S0 ===
 Logistic Regression: A Better Solution for Classification
-=== P721.S0 ===
+=== P658.S0 ===
 To address these issues, we turn to logistic regression.
-=== P721.S1 ===
+=== P658.S1 ===
 Unlike linear regression, logistic regression constrains the output to values between 0 and 1, which are suitable for binary classification.
-=== P721.S2 ===
+=== P658.S2 ===
 Logistic regression does this by using the logistic function (or sigmoid function) to model the probability that a given input belongs to the positive class.
-=== P721.S3 ===
+=== P658.S3 ===
 This helps avoid the problems we saw with linear regression and ensures a more robust model for classification tasks.
-=== P722.S0 ===
+=== P659.S0 ===
 One point of potential confusion is the term "regression" in logistic regression, which suggests a relationship with linear regression.
-=== P722.S1 ===
+=== P659.S1 ===
 However, despite the name, logistic regression is used for classification, not for predicting continuous values.
-=== P724.S0 ===
+=== P661.S0 ===
 lab: Classification
-=== P728.S0 ===
+=== P665.S0 ===
 Logistic Regression
-=== P729.S0 ===
+=== P666.S0 ===
 Logistic regression is one of the most widely used classification algorithms.
-=== P729.S1 ===
+=== P666.S1 ===
 It's employed in a variety of applications, such as predicting whether a tumor is malignant or benign, classifying spam emails, and even powering online advertisements.
-=== P729.S2 ===
+=== P666.S2 ===
 This section will build on previous lessons by explaining how logistic regression differs from linear regression and why it is ideal for classification problems.
-=== P731.S0 ===
+=== P668.S0 ===
 Binary Classification Problem
-=== P732.S0 ===
+=== P669.S0 ===
 Let's return to the example of classifying tumors as malignant (positive class, labeled as 1) or benign (negative class, labeled as 0).
-=== P732.S1 ===
+=== P669.S1 ===
 In logistic regression, the goal is to predict the probability that the label y will be 1 (malignant) given certain input features (e.g., tumor size).
-=== P734.S0 ===
+=== P671.S0 ===
 The output is a probability between 0 and 1, which can then be used to make a classification decision.
-=== P735.S0 ===
+=== P672.S0 ===
 In this case, the horizontal axis represents tumor size, and the vertical axis takes values of 0 or 1, representing the binary nature of the classification.
-=== P735.S1 ===
+=== P672.S1 ===
 While linear regression tries to fit a straight line to the data, logistic regression fits an S-shaped curve—a sigmoid function—that better represents the probabilities associated with classification.
-=== P737.S0 ===
+=== P674.S0 ===
 The Sigmoid Function
-=== P738.S0 ===
+=== P675.S0 ===
 At the heart of logistic regression is the sigmoid function (also called the logistic function).
-=== P738.S1 ===
+=== P675.S1 ===
 The sigmoid function maps any input (from negative infinity to positive infinity) to a value between 0 and 1, which makes it ideal for binary classification.
-=== P738.S2 ===
+=== P675.S2 ===
 The function is defined as:
-=== P739.S0 ===
-gz = 11 + e-z
-=== P741.S0 ===
+=== P678.S0 ===
 Where z can take any real value.
-=== P741.S1 ===
+=== P678.S1 ===
 When ( z ) is a large positive number, ( g(z) ) approaches 1, and when ( z ) is a large negative number, ( g(z) ) approaches 0.
-=== P741.S2 ===
+=== P678.S2 ===
 The function outputs 0.5 when ( z = 0 ), creating the classic S-shaped curve.
-=== P743.S0 ===
+=== P680.S0 ===
 Building the Logistic Regression Model
-=== P744.S0 ===
+=== P681.S0 ===
 The logistic regression model is built in two steps:
-=== P745.S0 ===
-Linear combination of input features: First, calculate z = w ⋅x + b , where ( w ) represents the model parameters (weights), ( x ) represents the input features, and ( b ) is the bias term.
-=== P746.S0 ===
+=== P682.S0 ===
+Linear combination of input features: First, calculate  , where ( w ) represents the model parameters (weights), ( x ) represents the input features, and ( b ) is the bias term.
+=== P683.S0 ===
 Apply the sigmoid function: Pass the value of ( z ) through the sigmoid function to output a probability between 0 and 1.
-=== P747.S0 ===
-Thus, the logistic regression model is expressed as:	 fx=gw⋅x+b
-=== P748.S0 ===
+=== P684.S0 ===
+Thus, the logistic regression model is expressed as:
+=== P685.S0 ===
 This model outputs a probability, and based on this, you can decide if the prediction should be 0 or 1.
-=== P750.S0 ===
+=== P687.S0 ===
 Interpreting Logistic Regression Output
-=== P751.S0 ===
+=== P688.S0 ===
 The output of logistic regression can be interpreted as the probability that y is equal to 1 given the input x.
-=== P751.S1 ===
+=== P688.S1 ===
 For example, if a tumor size x results in an output of 0.7, the model predicts a 70% chance that the tumor is malignant (i.e., y = 1).
-=== P751.S2 ===
+=== P688.S2 ===
 Consequently, the probability that y = 0 (benign) is
-=== P752.S0 ===
+=== P689.S0 ===
 1 - 0.7 = 0.3, or 30%.
-=== P753.S0 ===
+=== P690.S0 ===
 This probability allows us to make decisions based on a threshold (commonly 0.5).
-=== P753.S1 ===
+=== P690.S1 ===
 If the model outputs a probability greater than 0.5, we predict y = 1 (malignant), and if the probability is less than 0.5, we predict y = 0 (benign).
-=== P755.S0 ===
+=== P692.S0 ===
 Logistic Regression in Practice
-=== P756.S0 ===
+=== P693.S0 ===
 While logistic regression is widely used for binary classification problems, it can also be applied in a slightly modified form for multiclass classification (known as multinomial logistic regression).
-=== P756.S1 ===
+=== P693.S1 ===
 Historically, this algorithm has been crucial in fields like online advertising, where companies used variations of logistic regression to predict user behavior and show relevant ads.
-=== P759.S0 ===
+=== P696.S0 ===
 lab: Sigmoid function and logistic regression
-=== P761.S0 ===
+=== P698.S0 ===
 Decision boundary
-=== P762.S0 ===
-The output ( fw,bx) is interpreted as the probability that ( y = 1 ), given the features ( x ).
-=== P762.S1 ===
+=== P699.S0 ===
+The output ( ) is interpreted as the probability that ( y = 1 ), given the features ( x ).
+=== P699.S1 ===
 Typically, we use a threshold like 0.5 to determine the class label:
-=== P763.S0 ===
-If ( fw,bx) ≥ 0.5 ), predict ( y = 1 ) (positive class).
-=== P764.S0 ===
-If ( fw,bx) < 0.5 ), predict ( y = 0 ) (negative class).
-=== P766.S0 ===
+=== P700.S0 ===
+If (  ), predict ( y = 1 ) (positive class).
+=== P701.S0 ===
+If ( )  ), predict ( y = 0 ) (negative class).
+=== P703.S0 ===
 Decision Boundary:
-=== P767.S0 ===
-The decision boundary is where the model is "undecided" — where (fw,bx = 0.5 ), or equivalently, ( z = 0 ).
-=== P767.S1 ===
-This occurs when ( w ⋅x + b = 0 ).
-=== P768.S0 ===
-For example, in the case of two features ( x1) and (x2), and assuming ( w1=w2=1 ) and b = -3 , the decision boundary is the line ( x1+x2=3 ).
-=== P768.S1 ===
+=== P704.S0 ===
+The decision boundary is where the model is "undecided" — where ( ), or equivalently, ( z = 0 ).
+=== P704.S1 ===
+This occurs when (  ).
+=== P705.S0 ===
+For example, in the case of two features ( ) and (), and assuming (  ) and  , the decision boundary is the line (  ).
+=== P705.S1 ===
 This line separates the feature space into two regions:
-=== P769.S0 ===
-On one side, w⋅x+b≥0, the model predicts ( y = 1 ) (positive class).
-=== P770.S0 ===
-On the other side, ( w ⋅x + b < 0 ), the model predicts ( y = 0 ) (negative class).
-=== P772.S0 ===
+=== P706.S0 ===
+On one side, , the model predicts ( y = 1 ) (positive class).
+=== P707.S0 ===
+On the other side, (  ), the model predicts ( y = 0 ) (negative class).
+=== P709.S0 ===
 Non-Linear Decision Boundaries:
-=== P773.S0 ===
+=== P710.S0 ===
 Logistic regression can also handle non-linear decision boundaries by including polynomial features.
-=== P773.S1 ===
-For instance, when using features like ( x12 ) and ( x22 ), the decision boundary can form more complex shapes, like circles or ellipses, depending on the parameters.
-=== P774.S0 ===
-using the function ( z=x12+x22-1 ) produces a circular decision boundary.
-=== P775.S0 ===
+=== P710.S1 ===
+For instance, when using features like (  ) and (  ), the decision boundary can form more complex shapes, like circles or ellipses, depending on the parameters.
+=== P711.S0 ===
+using the function (  ) produces a circular decision boundary.
+=== P712.S0 ===
 This flexibility allows logistic regression to classify data with more complicated patterns, although it remains a linear classifier by default unless polynomial features are introduced.
-=== P778.S0 ===
+=== P715.S0 ===
 Cost function for logistic regression
-=== P779.S0 ===
+=== P716.S0 ===
 The cost function in machine learning models is essential, providing a metric to evaluate how well a set of parameters fits the training data.
-=== P779.S1 ===
+=== P716.S1 ===
 For linear regression, the squared error cost function works well, but for logistic regression, it's not an ideal choice due to its non-convex nature, which leads to multiple local minima that gradient descent can get stuck in.
-=== P779.S2 ===
+=== P716.S2 ===
 In this video, we explored why squared error is ineffective for logistic regression and introduced a new cost function that ensures convexity, allowing gradient descent to converge reliably to the global minimum.
-=== P781.S0 ===
+=== P718.S0 ===
 Understanding the Training Set
-=== P782.S0 ===
+=== P719.S0 ===
 In a typical logistic regression scenario, each row in the dataset corresponds to a training example, such as patients undergoing medical diagnosis.
-=== P782.S1 ===
+=== P719.S1 ===
 Each example has several features—like tumor size or patient age—and the target label (y) is binary, taking the value of either 0 or 1.
-=== P783.S0 ===
+=== P720.S0 ===
 Given this, the objective is to choose optimal parameters (w) and (b) that best fit the training data.
-=== P785.S0 ===
+=== P722.S0 ===
 Limitations of the Squared Error Cost Function
-=== P786.S0 ===
+=== P723.S0 ===
 In linear regression, the squared error cost function is convex and can be minimized using gradient descent.
-=== P786.S1 ===
+=== P723.S1 ===
 However, for logistic regression, applying the same cost function yields a non-convex cost surface.
-=== P786.S2 ===
+=== P723.S2 ===
 This makes the model susceptible to getting stuck in local minima, which prevents gradient descent from converging effectively.
-=== P787.S0 ===
+=== P724.S0 ===
 Developing a New Cost Function
-=== P788.S0 ===
+=== P725.S0 ===
 In order to build a new cost function, one that we'll use for logistic regression.
-=== P788.S1 ===
-I'm going to change a little bit the definition of the cost function Jw,b.
-=== P788.S2 ===
+=== P725.S1 ===
+I'm going to change a little bit the definition of the cost function .
+=== P725.S2 ===
 In particular, if you look inside this summation, let's call this term inside the loss on a single training example.
-=== P788.S3 ===
+=== P725.S3 ===
 I'm going to denote the loss via this capital L and as a function of the prediction of the learning algorithm, f of x as well as of the true label y.
-=== P789.S0 ===
-Jw,b=1m i=1m12fw,bxi-yi2 =1m i=1m Lfw,bxi, yi
-=== P791.S0 ===
+=== P728.S0 ===
 The new loss function for logistic regression is as follows:
-=== P792.S0 ===
-Lfw,bxi, yi   =    -logfw,bxi ,            If yi = 1-log1-fw,bxi ,    If yi = 0
-=== P793.S0 ===
-fw,bxi is the model's prediction, while yi is the target value.
-=== P795.S0 ===
+=== P729.S0 ===
+=
+=== P730.S0 ===
+is the model's prediction, while  is the target value.
+=== P732.S0 ===
 These definitions make intuitive sense:
-=== P796.S0 ===
+=== P733.S0 ===
 If the true label is 1 and the model predicts a value close to 1, the loss is very small (close to 0), indicating that the model is performing well.
-=== P797.S0 ===
+=== P734.S0 ===
 If the model predicts a value closer to 0 when the true label is 1, the loss becomes larger, penalizing the model more heavily for poor predictions.
-=== P798.S0 ===
-Similarly, when y=0, if the model predicts a value close to 0, the loss is small.
-=== P798.S1 ===
+=== P735.S0 ===
+Similarly, when , if the model predicts a value close to 0, the loss is small.
+=== P735.S1 ===
 However, if the prediction is close to 1, the loss becomes very large.
-=== P799.S0 ===
+=== P736.S0 ===
 This new loss function makes the overall cost function convex, meaning gradient descent can reliably find the global minimum.
-=== P799.S1 ===
+=== P736.S1 ===
 Proving this convexity is beyond the scope of this course, but the key takeaway is that with this choice of loss function, logistic regression avoids the pitfalls of local minima that plagued the squared error cost function.
-=== P800.S0 ===
+=== P737.S0 ===
 lab: Logistic loss
-=== P802.S0 ===
+=== P739.S0 ===
 Simplified Cost Function for Logistic Regression:
-=== P803.S0 ===
-Previously, we defined the loss function L for logistic regression with two cases, one for when the target label y=1 and another for when y=0.
-=== P803.S1 ===
+=== P740.S0 ===
+Previously, we defined the loss function L for logistic regression with two cases, one for when the target label  and another for when .
+=== P740.S1 ===
 To simplify this, we introduced a unified loss function that works for both cases.
-=== P804.S0 ===
+=== P741.S0 ===
 Simplified Loss Function:
-=== P805.S0 ===
-Lfw,bxi, yi=-yi·logfw,bxi+1-yi·log1-fw,bxi
-=== P806.S0 ===
+=== P743.S0 ===
 This formulation allows us to express the loss function in a single line without needing to handle the two cases separately.
-=== P807.S0 ===
+=== P744.S0 ===
 Simplified Cost Function :
-=== P808.S0 ===
+=== P745.S0 ===
 Using the simplified loss function, we can express the cost function as:
-=== P809.S0 ===
-Jw,b=-1mi=1myi·logfw,bxi+1-yi·log1-fw,bxi
-=== P810.S0 ===
+=== P747.S0 ===
 This is the cost function used to train logistic regression models.
-=== P810.S1 ===
+=== P747.S1 ===
 It’s convex, meaning that when we apply gradient descent, it is guaranteed to converge to the global minimum.
-=== P811.S0 ===
+=== P748.S0 ===
 Why This Cost Function?
-=== P812.S0 ===
+=== P749.S0 ===
 The particular choice of this cost function is grounded in statistics, specifically through a method known as Maximum Likelihood Estimation (MLE).
-=== P812.S1 ===
-MLE helps find the parameters w and b that maximize the likelihood of the observed data, and the derived cost function has a nice property of being convex.
-=== P812.S2 ===
+=== P749.S1 ===
+MLE helps find the parameters  and  that maximize the likelihood of the observed data, and the derived cost function has a nice property of being convex.
+=== P749.S2 ===
 This makes gradient descent an effective optimization method for logistic regression.
-=== P813.S0 ===
+=== P750.S0 ===
 lab: Cost function for logistic regression
-=== P815.S0 ===
+=== P752.S0 ===
 Gradient descent for logistic regression
-=== P816.S0 ===
-The goal is to minimize the cost function Jw,b by adjusting the parameters w (weights) and b (bias) using gradient descent.
-=== P816.S1 ===
-Once you find the optimal parameters, the model can make predictions, like estimating the probability that a label y is 1 (e.g., a patient having a disease given certain features).
-=== P817.S0 ===
+=== P753.S0 ===
+The goal is to minimize the cost function  by adjusting the parameters  (weights) and  (bias) using gradient descent.
+=== P753.S1 ===
+Once you find the optimal parameters, the model can make predictions, like estimating the probability that a label  is 1 (e.g., a patient having a disease given certain features).
+=== P754.S0 ===
 Gradient descent is the optimization algorithm used to minimize the cost function.
-=== P817.S1 ===
+=== P754.S1 ===
 The idea is to repeatedly adjust the parameters by taking small steps in the direction of the negative gradient of the cost function.
-=== P818.S0 ===
+=== P755.S0 ===
 The general update rule for gradient descent is:
-=== P819.S0 ===
-wj≝wj-α∂Jw,b∂wj
-=== P820.S0 ===
-b≝b-α∂Jw,b∂b
-=== P821.S0 ===
+=== P758.S0 ===
 Where:
-=== P822.S0 ===
-α is the learning rate.
-=== P823.S0 ===
-∂J∂wj is the derivative of the cost function with respect to the parameter wj.
-=== P824.S0 ===
-∂J∂b is the derivative of the cost function with respect to b.
-=== P826.S0 ===
+=== P759.S0 ===
+is the learning rate.
+=== P760.S0 ===
+is the derivative of the cost function with respect to the parameter .
+=== P761.S0 ===
+is the derivative of the cost function with respect to .
+=== P763.S0 ===
 Derivatives for Logistic Regression:
-=== P827.S0 ===
-The derivatives of the cost function Jw,b with respect to wj and b are:
-=== P828.S0 ===
-For wj:
-=== P829.S0 ===
-∂Jw,b∂wj=1mi=1mfxi-yixji
-=== P830.S0 ===
-For b:
-=== P831.S0 ===
-∂Jw,b∂b=1mi=1mfxi-yi
-=== P832.S0 ===
-Here, fxi is the sigmoid function applied to the linear combination of features:
-=== P833.S0 ===
-fxi=11+e-wTxi+b
-=== P834.S0 ===
+=== P764.S0 ===
+The derivatives of the cost function  with respect to  and  are:
+=== P765.S0 ===
+For :
+=== P767.S0 ===
+For :
+=== P769.S0 ===
+Here,  is the sigmoid function applied to the linear combination of features:
+=== P771.S0 ===
 This is what distinguishes logistic regression from linear regression.
-=== P834.S1 ===
-Although the gradient descent update rules look similar for both algorithms, the function fx is different (sigmoid for logistic regression, linear for linear regression).
-=== P836.S0 ===
+=== P771.S1 ===
+Although the gradient descent update rules look similar for both algorithms, the function  is different (sigmoid for logistic regression, linear for linear regression).
+=== P773.S0 ===
 Similar Concepts: Gradient Descent Monitoring, Vectorized Implementation, and Feature Scaling for Logistic Regression
-=== P837.S0 ===
+=== P774.S0 ===
 1.
-=== P837.S1 ===
+=== P774.S1 ===
 Monitor Gradient Descent (Learning Curve):
-=== P838.S0 ===
+=== P775.S0 ===
 In both linear regression and logistic regression, gradient descent is an iterative process, and it's important to monitor its progress to ensure it is converging towards the minimum of the cost function.
-=== P839.S0 ===
+=== P776.S0 ===
 Monitoring helps ensure that the model is not stuck in a local minimum or oscillating without converging.
-=== P841.S0 ===
+=== P778.S0 ===
 2.
-=== P841.S1 ===
+=== P778.S1 ===
 Vectorized Implementation:
-=== P842.S0 ===
+=== P779.S0 ===
 Both linear regression and logistic regression benefit from vectorized implementations, as they share the need to compute gradients for updating the parameters
-=== P844.S0 ===
+=== P781.S0 ===
 3.
-=== P844.S1 ===
+=== P781.S1 ===
 Feature Scaling:
-=== P845.S0 ===
+=== P782.S0 ===
 In both linear regression and logistic regression, applying normalization or standardization (scaling features to a common range, such as [-1, 1] or standardizing to a mean of 0 and standard deviation of 1) prevents the gradient descent from being biased towards larger-valued features, helping gradient descent converge faster.
-=== P847.S0 ===
+=== P784.S0 ===
 lab: Gradient descent for logistic regression
-=== P848.S0 ===
+=== P785.S0 ===
 lab: Logistic regression with scikit-learn
-=== P850.S0 ===
+=== P787.S0 ===
 The Problem of Overfitting
-=== P852.S0 ===
+=== P789.S0 ===
 Overfitting:
-=== P853.S0 ===
+=== P790.S0 ===
 Overfitting occurs when a model fits the training data too closely, capturing not only the true underlying patterns but also the noise or random fluctuations in the data.
-=== P853.S1 ===
+=== P790.S1 ===
 This results in a model that performs well on the training set but poorly on unseen data because it fails to generalize.
-=== P854.S0 ===
+=== P791.S0 ===
 Example: Fitting a fourth-order polynomial to predict housing prices where the model follows every data point exactly, creating a wiggly curve that does not reflect real-world behavior.
-=== P854.S1 ===
+=== P791.S1 ===
 This results in high variance, meaning small changes in the dataset can lead to vastly different models.
-=== P855.S0 ===
+=== P792.S0 ===
 High variance: When the model is too sensitive to changes in the training data, leading to unpredictable performance on new data.
-=== P856.S0 ===
+=== P793.S0 ===
 Underfitting:
-=== P857.S0 ===
+=== P794.S0 ===
 Underfitting happens when a model is too simple to capture the underlying patterns in the data.
-=== P857.S1 ===
+=== P794.S1 ===
 It results in poor performance on both the training set and new data because it fails to learn adequately.
-=== P858.S0 ===
+=== P795.S0 ===
 Example: Fitting a straight line to data that clearly follows a more complex pattern, such as housing prices that increase then flatten out.
-=== P858.S1 ===
+=== P795.S1 ===
 The model does not capture the true relationship between house size and price, leading to high bias.
-=== P859.S0 ===
+=== P796.S0 ===
 High bias: When the model has overly simplistic assumptions about the data, causing it to miss important patterns.
-=== P860.S0 ===
+=== P797.S0 ===
 Just Right (Optimal Model):
-=== P861.S0 ===
+=== P798.S0 ===
 The ideal model strikes a balance between underfitting and overfitting.
-=== P861.S1 ===
+=== P798.S1 ===
 It captures the true underlying patterns in the data without being overly influenced by noise or irrelevant details.
-=== P862.S0 ===
+=== P799.S0 ===
 Example: Using a quadratic model that fits the training data well and generalizes to unseen data.
-=== P862.S1 ===
+=== P799.S1 ===
 This model has a reasonable complexity and avoids both high bias and high variance.
-=== P863.S0 ===
+=== P800.S0 ===
 Overfitting and Underfitting in Classification:
-=== P864.S0 ===
+=== P801.S0 ===
 These concepts apply to classification tasks as well.
-=== P864.S1 ===
+=== P801.S1 ===
 For example, in classifying tumors as malignant or benign using features like tumor size and age, a logistic regression model might produce a linear decision boundary that underfits the data (high bias).
-=== P864.S2 ===
+=== P801.S2 ===
 Alternatively, a highly complex polynomial model might overfit by creating a wavy, complex boundary that perfectly classifies the training data but fails to generalize (high variance).
-=== P865.S0 ===
+=== P802.S0 ===
 The goal in machine learning is to find a model that is neither overfitting nor underfitting—a model that generalizes well to new, unseen data.
-=== P865.S1 ===
+=== P802.S1 ===
 This balance is essential for creating robust models that can make accurate predictions.
-=== P867.S0 ===
+=== P804.S0 ===
 Addressing Overfitting
-=== P868.S0 ===
+=== P805.S0 ===
 When your model suffers from overfitting (high variance), it means it fits the training data too closely and doesn't generalize well to new data.
-=== P868.S1 ===
+=== P805.S1 ===
 Here are three strategies to address overfitting:
-=== P869.S0 ===
+=== P806.S0 ===
 1.
-=== P869.S1 ===
+=== P806.S1 ===
 Collect More Training Data:
-=== P870.S0 ===
+=== P807.S0 ===
 Increasing the size of your training dataset can help your model learn more general patterns, reducing overfitting.
-=== P871.S0 ===
+=== P808.S0 ===
 In large datasets, even complex models with many features can perform well because the extra data helps the model avoid overfitting by providing more examples to learn from.
-=== P873.S0 ===
+=== P810.S0 ===
 Example: If you are predicting housing prices and can gather more data on house sizes and prices, your model will likely improve and avoid being overly influenced by any outliers or noise in the smaller dataset.
-=== P874.S0 ===
+=== P811.S0 ===
 Challenge: Sometimes, acquiring more data isn’t feasible, such as when only a limited number of houses have been sold in a given location.
-=== P876.S0 ===
+=== P813.S0 ===
 2.
-=== P876.S1 ===
+=== P813.S1 ===
 Feature Selection:
-=== P877.S0 ===
+=== P814.S0 ===
 Feature selection involves reducing the number of features used in your model.
-=== P877.S1 ===
+=== P814.S1 ===
 By using only the most relevant features, you can reduce overfitting.
-=== P878.S0 ===
+=== P815.S0 ===
 Overfitting occurs when the model tries to fit patterns in a large number of features, including irrelevant ones.
-=== P879.S0 ===
+=== P816.S0 ===
 Example: If your housing price model has many features (e.g., house size, number of bedrooms, distance to the nearest coffee shop, etc.), removing less important features might result in a simpler, better-performing model.
-=== P880.S0 ===
+=== P817.S0 ===
 Trade-off: By eliminating some features, you might lose valuable information.
-=== P880.S1 ===
+=== P817.S1 ===
 So, you need to find the right balance between simplifying the model and retaining useful data.
-=== P882.S0 ===
+=== P819.S0 ===
 3.
-=== P882.S1 ===
+=== P819.S1 ===
 Regularization:
-=== P883.S0 ===
+=== P820.S0 ===
 Regularization is a powerful technique that prevents overfitting by penalizing large parameter values, effectively reducing the influence of some features without completely discarding them.
-=== P884.S0 ===
+=== P821.S0 ===
 Regularization encourages the learning algorithm to find a solution where the weights (parameters) are smaller.
-=== P884.S1 ===
+=== P821.S1 ===
 This prevents the model from fitting the training data too perfectly while still allowing it to capture important patterns.
-=== P885.S0 ===
-Example: Instead of eliminating higher-order polynomial terms (e.g., x4), regularization reduces their effect by shrinking their corresponding weights (e.g., w4=0.0001).
-=== P886.S0 ===
+=== P822.S0 ===
+Example: Instead of eliminating higher-order polynomial terms (e.g., ), regularization reduces their effect by shrinking their corresponding weights (e.g., ).
+=== P823.S0 ===
 There are two common types of regularization:
-=== P887.S0 ===
+=== P824.S0 ===
 L2 Regularization (Ridge Regression): This adds a penalty proportional to the square of the magnitude of the weights (shrinks large weights).
-=== P888.S0 ===
+=== P825.S0 ===
 L1 Regularization (Lasso Regression): This adds a penalty proportional to the absolute value of the weights, encouraging sparsity (some weights may become exactly zero, effectively removing features).
-=== P889.S0 ===
+=== P826.S0 ===
 lab: Overfitting
-=== P891.S0 ===
+=== P828.S0 ===
 Cost function with regularization
-=== P892.S0 ===
+=== P829.S0 ===
 In this section , we extend the concept of regularization by developing a modified cost function that can be used in a learning algorithm to apply regularization.
-=== P892.S1 ===
+=== P829.S1 ===
 The goal is to reduce overfitting by penalizing large parameter values.
-=== P893.S0 ===
+=== P830.S0 ===
 In a previous example, fitting a high-order polynomial to data resulted in overfitting, where the model captures noise in the training data and fails to generalize to new data.
-=== P894.S0 ===
-If you could make the parameters corresponding to higher-order terms (e.g., W3, W4) small or close to 0, the model would look more like a simpler quadratic function, reducing overfitting.
-=== P895.S0 ===
+=== P831.S0 ===
+If you could make the parameters corresponding to higher-order terms (e.g., , ) small or close to 0, the model would look more like a simpler quadratic function, reducing overfitting.
+=== P832.S0 ===
 Cost Function with Regularization
-=== P896.S0 ===
+=== P833.S0 ===
 To regularize the model, you modify the cost function by adding a penalty term for large parameter values:
-=== P897.S0 ===
-Jw=12mi=1mfw,bxi-yi2+λ2mj=1nwj2
-=== P898.S0 ===
+=== P835.S0 ===
 The first term is the original mean squared error cost function.
-=== P899.S0 ===
-The second term is the regularization term: λ2mj=1nwj2, where:
-=== P900.S0 ===
-λ is the regularization parameter that controls the strength of regularization.
-=== P901.S0 ===
-wj are the model's parameters (weights).
-=== P902.S0 ===
-m is the number of training examples.
-=== P903.S0 ===
-Intuition: The regularization term penalizes large values of wj, encouraging smaller parameter values and thus simplifying the model.
-=== P903.S1 ===
+=== P836.S0 ===
+The second term is the regularization term: , where:
+=== P837.S0 ===
+is the regularization parameter that controls the strength of regularization.
+=== P838.S0 ===
+are the model's parameters (weights).
+=== P839.S0 ===
+is the number of training examples.
+=== P840.S0 ===
+Intuition: The regularization term penalizes large values of , encouraging smaller parameter values and thus simplifying the model.
+=== P840.S1 ===
 This prevents the model from fitting noise in the training data (overfitting).
-=== P904.S0 ===
+=== P841.S0 ===
 Key Points About Regularization:
-=== P905.S0 ===
+=== P842.S0 ===
 Regularizing All Parameters:
-=== P906.S0 ===
-Instead of selectively regularizing only certain parameters (e.g., W3, W4), regularization is typically applied to all parameters w1 through wn, except for the bias term b.
-=== P907.S0 ===
+=== P843.S0 ===
+Instead of selectively regularizing only certain parameters (e.g., , ), regularization is typically applied to all parameters  through , except for the bias term .
+=== P844.S0 ===
 This encourages the learning algorithm to find a solution where all parameter values are kept small, resulting in a simpler model that generalizes better.
-=== P908.S0 ===
-Choosing the Regularization Parameter λ:
-=== P909.S0 ===
-The regularization parameter λ controls the trade-off between two objectives:
-=== P910.S0 ===
+=== P845.S0 ===
+Choosing the Regularization Parameter :
+=== P846.S0 ===
+The regularization parameter  controls the trade-off between two objectives:
+=== P847.S0 ===
 Minimizing the original cost function (fitting the training data well).
-=== P911.S0 ===
+=== P848.S0 ===
 Keeping the parameter values small to reduce overfitting.
-=== P912.S0 ===
-A small λ allows the model to fit the data more closely (risk of overfitting), while a large λ forces the parameters to be very small (risk of underfitting).
-=== P913.S0 ===
-Effect of λ on Model Performance:
-=== P914.S0 ===
-If λ=0: The regularization term has no effect, and the model fits the training data as closely as possible, often leading to overfitting.
-=== P916.S0 ===
-If λ is too large: The model will be overly constrained, with parameter values close to 0, resulting in underfitting (the model is too simple and doesn’t capture important patterns in the data).
-=== P917.S0 ===
-Choosing the right λ: The goal is to find a balance where λ is not too small (avoiding overfitting) and not too large (avoiding underfitting).
-=== P918.S0 ===
+=== P849.S0 ===
+A small  allows the model to fit the data more closely (risk of overfitting), while a large  forces the parameters to be very small (risk of underfitting).
+=== P850.S0 ===
+Effect of  on Model Performance:
+=== P851.S0 ===
+If : The regularization term has no effect, and the model fits the training data as closely as possible, often leading to overfitting.
+=== P853.S0 ===
+If  is too large: The model will be overly constrained, with parameter values close to 0, resulting in underfitting (the model is too simple and doesn’t capture important patterns in the data).
+=== P854.S0 ===
+Choosing the right : The goal is to find a balance where  is not too small (avoiding overfitting) and not too large (avoiding underfitting).
+=== P855.S0 ===
 Example: Housing Price Prediction with Regularization
-=== P919.S0 ===
+=== P856.S0 ===
 Suppose you are using linear regression to predict housing prices based on multiple features (e.g., size, number of bedrooms).
-=== P920.S0 ===
+=== P857.S0 ===
 Without regularization, the model may overfit by assigning large weights to certain features, leading to a highly complex function.
-=== P921.S0 ===
+=== P858.S0 ===
 By applying regularization, the model is encouraged to keep the weights smaller, resulting in a smoother, more generalizable prediction function.
-=== P923.S0 ===
+=== P860.S0 ===
 Regularized Linear Regression
-=== P925.S0 ===
+=== P862.S0 ===
 Gradient Descent for Regularized Linear Regression
-=== P926.S0 ===
+=== P863.S0 ===
 Previously, we used gradient descent to minimize the original cost function without regularization.
-=== P926.S1 ===
-The updates for the parameters wj and b were based on the derivatives of the cost function with respect to those parameters.
-=== P926.S2 ===
-Now, with regularization, the updates remain similar, except for the derivative with respect to wj.
-=== P927.S0 ===
+=== P863.S1 ===
+The updates for the parameters  and  were based on the derivatives of the cost function with respect to those parameters.
+=== P863.S2 ===
+Now, with regularization, the updates remain similar, except for the derivative with respect to .
+=== P864.S0 ===
 The updated gradient descent algorithm with regularization looks like this:
-=== P928.S0 ===
-For wj (for j=1 to n):
-=== P929.S0 ===
-wj≝  wj-α1mi=1mfw,bxi-yixji+λmwj
-=== P930.S0 ===
-This is the regularized gradient update for the parameters wj.The additional term λmwj comes from the regularization term in the cost function, which shrinks wj.
-=== P931.S0 ===
-For b:
-=== P932.S0 ===
-b≝b-α1mi=1mfw,bxi-yi
-=== P933.S0 ===
-The update for b remains the same since we do not regularize b.
-=== P934.S0 ===
-The regularization term shrinks the weights wj, preventing them from becoming too large, which would lead to overfitting.
-=== P934.S1 ===
+=== P865.S0 ===
+For  (for  to ):
+=== P867.S0 ===
+This is the regularized gradient update for the parameters .The additional term  comes from the regularization term in the cost function, which shrinks .
+=== P868.S0 ===
+For :
+=== P870.S0 ===
+The update for  remains the same since we do not regularize .
+=== P871.S0 ===
+The regularization term shrinks the weights , preventing them from becoming too large, which would lead to overfitting.
+=== P871.S1 ===
 Here's a more detailed breakdown of how this works:
-=== P935.S0 ===
-The new gradient descent update for wj includes an extra term: -α·λmwj.
-=== P936.S0 ===
-When α (learning rate) and λ (regularization parameter) are small, this term only slightly reduces wj at each step, encouraging smaller weights without drastically changing the update.
-=== P937.S0 ===
+=== P872.S0 ===
+The new gradient descent update for  includes an extra term: .
+=== P873.S0 ===
+When  (learning rate) and  (regularization parameter) are small, this term only slightly reduces  at each step, encouraging smaller weights without drastically changing the update.
+=== P874.S0 ===
 The effect is that on every iteration, the weights are slightly shrunk, helping to reduce overfitting.
-=== P938.S0 ===
-We can rewrite the update rule for wj to show this shrinking effect more clearly:
-=== P939.S0 ===
-wj=  wj(1-αλm)-α1mi=1mfw,bxi-yixji
-=== P940.S0 ===
-Here, the term 1-αλm is a number slightly less than 1, which means that wj is multiplied by this value on each iteration, leading to a gradual shrinking of wj.
-=== P941.S0 ===
+=== P875.S0 ===
+We can rewrite the update rule for  to show this shrinking effect more clearly:
+=== P877.S0 ===
+Here, the term  is a number slightly less than 1, which means that  is multiplied by this value on each iteration, leading to a gradual shrinking of .
+=== P878.S0 ===
 Example :
-=== P942.S0 ===
+=== P879.S0 ===
 To see this effect in action, suppose:
-=== P943.S0 ===
-α=0.01 (learning rate),
-=== P944.S0 ===
-λ=1 (regularization parameter),
-=== P945.S0 ===
-m=50 (number of training examples).
-=== P946.S0 ===
+=== P880.S0 ===
+(learning rate),
+=== P881.S0 ===
+(regularization parameter),
+=== P882.S0 ===
+(number of training examples).
+=== P883.S0 ===
 The shrinking term is:
-=== P947.S0 ===
-1-αλm=1-0.01×150=0.9998
-=== P948.S0 ===
-This means that, on each iteration, wj is multiplied by 0.9998, slightly reducing its value.
-=== P949.S0 ===
+=== P885.S0 ===
+This means that, on each iteration,  is multiplied by 0.9998, slightly reducing its value.
+=== P886.S0 ===
 By applying this regularization strategy, we reduce the risk of overfitting, especially when dealing
-=== P951.S0 ===
+=== P888.S0 ===
 Regularized Logistic Regression
-=== P952.S0 ===
+=== P889.S0 ===
 We explore how to apply regularization to logistic regression using gradient descent.
-=== P952.S1 ===
+=== P889.S1 ===
 The regularized gradient update for logistic regression is quite similar to that for regularized linear regression, with a few key differences due to the logistic function.
-=== P953.S0 ===
+=== P890.S0 ===
 Motivation for Regularization in Logistic Regression
-=== P954.S0 ===
+=== P891.S0 ===
 Logistic regression can overfit when trained on models with many features, such as high-order polynomial features.
-=== P955.S0 ===
+=== P892.S0 ===
 Overfitting can lead to overly complex decision boundaries, which do not generalize well to unseen data.
-=== P956.S0 ===
-To reduce overfitting, we introduce regularization, which penalizes large parameter values wj.
-=== P960.S0 ===
+=== P893.S0 ===
+To reduce overfitting, we introduce regularization, which penalizes large parameter values .
+=== P897.S0 ===
 Regularized Cost Function for Logistic Regression
-=== P961.S0 ===
+=== P898.S0 ===
 The original cost function for logistic regression (without regularization) is:
-=== P962.S0 ===
-Jw,b=1mi=1m-yilogfw,bxi-1-yilog1-fw,bxi
-=== P963.S0 ===
-Where: fw,bxi is the sigmoid function applied to z=w·x+b.
-=== P964.S0 ===
-To add regularization, we modify the cost function by including a penalty term for the weights w1,w2,…,wn (but not b):
-=== P965.S0 ===
-Jw,b=1mi=1m-yilogfw,bxi-1-yilog1-fw,bxi+λ2mj=1nwj2
-=== P966.S0 ===
+=== P900.S0 ===
+Where:  is the sigmoid function applied to .
+=== P901.S0 ===
+To add regularization, we modify the cost function by including a penalty term for the weights  (but not ):
+=== P903.S0 ===
 Here:
-=== P967.S0 ===
-λ is the regularization parameter that controls the strength of the penalty.
-=== P968.S0 ===
-The term λ2mj=1nwj2 penalizes large weights, encouraging smaller wj values and thereby reducing overfitting.
-=== P970.S0 ===
+=== P904.S0 ===
+is the regularization parameter that controls the strength of the penalty.
+=== P905.S0 ===
+The term  penalizes large weights, encouraging smaller  values and thereby reducing overfitting.
+=== P907.S0 ===
 Gradient Descent for Regularized Logistic Regression
-=== P971.S0 ===
+=== P908.S0 ===
 To minimize this regularized cost function, we use gradient descent.
-=== P971.S1 ===
-The update rules for the parameters wj and b are derived similarly to how we did for linear regression, but with an additional regularization term for wj.
-=== P972.S0 ===
-For wj (for j=1 to n):
-=== P973.S0 ===
-wj≝wj-α1mi=1mfw,bxi-yixji+λmwj
-=== P974.S0 ===
-The term λmwj comes from the regularization penalty.
-=== P975.S0 ===
-This additional term shrinks the weights wj, helping to prevent overfitting.
-=== P976.S0 ===
-For b:
-=== P977.S0 ===
-b≝b-α1mi=1mhwxi-yi
-=== P978.S0 ===
-The update for b does not change with regularization, because we do not penalize b.
-=== P979.S0 ===
-The regularization term penalizes the model if the weights wj grow too large, thus controlling the complexity of the model.
-=== P980.S0 ===
+=== P908.S1 ===
+The update rules for the parameters  and  are derived similarly to how we did for linear regression, but with an additional regularization term for .
+=== P909.S0 ===
+For  (for  to ):
+=== P911.S0 ===
+The term  comes from the regularization penalty.
+=== P912.S0 ===
+This additional term shrinks the weights , helping to prevent overfitting.
+=== P913.S0 ===
+For :
+=== P915.S0 ===
+The update for  does not change with regularization, because we do not penalize .
+=== P916.S0 ===
+The regularization term penalizes the model if the weights  grow too large, thus controlling the complexity of the model.
+=== P917.S0 ===
 Regularization encourages the model to simplify by shrinking weights, which helps it generalize better to unseen data.
-=== P982.S0 ===
+=== P919.S0 ===
 lab: Regularization
-=== P984.S0 ===
+=== P921.S0 ===
 Programming Assignment: Week 3 practice lab: logistic regression

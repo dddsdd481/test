@@ -1,5 +1,7 @@
 === P0.S0 ===
 Supervised Machine Learning
+=== P3.S0 ===
+Machine Learning  The field of study that gives computers the ability to learn without being explicitly programmed.Arthur SamuelMachine Learning  The field of study that gives computers the ability to learn without being explicitly programmed.Arthur Samuel
 === P15.S0 ===
 Week 1 - Introduction to Machine Learning
 === P16.S0 ===
@@ -35,8 +37,10 @@ With this data, let's say a friend wants to know what's the price for their 750 
 === P29.S1 ===
 How can the learning algorithm help you?
 === P29.S2 ===
-One thing a learning algorithm might be able to do is say, for the straight line to the data and reading off the straight line, it looks like your friend's house could be sold for maybe about $150,000. this housing price prediction is the particular type of supervised learning called regression.
+One thing a learning algorithm might be able to do is say, for the straight line to the data and reading off the straight line, it looks like your friend's house could be sold for maybe about $150,000.
 === P29.S3 ===
+this housing price prediction is the particular type of supervised learning called regression.
+=== P29.S4 ===
 By regression, I mean we're trying to predict a number from infinitely many possible numbers such as the house prices in our example, which could be 150,000 or 70,000 or 183,000 or any other number in between.
 === P31.S0 ===
 Supervised learning: Classification
@@ -89,7 +93,7 @@ So when a new patient comes in, the doctor can measure the patient's tumor size 
 === P36.S1 ===
 And so given this, how can we predict if this patient's tumor is benign or malignant?
 === P36.S2 ===
-Well, given the day said like this, what the learning algorithm might do is find some boundary that separates out the malignant tumors from the benign ones.
+Well, given the day said like this, what the learning algorithm might do is find some boundary that  separates out the malignant tumors from the benign ones.
 === P36.S3 ===
 So the learning algorithm has to decide how to fit a boundary line through this data.
 === P36.S4 ===
@@ -277,11 +281,11 @@ P34
 === P69.S0 ===
 Function and Prediction
 === P70.S0 ===
-- The function f takes a new input x and generates an estimate or prediction, denoted as ŷ (y-hat).
+- The function f takes a new input x and generates an estimate or prediction, denoted as ŷ  (y-hat).
 === P70.S1 ===
-The prediction ŷ is the estimated value of the target variable y.
+The prediction ŷ  is the estimated value of the target variable y.
 === P71.S0 ===
-- x represents the input feature, and the output of the model, ŷ is the prediction.
+- x represents the input feature, and the output of the model, ŷ  is the prediction.
 === P72.S0 ===
 - The actual true value in the training set is referred to as y, while ŷ is an estimate, which might not match the true value.
 === P73.S0 ===
@@ -297,11 +301,11 @@ A key aspect of designing a learning algorithm is determining how to represent t
 === P77.S1 ===
 For simplicity, we can start by assuming f is a straight line, represented as:
 === P78.S0 ===
-${f}_{w,b}\left(x\right)=w⋅x+b$
+{f}_{w,b}\left(x\right)=w\cdot x+b
 === P79.S0 ===
-- w and b are parameters that determine the prediction ŷ based on the input feature x .
+- w  and b are parameters that determine the prediction ŷ based on the input feature  x .
 === P80.S0 ===
-- w represents the weight (slope), and b is the bias (intercept).
+- w  represents the weight (slope), and  b is the bias (intercept).
 === P82.S0 ===
 Visualizing Linear Regression
 === P83.S0 ===
@@ -309,7 +313,7 @@ If we plot the training data on a graph, with x (input feature) on the horizonta
 === P83.S1 ===
 This straight line is a linear function:
 === P84.S0 ===
-- $f\left(x\right)=w⋅x+b$
+- f\left(x\right)=w\cdot x+b
 === P85.S0 ===
 - This function makes predictions for y based on x using a linear relationship.
 === P87.S0 ===
@@ -343,7 +347,7 @@ You start with a training set that contains input features ( x ) and correspondi
 === P94.S1 ===
 The linear model used to fit this data is represented by the equation:
 === P95.S0 ===
-$${f}_{w,b}\left(x\right)=w⋅x+b$$
+{f}_{w,b}\left(x\right)=w\cdot x+b
 === P96.S0 ===
 Here:
 === P97.S0 ===
@@ -379,13 +383,13 @@ Measuring the Error:
 === P107.S0 ===
 To figure out how well a line fits the training data, we need to measure the error.
 === P107.S1 ===
-For any training example $\left({x}^{\left(i\right)},{y}^{\left(i\right)}\right)$ , the model makes a prediction ( $\widehat{{y}^{\left(i\right)}}$ ), which is calculated by:
+For any training example  \left({x}^{\left(i\right)},{y}^{\left(i\right)}\right), the model makes a prediction ( \widehat{{y}^{\left(i\right)}} ), which is calculated by:
 === P108.S0 ===
-$\widehat{{y}^{i}}={f}_{w,b}\left({x}^{\left(i\right)}\right)$
+\widehat{{y}^{i}}={f}_{w,b}\left({x}^{\left(i\right)}\right)
 === P109.S0 ===
-The error for a single example is the difference between the predicted value ( $\widehat{{y}^{\left(i\right)}}$ ) and the actual value ( ${y}^{\left(i\right)}$ ), given by:
+The error for a single example is the difference between the predicted value ( \widehat{{y}^{\left(i\right)}} ) and the actual value ( {y}^{\left(i\right)} ), given by:
 === P110.S0 ===
-$$Error=\widehat{{y}^{\left(i\right)}}-{y}^{\left(i\right)}$$
+Error=\widehat{{y}^{\left(i\right)}}-{y}^{\left(i\right)}
 === P111.S0 ===
 4.
 === P111.S1 ===
@@ -397,19 +401,19 @@ The squared error ensures that both over-predictions and under-predictions contr
 === P113.S0 ===
 The cost function ( J(w, b) ), also known as the squared error cost function, is defined as:
 === P114.S0 ===
-$$J\left(w,b\right)=\frac{1}{2m}\sum_{i=1}^{m}{\left(\widehat{{y}^{\left(i\right)}}-{y}^{\left(i\right)}\right)}^{2} =  \frac{1}{2m}\sum_{i=1}^{m}{\left({f}_{w,b}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)}^{2}$$
+J\left(w,b\right)=\frac{1}{2m}\sum_{i=1}^{m} {\left(\widehat{{y}^{\left(i\right)}}-{y}^{\left(i\right)}\right)}^{2} =  \frac{1}{2m}\sum_{i=1}^{m} {\left({f}_{w,b}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)}^{2}
 === P115.S0 ===
 Where:
 === P116.S0 ===
 ( m ) is the number of training examples.
 === P117.S0 ===
-( $\widehat{{y}^{\left(i\right)}}$ ) is the predicted value for the i-th example.
+( \widehat{{y}^{\left(i\right)}} ) is the predicted value for the i-th example.
 === P118.S0 ===
-( ${y}^{\left(i\right)}$ ) is the true value for the i-th example.
+( {y}^{\left(i\right)} ) is the true value for the i-th example.
 === P119.S0 ===
 When the cost is relatively small, closer to zero, it means the model fits the data better compared to other choices for w and b.
 === P121.S0 ===
-The factor of $\frac{1}{2}$ is included for mathematical convenience, as it simplifies the derivatives in optimization algorithms.
+The factor of  \frac{1}{2}  is included for mathematical convenience, as it simplifies the derivatives in optimization algorithms.
 === P122.S0 ===
 5.
 === P122.S1 ===
@@ -433,7 +437,7 @@ In this section, we explore the cost function in linear regression and how it he
 === P130.S0 ===
 The goal is to choose values for ( w ) and ( b ) that allow the line to fit the training data well.
 === P130.S1 ===
-To measure this fit, we use a cost function denoted by ( $J\left(w,b\right)$ ), which calculates the difference between the model's predictions ( $\widehat{y}$ ) (or ( $f\left(x\right)$ )) and the actual true values ( y ).
+To measure this fit, we use a cost function denoted by ( J\left(w,b\right) ), which calculates the difference between the model's predictions ( \widehat{y} ) (or ( f\left(x\right) )) and the actual true values ( y ).
 === P132.S0 ===
 Simplifying the Model
 === P133.S0 ===
@@ -441,7 +445,7 @@ To make it easier to understand, let's simplify the model by setting ( b = 0 ).
 === P133.S1 ===
 Thus, the function becomes:
 === P134.S0 ===
-$${f}_{w}\left(x\right)=w⋅x$$
+{f}_{w}\left(x\right)=w\cdot x
 === P135.S0 ===
 Now, there's only one parameter to adjust, ( w ), and the cost function ( J(w) ) reflects how well a particular value of ( w ) fits the training data.
 === P137.S0 ===
@@ -455,21 +459,21 @@ Training Set: Suppose we have three data points: ( (1, 1) ), ( (2, 2) ), and ( (
 === P141.S0 ===
 Choosing ( w = 1 ):
 === P142.S0 ===
-The function ( ${f}_{w}\left(x\right)$ ) becomes a line with a slope of 1, perfectly passing through all the points.
+The function ( {f}_{w}\left(x\right)) becomes a line with a slope of 1, perfectly passing through all the points.
 === P143.S0 ===
 The predicted values match the actual values, so the cost function ( J(1) = 0 ) (no error).
 === P144.S0 ===
 Choosing ( w = 0.5 ):
 === P145.S0 ===
-The function ${f}_{w}\left(x\right)$ now has a slope of 0.5, resulting in some error between the predicted and actual values.
+The function {f}_{w}\left(x\right) now has a slope of 0.5, resulting in some error between the predicted and actual values.
 === P146.S0 ===
-The squared errors for each point are calculated and summed, giving a cost ( $J\left(0.5\right)\approx 0.58$ ).
+The squared errors for each point are calculated and summed, giving a cost (J\left(0.5\right)\approx 0.58 ).
 === P147.S0 ===
 Choosing ( w = 0 ):
 === P148.S0 ===
-The function becomes a flat line, ( ${f}_{w}\left(x\right)=0$ ), leading to larger prediction errors.
+The function becomes a flat line, ( {f}_{w}\left(x\right)=0 ), leading to larger prediction errors.
 === P149.S0 ===
-The cost $J\left(0\right)\approx 2.33$ , which is much higher than when ( w = 1 ).
+The cost  J\left(0\right)\approx 2.33 , which is much higher than when ( w = 1 ).
 === P151.S0 ===
 Plotting the Cost Function
 === P152.S0 ===
@@ -515,7 +519,7 @@ As before, we want to gain a visual understanding of the model function, (f(x)),
 === P170.S0 ===
 Here's a training set of house sizes and prices.
 === P170.S1 ===
-For example, we can select a possible function (f(x)) with (w = 0.06) and (b = 50), giving us the function: [ $f\left(x\right)=0.06x+50$ ] This particular model consistently underestimates housing prices, making it a poor fit for the data.
+For example, we can select a possible function (f(x)) with (w = 0.06) and (b = 50), giving us the function: [ f\left(x\right)=0.06x+50 ] This particular model consistently underestimates housing prices, making it a poor fit for the data.
 === P172.S0 ===
 The Shape of the Cost Function
 === P173.S0 ===
@@ -629,7 +633,7 @@ Generalization Beyond Linear Regression
 === P228.S0 ===
 Gradient descent is not limited to linear regression or models with just two parameters.
 === P228.S1 ===
-You can apply it to more complex models where the cost function depends on many parameters $\left(\left({w}_{1},{w}_{2},…,{w}_{n}\right)\right)$ along with (b).
+You can apply it to more complex models where the cost function depends on many parameters \left(\left({w}_{1},{w}_{2},…,{w}_{n}\right)\right) along with (b).
 === P228.S2 ===
 The same process is followed to minimize the cost function in these cases.
 === P230.S0 ===
@@ -657,19 +661,19 @@ Gradient Descent Algorithm
 === P239.S0 ===
 The algorithm updates the parameters w and b iteratively:
 === P240.S0 ===
-$w=w-\alpha ⋅\frac{\partial }{dw}J\left(w,b\right)$
+w=w-\alpha \cdot \frac{\partial}{dw}J\left(w,b\right)
 === P241.S0 ===
-$b=b-\alpha ⋅\frac{\partial }{db}J\left(w,b\right)$
+b=b-\alpha \cdot \frac{\partial}{db}J\left(w,b\right)
 === P242.S0 ===
 Where:
 === P243.S0 ===
-- $\alpha$ is the learning rate, controlling the size of each step.
+- \alphais the learning rate, controlling the size of each step.
 === P243.S1 ===
 It’s a small positive number (e.g., 0.01) that determines how quickly or slowly the algorithm descends.
 === P243.S2 ===
-$\alpha \in [0,1]$
+\alpha \in [0,1]
 === P244.S0 ===
-- The derivative term (partial derivatives $\frac{\partial }{dw}$ and $\frac{\partial }{db}$ ) indicates the direction to move the parameters for reducing the cost.
+- The derivative term (partial derivatives \frac{\partial}{dw} and \frac{\partial}{db}) indicates the direction to move the parameters for reducing the cost.
 === P246.S0 ===
 Understanding the Equation
 === P247.S0 ===
@@ -679,9 +683,9 @@ Assignment Operator: In code, the equation represents updating the parameter by 
 === P248.S0 ===
 2.
 === P248.S1 ===
-Learning Rate ( $\alpha$ ): Controls the step size.
+Learning Rate (\alpha): Controls the step size.
 === P248.S2 ===
-A small $\alpha$ results in slow progress (baby steps), while a large $\alpha$ may cause the algorithm to overshoot the minimum.
+A small \alpha results in slow progress (baby steps), while a large \alpha may cause the algorithm to overshoot the minimum.
 === P249.S0 ===
 3.
 === P249.S1 ===
@@ -691,11 +695,13 @@ This ensures that both parameters are adjusted based on their current values bef
 === P252.S0 ===
 Correct vs Incorrect Implementation
 === P253.S0 ===
-- Correct Implementation: Calculate the new values for w and b using temporary variables.
+- Correct Implementation: Calculate the new values for w and b  using temporary variables.
 === P253.S1 ===
 Once both new values are computed, assign them to w and b simultaneously.
 === P255.S0 ===
 Example:
+=== P256.S0 ===
+tmp_w = w - α    (derivative of J with respect to w)tmp_b = b - α      (derivative of J with respect to b)w = tmp_wb = tmp_btmp_w = w - α    (derivative of J with respect to w)tmp_b = b - α      (derivative of J with respect to b)w = tmp_wb = tmp_b
 === P261.S0 ===
 - Incorrect Implementation: If you update w first, then use the updated value of w to compute the new b, this breaks the simultaneous update rule, leading to inaccuracies.
 === P263.S0 ===
@@ -707,7 +713,7 @@ At this point, the algorithm has converged.
 === P266.S0 ===
 Gradient descent intuition
 === P267.S0 ===
-The term $\frac{\partial }{dw}$ represents the derivative (or more accurately, the partial derivative) of the cost function with respect to w.
+The term \frac{\partial}{dw}  represents the derivative (or more accurately, the partial derivative) of the cost function with respect to w.
 === P267.S1 ===
 While technically this is a partial derivative, we'll simply refer to it as the derivative for ease.
 === P269.S0 ===
@@ -717,7 +723,7 @@ To simplify, consider a scenario with just one parameter, w.
 === P270.S1 ===
 The goal is to minimize a cost function J(w).
 === P270.S2 ===
-The update rule becomes: $w=w-\alpha \frac{d}{dw}J\left(w\right)$
+The update rule becomes:		 w=w-\alpha \frac{d}{dw}J\left(w\right)
 === P272.S0 ===
 Here, the gradient descent seeks to minimize J(w) by adjusting w.
 === P272.S1 ===
@@ -797,11 +803,11 @@ To implement gradient descent for linear regression, we need to compute the deri
 === P306.S0 ===
 Derivative with respect to w:
 === P307.S0 ===
-$$\frac{\partial J\left(w,b\right)}{\partial w}=\frac{1}{m}\sum_{i=1}^{m}\left({f}_{w,b}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)⋅{x}^{\left(i\right)}$$
+\frac{\partial J\left(w,b\right)}{\partial w}=\frac{1}{m}\sum_{i=1}^{m} \left({f}_{w,b}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)\cdot {x}^{\left(i\right)}
 === P308.S0 ===
 Derivative with respect to b:
 === P309.S0 ===
-$$\frac{\partial J\left(w,b\right)}{\partial b}=\frac{1}{m}\sum_{i=1}^{m}\left({f}_{w,b}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)$$
+\frac{\partial J\left(w,b\right)}{\partial b}=\frac{1}{m}\sum_{i=1}^{m} \left({f}_{w,b}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)
 === P311.S0 ===
 Global Minimum in Linear Regression
 === P312.S0 ===
@@ -835,57 +841,57 @@ Notation Overview:
 === P353.S0 ===
 Features:
 === P354.S0 ===
-We denote features using ( ${X}_{1},{X}_{2},{X}_{3},…,{X}_{n}$ ), where (n) is the total number of features.
+We denote features using ({X}_{1},{X}_{2},{X}_{3},…,{X}_{n}), where (n) is the total number of features.
 === P354.S1 ===
 For instance:
 === P355.S0 ===
-( ${X}_{1}$ ): Size of the house.
+({X}_{1}): Size of the house.
 === P356.S0 ===
-( ${X}_{2}$ ): Number of bedrooms.
+({X}_{2}): Number of bedrooms.
 === P357.S0 ===
-( ${X}_{3}$ ): Number of floors.
+({X}_{3}): Number of floors.
 === P358.S0 ===
-( ${X}_{4}$ ): Age of the house.
+({X}_{4}): Age of the house.
 === P360.S0 ===
 Training Examples:
 === P361.S0 ===
-Each training example ( ${X}^{\left(i\right)}$ ) consists of a vector of features.
+Each training example ({X}^{\left(i\right)}) consists of a vector of features.
 === P361.S1 ===
-For example, ( ${X}^{\left(2\right)}$ = [1416, 3, 2, 40]) might represent a house with 1416 square feet, 3 bedrooms, 2 floors, and 40 years of age.
+For example, ({X}^{\left(2\right)} = [1416, 3, 2, 40]) might represent a house with 1416 square feet, 3 bedrooms, 2 floors, and 40 years of age.
 === P363.S0 ===
 Model Representation:
 === P364.S0 ===
 The model with multiple features is expressed as:
 === P366.S0 ===
-${f}_{W,b}\left(X\right)={W}_{1}{X}_{1}+{W}_{2}{X}_{2}+{W}_{3}{X}_{3}+…+{W}_{n}{X}_{n}+b$
+{f}_{W,b}\left(X\right)={W}_{1}{X}_{1}+{W}_{2}{X}_{2}+{W}_{3}{X}_{3}+…+{W}_{n}{X}_{n}+b
 === P368.S0 ===
-Here, ( ${W}_{1},{W}_{2},{W}_{3},…,{W}_{n}$ ) are the weights assigned to each feature, and (b) is the bias term.
+Here, ({W}_{1},{W}_{2},{W}_{3},…,{W}_{n}) are the weights assigned to each feature, and (b) is the bias term.
 === P370.S0 ===
 Interpretation of Parameters:
 === P371.S0 ===
-( ${W}_{1}=0.1$ ): For every additional square foot, the house price increases by $100.
+({W}_{1}=0.1): For every additional square foot, the house price increases by $100.
 === P372.S0 ===
-( ${W}_{2}=4$ ): Each additional bedroom increases the price by $4,000.
+({W}_{2}=4): Each additional bedroom increases the price by $4,000.
 === P373.S0 ===
-( ${W}_{3}=10$ ): Each additional floor adds $10,000 to the price.
+({W}_{3}=10): Each additional floor adds $10,000 to the price.
 === P374.S0 ===
-( ${W}_{4}=-2$ ): Every year of the house's age decreases its price by $2,000.
+({W}_{4}=-2): Every year of the house's age decreases its price by $2,000.
 === P375.S0 ===
-( $b = 80$ ): The base price of a house (with zero size, bedrooms, floors, and age) is $80,000.
+(b = 80): The base price of a house (with zero size, bedrooms, floors, and age) is $80,000.
 === P377.S0 ===
 Vectorized Form:
 === P378.S0 ===
 To simplify the notation, we use vectors to represent the features and weights:
 === P379.S0 ===
-( $W=\left[{W}_{1},{W}_{2},{W}_{3},…,{W}_{n}\right]$ )
+(W=\left[{W}_{1},{W}_{2},{W}_{3},…,{W}_{n}\right])
 === P380.S0 ===
-$\left(X=\left[{X}_{1},{X}_{2},{X}_{3},…,{X}_{n}\right]\right)$
+\left(X=\left[{X}_{1},{X}_{2},{X}_{3},…,{X}_{n}\right]\right)
 === P382.S0 ===
-The model can now be rewritten using the dot product: ${f}_{W,b}\left(X\right)=W⋅X+b$
+The model can now be rewritten using the dot product:	 {f}_{W,b}\left(X\right)=W\cdot X+b
 === P384.S0 ===
 The dot product computes the sum of the products of corresponding components from (W) and (X):
 === P385.S0 ===
-$${W}_{1}{X}_{1} +{W}_{2}{X}_{2} + … +{W}_{n}{X}_{n}$$
+{W}_{1}{X}_{1} +{W}_{2}{X}_{2} + … +{W}_{n}{X}_{n}
 === P387.S0 ===
 Multiple Linear Regression:
 === P388.S0 ===
@@ -907,9 +913,9 @@ When you write vectorized code, it is both shorter and optimized to run faster, 
 === P394.S0 ===
 Example of Non-Vectorized Code
 === P395.S0 ===
-Consider a simple model with parameters $W$ and $b$ , where $W$ is a vector of weights, and $x$ is a vector of features.
+Consider a simple model with parameters W and b, where W is a vector of weights, and x is a vector of features.
 === P395.S1 ===
-Suppose you have three features, making $n=3$ .
+Suppose you have three features, making n=3.
 === P396.S0 ===
 In code, this could be done using a for-loop:
 === P397.S0 ===
@@ -923,7 +929,7 @@ f += W[j] * x[j]
 === P401.S0 ===
 f += b
 === P402.S0 ===
-This approach works, but it's inefficient, especially when $n$ becomes large.
+This approach works, but it's inefficient, especially when n becomes large.
 === P403.S0 ===
 Vectorized Approach
 === P404.S0 ===
@@ -933,13 +939,13 @@ python
 === P406.S0 ===
 f = np.dot(W, x) + b
 === P407.S0 ===
-Here, np.dot is a function from the NumPy library, which performs the dot product between the vectors $W$ and $x$ .
+Here, np.dot is a function from the NumPy library, which performs the dot product between the vectors W and x.
 === P407.S1 ===
 The benefits of this approach are:
 === P408.S0 ===
 Shorter code: One line instead of a loop.
 === P409.S0 ===
-Faster execution: The np.dot function uses optimized linear algebra routines and can leverage hardware acceleration, especially when $n$ is large.
+Faster execution: The np.dot function uses optimized linear algebra routines and can leverage hardware acceleration, especially when n is large.
 === P411.S0 ===
 Benefits of Vectorization
 === P412.S0 ===
@@ -961,15 +967,15 @@ The Parallel Power of Vectorization
 === P419.S0 ===
 Vectorization leverages hardware designed for parallel processing, such as GPUs.
 === P419.S1 ===
-Instead of performing operations sequentially, the computer processes all values of $W$ and $x$ in parallel.
+Instead of performing operations sequentially, the computer processes all values of W and x in parallel.
 === P419.S2 ===
-For example, it multiplies all pairs of values between $W$ and $x$ at the same time, and then uses specialized hardware to add the results together in a highly efficient manner.
+For example, it multiplies all pairs of values between W and x at the same time, and then uses specialized hardware to add the results together in a highly efficient manner.
 === P419.S3 ===
 This parallel execution is a key reason why vectorized code runs significantly faster than non-vectorized code, particularly for large datasets.
 === P420.S0 ===
 Example: Linear Regression with Multiple Features
 === P421.S0 ===
-Consider a scenario with 16 features, where you need to update 16 weights (parameters ${W}_{1}$ through ${W}_{16}$ ) during gradient descent.
+Consider a scenario with 16 features, where you need to update 16 weights (parameters {W}_{1} through {W}_{16}) during gradient descent.
 === P421.S1 ===
 Without vectorization, you would update each weight one by one in a for loop:
 === P422.S0 ===
@@ -999,45 +1005,45 @@ Let's break down the implementation of gradient descent for multiple linear regr
 === P433.S0 ===
 For multiple linear regression, the model can be expressed as:
 === P434.S0 ===
-$${f}_{\vec{w},b}\left(\vec{x}\right)=\vec{w}\cdot \vec{x}+b$$
+{f}_{\overrightarrow{w},b}\left(\overrightarrow{x}\right)=\overrightarrow{w}·\overrightarrow{x}+b
 === P435.S0 ===
 Where:
 === P436.S0 ===
-$w$ is a vector of parameters of length $n$ .
+w is a vector of parameters of length n.
 === P437.S0 ===
-$x$ is the input feature vector of length $n$ .
+x is the input feature vector of length n.
 === P438.S0 ===
-$b$ is the bias term (a scalar).
+b is the bias term (a scalar).
 === P439.S0 ===
-The dot product $w\cdot x$ represents the weighted sum of the features.
+The dot product w·x represents the weighted sum of the features.
 === P441.S0 ===
 Gradient Descent Update Rules
 === P442.S0 ===
-The gradient descent algorithm updates the parameters $w$ and $b$ to minimize the cost function.
+The gradient descent algorithm updates the parameters w and b to minimize the cost function.
 === P442.S1 ===
 The update rules are:
 === P443.S0 ===
-$${w}_{j}={w}_{j}-\alpha \frac{\partial }{\partial {w}_{j}}J\left({w}_{1},{w}_{2},{w}_{3},…,{w}_{n},b\right)$$
+{w}_{j}={w}_{j}-\alpha \frac{\partial}{\partial {w}_{j}}J\left({w}_{1},{w}_{2},{w}_{3},…,{w}_{n},b\right)
 === P444.S0 ===
-$$b=b-\alpha \frac{\partial }{\partial b}J\left({w}_{1},{w}_{2},{w}_{3},…,{w}_{n},b\right)$$
+b=b-\alpha \frac{\partial}{\partial b}J\left({w}_{1},{w}_{2},{w}_{3},…,{w}_{n},b\right)
 === P446.S0 ===
-Where $\alpha$ is the learning rate, and the partial derivatives (gradients) for $w$ and $b$ are computed as:
+Where \alpha is the learning rate, and the partial derivatives (gradients) for w and b are computed as:
 === P447.S0 ===
-For ${w}_{j}$ :
+For {w}_{j}:
 === P448.S0 ===
-$$\frac{\partial }{\partial {w}_{j}}J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m}\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)\cdot {x}_{j}^{\left(i\right)}$$
+\frac{\partial}{\partial {w}_{j}}J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m} \left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)·{x}_{j}^{\left(i\right)}
 === P449.S0 ===
-For $b$ :
+For b:
 === P450.S0 ===
-$$\frac{\partial }{\partial b}J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m}\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)$$
+\frac{\partial}{\partial b}J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m} \left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)
 === P452.S0 ===
 Normal Equation Method (Quick Aside)
 === P453.S0 ===
 The normal equation provides a closed-form solution to linear regression without needing gradient descent:
 === P454.S0 ===
-$$w={\left({X}^{T}X\right)}^{-1}{X}^{T}y$$
+w={\left({X}^{T}X\right)}^{-1}{X}^{T}y
 === P455.S0 ===
-However, this method is only practical for smaller datasets because computing the inverse of ${X}^{T}X$ is computationally expensive for large $n$ , making gradient descent the preferred method in most machine learning applications.
+However, this method is only practical for smaller datasets because computing the inverse of {X}^{T}X is computationally expensive for large n, making gradient descent the preferred method in most machine learning applications.
 === P458.S0 ===
 C1_W2_Lab02_Multiple_Variable
 === P461.S0 ===
@@ -1051,15 +1057,15 @@ Example: Predicting House Prices
 === P464.S0 ===
 Consider a model predicting house prices with two features:
 === P465.S0 ===
-${x}_{1}$ : Size of the house (ranges from 300 to 2000 square feet)
+{x}_{1}: Size of the house (ranges from 300 to 2000 square feet)
 === P466.S0 ===
-${x}_{2}$ : Number of bedrooms (ranges from 0 to 5)
+{x}_{2}: Number of bedrooms (ranges from 0 to 5)
 === P467.S0 ===
-In this scenario, ${x}_{1}$ has a much larger range of values than ${x}_{2}$ .
+In this scenario, {x}_{1} has a much larger range of values than {x}_{2}.
 === P467.S1 ===
-This discrepancy leads to the parameters ${w}_{1}$ (for size) and ${w}_{2}$ (for bedrooms) behaving very differently.
+This discrepancy leads to the parameters {w}_{1} (for size) and {w}_{2} (for bedrooms) behaving very differently.
 === P467.S2 ===
-For example, if ${w}_{1}=50$ and ${w}_{2}=0.1$ , the prediction is far off, whereas when ${w}_{1}=0.1$ and ${w}_{2}=50$ , the prediction is accurate.
+For example, if {w}_{1}=50 and {w}_{2}=0.1, the prediction is far off, whereas when {w}_{1}=0.1 and {w}_{2}=50, the prediction is accurate.
 === P468.S0 ===
 Impact on Gradient Descent
 === P469.S0 ===
@@ -1085,11 +1091,11 @@ Take each feature and divide it by its maximum value.
 === P476.S0 ===
 Example:
 === P477.S0 ===
-If $300{\le x}_{1}\le 2000$ , divide each value of ${x}_{1}$ by 2000.
+If 300{\leq x}_{1}\leq 2000, divide each value of {x}_{1} by 2000.
 === P477.S1 ===
-This scales ${x}_{1}$ between 0.15 and 1.
+This scales {x}_{1} between 0.15 and 1.
 === P477.S2 ===
-Similarly, for ${0\le x}_{2}\le 5$ , divide by its maximum 5 , scaling it between 0 and 1.
+Similarly, for {0\leq x}_{2}\leq 5, divide by its maximum 5 , scaling it between 0 and 1.
 === P478.S0 ===
 After scaling, the features are more comparable in range, leading to faster gradient descent.
 === P479.S0 ===
@@ -1099,11 +1105,11 @@ Subtract the mean value of the feature and then divide by the range (max - min).
 === P481.S0 ===
 Formula:
 === P482.S0 ===
-$${x}_{1}=\frac{{x}_{1}-{\mu }_{1}}{{max}_{1}-{min}_{1}}$$
+{x}_{1}=\frac{{x}_{1}-{\mu}_{1}}{{max}_{1}-{min}_{1}}
 === P483.S0 ===
-where ${\mu }_{1}$ is the mean of ${x}_{1}$ , and max and min are its maximum and minimum values.
+where {\mu}_{1} is the mean of {x}_{1}, and max and min are its maximum and minimum values.
 === P484.S0 ===
-Example: If ${x}_{1}$ ranges from 300 to 2000 with a mean of 600, subtract 600 from each value of ${x}_{1}$ , then divide by (2000 - 300).
+Example: If {x}_{1} ranges from 300 to 2000 with a mean of 600, subtract 600 from each value of {x}_{1}, then divide by (2000 - 300).
 === P484.S1 ===
 This centers the values around 0, ranging between approximately -0.18 and 0.82.
 === P486.S0 ===
@@ -1113,11 +1119,11 @@ Standardizes the feature by subtracting the mean and dividing by the standard de
 === P488.S0 ===
 Formula:
 === P489.S0 ===
-$${x}_{1}=\frac{{x}_{1}-{\mu }_{1}}{{\sigma }_{1}}$$
+{x}_{1}=\frac{{x}_{1}-{\mu}_{1}}{{\sigma}_{1}}
 === P490.S0 ===
-where ${\sigma }_{1}$ is the standard deviation of ${x}_{1}$ .
+where {\sigma}_{1} is the standard deviation of {x}_{1}.
 === P491.S0 ===
-Example: If ${x}_{1}$ has a mean of 600 and standard deviation of 450, the Z-score normalized ${x}_{1}$ will range between -0.67 and 3.1.
+Example: If {x}_{1} has a mean of 600 and standard deviation of 450, the Z-score normalized {x}_{1} will range between -0.67 and 3.1.
 === P492.S0 ===
 This technique is useful when the features follow a normal distribution, but it is not a strict requirement for machine learning.
 === P494.S0 ===
@@ -1133,15 +1139,15 @@ While some features with ranges between 0 and 3 or -2 and 0.5 may not require sc
 === P504.S0 ===
 Checking Gradient Descent for Convergence
 === P505.S0 ===
-One of the best ways to track whether gradient descent is converging is to plot the cost function $J\left(w,b\right)$ over the iterations of the algorithm.
+One of the best ways to track whether gradient descent is converging is to plot the cost function J\left(w,b\right) over the iterations of the algorithm.
 === P505.S1 ===
 This plot, known as a learning curve, has the following characteristics:
 === P506.S0 ===
 Horizontal axis: Number of iterations of gradient descent.
 === P507.S0 ===
-Vertical axis: Cost function value $J\left(w,b\right)$ .
+Vertical axis: Cost function value J\left(w,b\right).
 === P509.S0 ===
-Each point on the curve represents the cost function after a specific number of updates to the parameters $w$ and $b$ .
+Each point on the curve represents the cost function after a specific number of updates to the parameters w and b.
 === P509.S1 ===
 Ideally, the cost should decrease with each iteration of gradient descent.
 === P510.S0 ===
@@ -1151,13 +1157,13 @@ Continuous Decrease in Cost:
 === P512.S0 ===
 If gradient descent is working correctly, the value of the cost function should decrease after every iteration.
 === P513.S0 ===
-If you observe an increase in the cost function at any iteration, it usually indicates that the learning rate $\alpha$ is too large or there is a bug in the implementation.
+If you observe an increase in the cost function at any iteration, it usually indicates that the learning rate \alpha is too large or there is a bug in the implementation.
 === P515.S0 ===
 Convergence Behavior:
 === P516.S0 ===
 As the algorithm progresses, the curve will start to flatten, indicating that the cost function is no longer decreasing significantly.
 === P517.S0 ===
-This is a sign that gradient descent has converged and that the current values of $w$ and $b$ are close to the optimal solution.
+This is a sign that gradient descent has converged and that the current values of w and b are close to the optimal solution.
 === P518.S0 ===
 For example, after 300 iterations, you may notice that the cost value changes very little, meaning the algorithm is converging.
 === P520.S0 ===
@@ -1165,11 +1171,11 @@ Automatic Convergence Test:
 === P521.S0 ===
 Instead of manually inspecting the learning curve, you can also use an automatic convergence test:
 === P522.S0 ===
-Define a small threshold value $ϵ$ (e.g., 0.001 or ${10}^{-3}$ ).
+Define a small threshold value ϵ (e.g., 0.001 or {10}^{-3}).
 === P523.S0 ===
-If the decrease in the cost function between iterations is smaller than $ϵ$ , gradient descent has likely converged.
+If the decrease in the cost function between iterations is smaller than ϵ, gradient descent has likely converged.
 === P524.S0 ===
-However, choosing the right $ϵ$ can be tricky, and it's often easier to rely on visually inspecting the learning curve to ensure smooth convergence.
+However, choosing the right ϵ can be tricky, and it's often easier to rely on visually inspecting the learning curve to ensure smooth convergence.
 === P526.S0 ===
 Note: The number of iterations needed for gradient descent to converge varies widely depending on the problem.
 === P526.S1 ===
@@ -1179,9 +1185,9 @@ Choosing Learning Rate
 === P528.S0 ===
 Impact of Learning Rate on Convergence
 === P529.S0 ===
-Too Small $\alpha$ : Gradient descent will converge, but it will do so very slowly, requiring many iterations to reach the minimum.
+Too Small \alpha: Gradient descent will converge, but it will do so very slowly, requiring many iterations to reach the minimum.
 === P530.S0 ===
-Too Large $\alpha$ : The algorithm may overshoot the global minimum, causing the cost function to increase after some iterations, which can result in divergence.
+Too Large \alpha: The algorithm may overshoot the global minimum, causing the cost function to increase after some iterations, which can result in divergence.
 === P531.S0 ===
 Signs of a Poor Learning Rate
 === P532.S0 ===
@@ -1189,33 +1195,33 @@ If the cost function increases after an iteration or oscillates up and down, it 
 === P533.S0 ===
 A learning rate that is too large.
 === P534.S0 ===
-A potential bug in the implementation (e.g., the wrong update rule for $w$ ).
+A potential bug in the implementation (e.g., the wrong update rule for w).
 === P535.S0 ===
-For example, when the cost function rises with each iteration, double-check your code to ensure that you're using the correct update rule for the parameters: ${w}_{1}≝{w}_{1}-\alpha \cdot \frac{\partial }{\partial {w}_{1}}J\left({w}_{1}\right)$
+For example, when the cost function rises with each iteration, double-check your code to ensure that you're using the correct update rule for the parameters:  {w}_{1}≝{w}_{1}-\alpha ·\frac{\partial}{\partial {w}_{1}}J\left({w}_{1}\right)
 === P536.S0 ===
 The negative sign ensures you're moving in the direction that reduces the cost function.
 === P537.S0 ===
-Debugging with Small $\alpha$
+Debugging with Small \alpha
 === P538.S0 ===
 A good debugging strategy is to set the learning rate to a very small value (e.g., 0.001).
 === P538.S1 ===
-If the cost function does not decrease consistently with a small $\alpha$ , it's often a sign that there's a bug in the code.
+If the cost function does not decrease consistently with a small \alpha, it's often a sign that there's a bug in the code.
 === P539.S0 ===
 While this small value helps debug, it is not recommended for efficient training, as it may slow down the convergence significantly.
 === P541.S0 ===
 Choosing the Optimal Learning Rate
 === P542.S0 ===
-Try several values for $\alpha$ and observe how quickly and consistently the cost function decreases.
+Try several values for \alpha and observe how quickly and consistently the cost function decreases.
 === P542.S1 ===
 A good approach is to start small and gradually increase:
 === P543.S0 ===
-Start with $\alpha =0.001$ .
+Start with \alpha =0.001.
 === P544.S0 ===
-Try increasing by factors of three (e.g., $0.001$ , $0.003$ , $0.01$ , etc.).
+Try increasing by factors of three (e.g., 0.001, 0.003, 0.01, etc.).
 === P545.S0 ===
-Find the largest $\alpha$ that results in consistent decreases in the cost function.
+Find the largest \alpha that results in consistent decreases in the cost function.
 === P546.S0 ===
-Plot the cost function against the number of iterations for each $\alpha$ .
+Plot the cost function against the number of iterations for each \alpha.
 === P546.S1 ===
 Choose the learning rate that decreases the cost function rapidly and consistently.
 === P548.S0 ===
@@ -1239,23 +1245,23 @@ Example: Predicting House Prices
 === P558.S0 ===
 Imagine you're predicting house prices using two features:
 === P559.S0 ===
-${x}_{1}$ : The width of the lot (also called the frontage).
+{x}_{1}: The width of the lot (also called the frontage).
 === P560.S0 ===
-${x}_{2}$ : The depth of the lot.
+{x}_{2}: The depth of the lot.
 === P561.S0 ===
-A simple linear model might be: $f\left(x\right)={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+b$
+A simple linear model might be:     f\left(x\right)={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+b
 === P562.S0 ===
 This model uses the frontage and depth separately, which may provide a decent prediction.
 === P564.S0 ===
 Creating a New Feature
 === P565.S0 ===
-You might notice that land area (width × depth) is more indicative of the price than width and depth alone.In this case, you can define a new feature: ${x}_{3}={x}_{1}\times {x}_{2}$
+You might notice that land area (width × depth) is more indicative of the price than width and depth alone.In this case, you can define a new feature:   {x}_{3}={x}_{1}\times {x}_{2}
 === P566.S0 ===
-This new feature, ${x}_{3}$ , represents the area of the lot, which is likely more predictive of house price.
+This new feature, {x}_{3}, represents the area of the lot, which is likely more predictive of house price.
 === P567.S0 ===
 The updated model could be:
 === P568.S0 ===
-$$f\left(x\right)={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+{w}_{3}{x}_{3}+b$$
+f\left(x\right)={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+{w}_{3}{x}_{3}+b
 === P569.S0 ===
 Now, the algorithm can automatically learn the importance of the area alongside the frontage and depth.
 === P572.S0 ===
@@ -1275,27 +1281,27 @@ By extending multiple linear regression and using feature engineering, we can in
 === P579.S2 ===
 This technique allows us to fit curves to the data by incorporating higher-order powers of the original features.
 === P580.S0 ===
-Consider a dataset where the feature $x$ represents the size of a house, and you're predicting the price.If you plot the data, it may not follow a straight line, so fitting a linear model won’t work well.
+Consider a dataset where the feature x represents the size of a house, and you're predicting the price.If you plot the data, it may not follow a straight line, so fitting a linear model won’t work well.
 === P581.S0 ===
-$$f\left(x\right)={w}_{1}x+b$$
+f\left(x\right)={w}_{1}x+b
 === P582.S0 ===
-To better fit the data, you can introduce polynomial features, such as ${x}^{2}$ (size squared), to allow the model to fit curves.
+To better fit the data, you can introduce polynomial features, such as {x}^{2} (size squared), to allow the model to fit curves.
 === P583.S0 ===
 Quadratic and Cubic Models
 === P584.S0 ===
-A quadratic model includes ${x}^{2}$ , which can capture curves in the data: $f\left(x\right)={w}_{1}x+{w}_{2}{x}^{2}+b$
+A quadratic model includes {x}^{2}, which can capture curves in the data: f\left(x\right)={w}_{1}x+{w}_{2}{x}^{2}+b
 === P585.S0 ===
 However, a quadratic function eventually curves back down, which may not be realistic (e.g., house prices shouldn’t decrease as size increases).
 === P586.S0 ===
-To address this, you can try a cubic model: $f\left(x\right)={w}_{1}x+{w}_{2}{x}^{2}+{w}_{3}{x}^{3}+b$
+To address this, you can try a cubic model:         f\left(x\right)={w}_{1}x+{w}_{2}{x}^{2}+{w}_{3}{x}^{3}+b
 === P587.S0 ===
 The cubic model can capture more complex relationships, where the price increases as the size increases, without curving downward.
 === P588.S0 ===
-You can also introduce other transformations, such as the square root of $x$ .
+You can also introduce other transformations, such as the square root of x.
 === P588.S1 ===
-$f\left(x\right)={w}_{1}x+{w}_{2}\sqrt{x}+b$ The square root function is less steep than $x$ and doesn't curve back down, making it another useful transformation depending on the problem.
+f\left(x\right)={w}_{1}x+{w}_{2}\sqrt{x}+b The square root function is less steep than x and doesn't curve back down, making it another useful transformation depending on the problem.
 === P589.S0 ===
-In general, polynomial regression involves introducing higher-order terms (e.g., ${x}^{2}$ , ${x}^{3}$ , etc.) as new features.
+In general, polynomial regression involves introducing higher-order terms (e.g., {x}^{2}, {x}^{3}, etc.) as new features.
 === P589.S1 ===
 These features help the model capture more complex patterns in the data.
 === P591.S0 ===
@@ -1303,7 +1309,7 @@ Importance of Feature Scaling
 === P592.S0 ===
 When using polynomial regression, feature scaling becomes crucial.
 === P593.S0 ===
-For instance, if the feature $x$ (size) ranges from 1 to 1,000, then ${x}^{2}$ will range from 1 to 1,000,000, and ${x}^{3}$ will range from 1 to 1 billion.
+For instance, if the feature x (size) ranges from 1 to 1,000, then {x}^{2} will range from 1 to 1,000,000, and {x}^{3} will range from 1 to 1 billion.
 === P594.S0 ===
 These vastly different scales can lead to poor performance in gradient descent.
 === P594.S1 ===
@@ -1403,7 +1409,7 @@ The sigmoid function maps any input (from negative infinity to positive infinity
 === P675.S2 ===
 The function is defined as:
 === P676.S0 ===
-$$g\left(z\right) = \frac{1}{1 + {e}^{-z}}$$
+g\left(z\right) = \frac{1}{1 + {e}^{-z}}
 === P678.S0 ===
 Where z can take any real value.
 === P678.S1 ===
@@ -1415,11 +1421,11 @@ Building the Logistic Regression Model
 === P681.S0 ===
 The logistic regression model is built in two steps:
 === P682.S0 ===
-Linear combination of input features: First, calculate $z = w ⋅x + b$ , where ( w ) represents the model parameters (weights), ( x ) represents the input features, and ( b ) is the bias term.
+Linear combination of input features: First, calculate z = w \cdot x + b , where ( w ) represents the model parameters (weights), ( x ) represents the input features, and ( b ) is the bias term.
 === P683.S0 ===
 Apply the sigmoid function: Pass the value of ( z ) through the sigmoid function to output a probability between 0 and 1.
 === P684.S0 ===
-Thus, the logistic regression model is expressed as: $f\left(x\right)=g\left(w⋅x+b\right)$
+Thus, the logistic regression model is expressed as:	 f\left(x\right)=g\left(w\cdot x+b\right)
 === P685.S0 ===
 This model outputs a probability, and based on this, you can decide if the prediction should be 0 or 1.
 === P687.S0 ===
@@ -1447,35 +1453,35 @@ lab: Sigmoid function and logistic regression
 === P698.S0 ===
 Decision boundary
 === P699.S0 ===
-The output ( ${f}_{w,b}\left(x\right)$ ) is interpreted as the probability that ( y = 1 ), given the features ( x ).
+The output ( {f}_{w,b}\left(x\right)) is interpreted as the probability that ( y = 1 ), given the features ( x ).
 === P699.S1 ===
 Typically, we use a threshold like 0.5 to determine the class label:
 === P700.S0 ===
-If ( ${f}_{w,b}\left(x\right)) \ge  0.5$ ), predict ( y = 1 ) (positive class).
+If ( {f}_{w,b}\left(x\right)) \geq  0.5 ), predict ( y = 1 ) (positive class).
 === P701.S0 ===
-If ( ${f}_{w,b}\left(x\right)$ ) $< 0.5$ ), predict ( y = 0 ) (negative class).
+If ( {f}_{w,b}\left(x\right)) < 0.5 ), predict ( y = 0 ) (negative class).
 === P703.S0 ===
 Decision Boundary:
 === P704.S0 ===
-The decision boundary is where the model is "undecided" — where ( ${f}_{w,b}\left(x\right) = 0.5$ ), or equivalently, ( z = 0 ).
+The decision boundary is where the model is "undecided" — where ({f}_{w,b}\left(x\right) = 0.5 ), or equivalently, ( z = 0 ).
 === P704.S1 ===
-This occurs when ( $w ⋅x + b = 0$ ).
+This occurs when ( w \cdot x + b = 0 ).
 === P705.S0 ===
-For example, in the case of two features ( ${x}_{1}$ ) and ( ${x}_{2}$ ), and assuming ( ${w}_{1}={w}_{2}=1$ ) and $b = -3$ , the decision boundary is the line ( ${x}_{1}+{x}_{2}=3$ ).
+For example, in the case of two features ( {x}_{1}) and ({x}_{2}), and assuming ( {w}_{1}={w}_{2}=1 ) and b = -3 , the decision boundary is the line ( {x}_{1}+{x}_{2}=3 ).
 === P705.S1 ===
 This line separates the feature space into two regions:
 === P706.S0 ===
-On one side, $\left(w⋅x+b\ge 0\right)$ , the model predicts ( y = 1 ) (positive class).
+On one side, \left(w\cdot x+b\geq 0\right), the model predicts ( y = 1 ) (positive class).
 === P707.S0 ===
-On the other side, ( $w ⋅x + b < 0$ ), the model predicts ( y = 0 ) (negative class).
+On the other side, ( w \cdot x + b < 0 ), the model predicts ( y = 0 ) (negative class).
 === P709.S0 ===
 Non-Linear Decision Boundaries:
 === P710.S0 ===
 Logistic regression can also handle non-linear decision boundaries by including polynomial features.
 === P710.S1 ===
-For instance, when using features like ( ${x}_{1}^{2}$ ) and ( ${x}_{2}^{2}$ ), the decision boundary can form more complex shapes, like circles or ellipses, depending on the parameters.
+For instance, when using features like ( {x}_{1}^{2} ) and ( {x}_{2}^{2} ), the decision boundary can form more complex shapes, like circles or ellipses, depending on the parameters.
 === P711.S0 ===
-using the function ( $z={x}_{1}^{2}+{x}_{2}^{2}-1$ ) produces a circular decision boundary.
+using the function ( z={x}_{1}^{2}+{x}_{2}^{2}-1 ) produces a circular decision boundary.
 === P712.S0 ===
 This flexibility allows logistic regression to classify data with more complicated patterns, although it remains a linear classifier by default unless polynomial features are introduced.
 === P715.S0 ===
@@ -1507,19 +1513,19 @@ Developing a New Cost Function
 === P725.S0 ===
 In order to build a new cost function, one that we'll use for logistic regression.
 === P725.S1 ===
-I'm going to change a little bit the definition of the cost function $J\left(\vec{w},b\right)$ .
+I'm going to change a little bit the definition of the cost function J\left(\overrightarrow{w},b\right).
 === P725.S2 ===
 In particular, if you look inside this summation, let's call this term inside the loss on a single training example.
 === P725.S3 ===
 I'm going to denote the loss via this capital L and as a function of the prediction of the learning algorithm, f of x as well as of the true label y.
 === P726.S0 ===
-$$J\left(\vec{w},b\right)=\frac{1}{m} \sum_{i=1}^{m}\frac{1}{2}{\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)}^{2} =\frac{1}{m} \sum_{i=1}^{m} L\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right), {y}^{\left(i\right)}\right)$$
+J\left(\overrightarrow{w},b\right)=\frac{1}{m} \sum_{i=1}^{m} \frac{1}{2}{\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)}^{2} =\frac{1}{m} \sum_{i=1}^{m} L\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right), {y}^{\left(i\right)}\right)
 === P728.S0 ===
 The new loss function for logistic regression is as follows:
 === P729.S0 ===
-$L\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right), {y}^{\left(i\right)}\right)$ = $\left( \left\{\begin{aligned}-log\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right) , If {y}^{\left(i\right)} = 1 \\ -log\left(\left(1-{f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right) , If {y}^{\left(i\right)} = 0\right)\end{aligned}\right.\right)$
+L\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right), {y}^{\left(i\right)}\right) =  {\left\{\begin{aligned} -log\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right) , If {y}^{\left(i\right)} = 1 \\ -\log{\left(1-{f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right) , If {y}^{\left(i\right)} = 0} \end{aligned}\right.}
 === P730.S0 ===
-${f}_{w,b}\left({x}^{\left(i\right)}\right)$ is the model's prediction, while ${y}^{\left(i\right)}$ is the target value.
+{f}_{w,b}\left({x}^{\left(i\right)}\right) is the model's prediction, while {y}^{\left(i\right)} is the target value.
 === P732.S0 ===
 These definitions make intuitive sense:
 === P733.S0 ===
@@ -1527,7 +1533,7 @@ If the true label is 1 and the model predicts a value close to 1, the loss is ve
 === P734.S0 ===
 If the model predicts a value closer to 0 when the true label is 1, the loss becomes larger, penalizing the model more heavily for poor predictions.
 === P735.S0 ===
-Similarly, when $y=0$ , if the model predicts a value close to 0, the loss is small.
+Similarly, when y=0, if the model predicts a value close to 0, the loss is small.
 === P735.S1 ===
 However, if the prediction is close to 1, the loss becomes very large.
 === P736.S0 ===
@@ -1539,13 +1545,13 @@ lab: Logistic loss
 === P739.S0 ===
 Simplified Cost Function for Logistic Regression:
 === P740.S0 ===
-Previously, we defined the loss function L for logistic regression with two cases, one for when the target label $y=1$ and another for when $y=0$ .
+Previously, we defined the loss function L for logistic regression with two cases, one for when the target label y=1 and another for when y=0.
 === P740.S1 ===
 To simplify this, we introduced a unified loss function that works for both cases.
 === P741.S0 ===
 Simplified Loss Function:
 === P742.S0 ===
-$$L\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right), {y}^{\left(i\right)}\right)=-\left[{y}^{\left(i\right)}\cdot log\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)+\left(1-{y}^{\left(i\right)}\right)\cdot log\left(1-{f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)\right]$$
+L\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right), {y}^{\left(i\right)}\right)=-\left[{y}^{\left(i\right)}·log\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)+\left(1-{y}^{\left(i\right)}\right)·log\left(1-{f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)\right]
 === P743.S0 ===
 This formulation allows us to express the loss function in a single line without needing to handle the two cases separately.
 === P744.S0 ===
@@ -1553,7 +1559,7 @@ Simplified Cost Function :
 === P745.S0 ===
 Using the simplified loss function, we can express the cost function as:
 === P746.S0 ===
-$$J\left(w,b\right)=-\frac{1}{m}\sum_{i=1}^{m}\left[{y}^{\left(i\right)}\cdot log\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)+\left(1-{y}^{\left(i\right)}\right)\cdot log\left(1-{f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)\right]$$
+J\left(w,b\right)=-\frac{1}{m}\sum_{i=1}^{m} \left[{y}^{\left(i\right)}·log\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)+\left(1-{y}^{\left(i\right)}\right)·log\left(1-{f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)\right]
 === P747.S0 ===
 This is the cost function used to train logistic regression models.
 === P747.S1 ===
@@ -1563,7 +1569,7 @@ Why This Cost Function?
 === P749.S0 ===
 The particular choice of this cost function is grounded in statistics, specifically through a method known as Maximum Likelihood Estimation (MLE).
 === P749.S1 ===
-MLE helps find the parameters $w$ and $b$ that maximize the likelihood of the observed data, and the derived cost function has a nice property of being convex.
+MLE helps find the parameters w and b that maximize the likelihood of the observed data, and the derived cost function has a nice property of being convex.
 === P749.S2 ===
 This makes gradient descent an effective optimization method for logistic regression.
 === P750.S0 ===
@@ -1571,9 +1577,9 @@ lab: Cost function for logistic regression
 === P752.S0 ===
 Gradient descent for logistic regression
 === P753.S0 ===
-The goal is to minimize the cost function $J\left(w,b\right)$ by adjusting the parameters $w$ (weights) and $b$ (bias) using gradient descent.
+The goal is to minimize the cost function J\left(w,b\right) by adjusting the parameters w (weights) and b (bias) using gradient descent.
 === P753.S1 ===
-Once you find the optimal parameters, the model can make predictions, like estimating the probability that a label $y$ is 1 (e.g., a patient having a disease given certain features).
+Once you find the optimal parameters, the model can make predictions, like estimating the probability that a label y is 1 (e.g., a patient having a disease given certain features).
 === P754.S0 ===
 Gradient descent is the optimization algorithm used to minimize the cost function.
 === P754.S1 ===
@@ -1581,37 +1587,37 @@ The idea is to repeatedly adjust the parameters by taking small steps in the dir
 === P755.S0 ===
 The general update rule for gradient descent is:
 === P756.S0 ===
-$${w}_{j}≝{w}_{j}-\alpha \frac{\partial J\left(w,b\right)}{\partial {w}_{j}}$$
+{w}_{j}≝{w}_{j}-\alpha \frac{\partial J\left(w,b\right)}{\partial {w}_{j}}
 === P757.S0 ===
-$$b≝b-\alpha \frac{\partial J\left(w,b\right)}{\partial b}$$
+b≝b-\alpha \frac{\partial J\left(w,b\right)}{\partial b}
 === P758.S0 ===
 Where:
 === P759.S0 ===
-$\alpha$ is the learning rate.
+\alpha is the learning rate.
 === P760.S0 ===
-$\frac{\partial J}{\partial {w}_{j}}$ is the derivative of the cost function with respect to the parameter ${w}_{j}$ .
+\frac{\partial J}{\partial {w}_{j}} is the derivative of the cost function with respect to the parameter {w}_{j}.
 === P761.S0 ===
-$\frac{\partial J}{\partial b}$ is the derivative of the cost function with respect to $b$ .
+\frac{\partial J}{\partial b} is the derivative of the cost function with respect to b.
 === P763.S0 ===
 Derivatives for Logistic Regression:
 === P764.S0 ===
-The derivatives of the cost function $J\left(w,b\right)$ with respect to ${w}_{j}$ and $b$ are:
+The derivatives of the cost function J\left(w,b\right) with respect to {w}_{j} and b are:
 === P765.S0 ===
-For ${w}_{j}$ :
+For {w}_{j}:
 === P766.S0 ===
-$$\frac{\partial J\left(w,b\right)}{\partial {w}_{j}}=\frac{1}{m}\sum_{i=1}^{m}\left(f\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}$$
+\frac{\partial J\left(w,b\right)}{\partial {w}_{j}}=\frac{1}{m}\sum_{i=1}^{m} \left(f\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}
 === P767.S0 ===
-For $b$ :
+For b:
 === P768.S0 ===
-$$\frac{\partial J\left(w,b\right)}{\partial b}=\frac{1}{m}\sum_{i=1}^{m}\left(f\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)$$
+\frac{\partial J\left(w,b\right)}{\partial b}=\frac{1}{m}\sum_{i=1}^{m} \left(f\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)
 === P769.S0 ===
-Here, $f\left({x}^{\left(i\right)}\right)$ is the sigmoid function applied to the linear combination of features:
+Here, f\left({x}^{\left(i\right)}\right) is the sigmoid function applied to the linear combination of features:
 === P770.S0 ===
-$$f\left({x}^{\left(i\right)}\right)=\frac{1}{1+{e}^{-\left({w}^{T}{x}^{\left(i\right)}+b\right)}}$$
+f\left({x}^{\left(i\right)}\right)=\frac{1}{1+{e}^{-\left({w}^{T}{x}^{\left(i\right)}+b\right)}}
 === P771.S0 ===
 This is what distinguishes logistic regression from linear regression.
 === P771.S1 ===
-Although the gradient descent update rules look similar for both algorithms, the function $f\left(x\right)$ is different (sigmoid for logistic regression, linear for linear regression).
+Although the gradient descent update rules look similar for both algorithms, the function f\left(x\right) is different (sigmoid for logistic regression, linear for linear regression).
 === P773.S0 ===
 Similar Concepts: Gradient Descent Monitoring, Vectorized Implementation, and Feature Scaling for Logistic Regression
 === P774.S0 ===
@@ -1731,7 +1737,7 @@ Regularization encourages the learning algorithm to find a solution where the we
 === P821.S1 ===
 This prevents the model from fitting the training data too perfectly while still allowing it to capture important patterns.
 === P822.S0 ===
-Example: Instead of eliminating higher-order polynomial terms (e.g., ${x}^{4}$ ), regularization reduces their effect by shrinking their corresponding weights (e.g., ${w}_{4}=0.0001$ ).
+Example: Instead of eliminating higher-order polynomial terms (e.g., {x}^{4}), regularization reduces their effect by shrinking their corresponding weights (e.g., {w}_{4}=0.0001).
 === P823.S0 ===
 There are two common types of regularization:
 === P824.S0 ===
@@ -1749,25 +1755,25 @@ The goal is to reduce overfitting by penalizing large parameter values.
 === P830.S0 ===
 In a previous example, fitting a high-order polynomial to data resulted in overfitting, where the model captures noise in the training data and fails to generalize to new data.
 === P831.S0 ===
-If you could make the parameters corresponding to higher-order terms (e.g., ${W}_{3}$ , ${W}_{4}$ ) small or close to 0, the model would look more like a simpler quadratic function, reducing overfitting.
+If you could make the parameters corresponding to higher-order terms (e.g., {W}_{3}, {W}_{4}) small or close to 0, the model would look more like a simpler quadratic function, reducing overfitting.
 === P832.S0 ===
 Cost Function with Regularization
 === P833.S0 ===
 To regularize the model, you modify the cost function by adding a penalty term for large parameter values:
 === P834.S0 ===
-$J\left(w\right)=\frac{1}{2m}\sum_{i=1}^{m}{\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)}^{2}+\frac{\lambda }{2m}\sum_{j=1}^{n}{w}_{j}^{2}$
+J\left(w\right)=\frac{1}{2m}\sum_{i=1}^{m} {\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)}^{2}+\frac{\lambda}{2m}\sum_{j=1}^{n} {w}_{j}^{2}
 === P835.S0 ===
 The first term is the original mean squared error cost function.
 === P836.S0 ===
-The second term is the regularization term: $\frac{\lambda }{2m}\sum_{j=1}^{n}{w}_{j}^{2}$ , where:
+The second term is the regularization term: \frac{\lambda}{2m}\sum_{j=1}^{n} {w}_{j}^{2}, where:
 === P837.S0 ===
-$\lambda$ is the regularization parameter that controls the strength of regularization.
+\lambda is the regularization parameter that controls the strength of regularization.
 === P838.S0 ===
-${w}_{j}$ are the model's parameters (weights).
+{w}_{j} are the model's parameters (weights).
 === P839.S0 ===
-$m$ is the number of training examples.
+m is the number of training examples.
 === P840.S0 ===
-Intuition: The regularization term penalizes large values of ${w}_{j}$ , encouraging smaller parameter values and thus simplifying the model.
+Intuition: The regularization term penalizes large values of {w}_{j}, encouraging smaller parameter values and thus simplifying the model.
 === P840.S1 ===
 This prevents the model from fitting noise in the training data (overfitting).
 === P841.S0 ===
@@ -1775,27 +1781,27 @@ Key Points About Regularization:
 === P842.S0 ===
 Regularizing All Parameters:
 === P843.S0 ===
-Instead of selectively regularizing only certain parameters (e.g., ${W}_{3}$ , ${W}_{4}$ ), regularization is typically applied to all parameters ${w}_{1}$ through ${w}_{n}$ , except for the bias term $b$ .
+Instead of selectively regularizing only certain parameters (e.g., {W}_{3}, {W}_{4}), regularization is typically applied to all parameters {w}_{1} through {w}_{n}, except for the bias term b.
 === P844.S0 ===
 This encourages the learning algorithm to find a solution where all parameter values are kept small, resulting in a simpler model that generalizes better.
 === P845.S0 ===
-Choosing the Regularization Parameter $\lambda$ :
+Choosing the Regularization Parameter \lambda:
 === P846.S0 ===
-The regularization parameter $\lambda$ controls the trade-off between two objectives:
+The regularization parameter \lambda controls the trade-off between two objectives:
 === P847.S0 ===
 Minimizing the original cost function (fitting the training data well).
 === P848.S0 ===
 Keeping the parameter values small to reduce overfitting.
 === P849.S0 ===
-A small $\lambda$ allows the model to fit the data more closely (risk of overfitting), while a large $\lambda$ forces the parameters to be very small (risk of underfitting).
+A small \lambda allows the model to fit the data more closely (risk of overfitting), while a large \lambda forces the parameters to be very small (risk of underfitting).
 === P850.S0 ===
-Effect of $\lambda$ on Model Performance:
+Effect of \lambda on Model Performance:
 === P851.S0 ===
-If $\lambda =0$ : The regularization term has no effect, and the model fits the training data as closely as possible, often leading to overfitting.
+If \lambda =0: The regularization term has no effect, and the model fits the training data as closely as possible, often leading to overfitting.
 === P853.S0 ===
-If $\lambda$ is too large: The model will be overly constrained, with parameter values close to 0, resulting in underfitting (the model is too simple and doesn’t capture important patterns in the data).
+If \lambda is too large: The model will be overly constrained, with parameter values close to 0, resulting in underfitting (the model is too simple and doesn’t capture important patterns in the data).
 === P854.S0 ===
-Choosing the right $\lambda$ : The goal is to find a balance where $\lambda$ is not too small (avoiding overfitting) and not too large (avoiding underfitting).
+Choosing the right \lambda: The goal is to find a balance where \lambda is not too small (avoiding overfitting) and not too large (avoiding underfitting).
 === P855.S0 ===
 Example: Housing Price Prediction with Regularization
 === P856.S0 ===
@@ -1811,55 +1817,55 @@ Gradient Descent for Regularized Linear Regression
 === P863.S0 ===
 Previously, we used gradient descent to minimize the original cost function without regularization.
 === P863.S1 ===
-The updates for the parameters ${w}_{j}$ and $b$ were based on the derivatives of the cost function with respect to those parameters.
+The updates for the parameters {w}_{j} and b were based on the derivatives of the cost function with respect to those parameters.
 === P863.S2 ===
-Now, with regularization, the updates remain similar, except for the derivative with respect to ${w}_{j}$ .
+Now, with regularization, the updates remain similar, except for the derivative with respect to {w}_{j}.
 === P864.S0 ===
 The updated gradient descent algorithm with regularization looks like this:
 === P865.S0 ===
-For ${w}_{j}$ (for $j=1$ to $n$ ):
+For {w}_{j} (for j=1 to n):
 === P866.S0 ===
-${w}_{j}≝{ w}_{j}-\alpha \left(\frac{1}{m}\sum_{i=1}^{m}\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}+\frac{\lambda }{m}{w}_{j}\right)$
+{w}_{j}≝{w}_{j}-\alpha \left(\frac{1}{m}\sum_{i=1}^{m} \left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}+\frac{\lambda}{m}{w}_{j}\right)
 === P867.S0 ===
-This is the regularized gradient update for the parameters ${w}_{j}$ .The additional term $\frac{\lambda }{m}{w}_{j}$ comes from the regularization term in the cost function, which shrinks ${w}_{j}$ .
+This is the regularized gradient update for the parameters {w}_{j}.The additional term \frac{\lambda}{m}{w}_{j} comes from the regularization term in the cost function, which shrinks {w}_{j}.
 === P868.S0 ===
-For $b$ :
+For b:
 === P869.S0 ===
-$b≝b-\alpha \left(\frac{1}{m}\sum_{i=1}^{m}\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)\right)$
+b≝b-\alpha \left(\frac{1}{m}\sum_{i=1}^{m} \left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)\right)
 === P870.S0 ===
-The update for $b$ remains the same since we do not regularize $b$ .
+The update for b remains the same since we do not regularize b.
 === P871.S0 ===
-The regularization term shrinks the weights ${w}_{j}$ , preventing them from becoming too large, which would lead to overfitting.
+The regularization term shrinks the weights {w}_{j}, preventing them from becoming too large, which would lead to overfitting.
 === P871.S1 ===
 Here's a more detailed breakdown of how this works:
 === P872.S0 ===
-The new gradient descent update for ${w}_{j}$ includes an extra term: $-\alpha \cdot \frac{\lambda }{m}{w}_{j}$ .
+The new gradient descent update for {w}_{j} includes an extra term: -\alpha ·\frac{\lambda}{m}{w}_{j}.
 === P873.S0 ===
-When $\alpha$ (learning rate) and $\lambda$ (regularization parameter) are small, this term only slightly reduces ${w}_{j}$ at each step, encouraging smaller weights without drastically changing the update.
+When \alpha (learning rate) and \lambda (regularization parameter) are small, this term only slightly reduces {w}_{j} at each step, encouraging smaller weights without drastically changing the update.
 === P874.S0 ===
 The effect is that on every iteration, the weights are slightly shrunk, helping to reduce overfitting.
 === P875.S0 ===
-We can rewrite the update rule for ${w}_{j}$ to show this shrinking effect more clearly:
+We can rewrite the update rule for {w}_{j} to show this shrinking effect more clearly:
 === P876.S0 ===
-$${w}_{j}={ w}_{j}(1-\alpha \frac{\lambda }{m})-\alpha \frac{1}{m}\sum_{i=1}^{m}\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}$$
+{w}_{j}={w}_{j}(1-\alpha \frac{\lambda}{m})-\alpha \frac{1}{m}\sum_{i=1}^{m} \left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}
 === P877.S0 ===
-Here, the term $\left(1-\alpha \frac{\lambda }{m}\right)$ is a number slightly less than 1, which means that ${w}_{j}$ is multiplied by this value on each iteration, leading to a gradual shrinking of ${w}_{j}$ .
+Here, the term \left(1-\alpha \frac{\lambda}{m}\right) is a number slightly less than 1, which means that {w}_{j} is multiplied by this value on each iteration, leading to a gradual shrinking of {w}_{j}.
 === P878.S0 ===
 Example :
 === P879.S0 ===
 To see this effect in action, suppose:
 === P880.S0 ===
-$\alpha =0.01$ (learning rate),
+\alpha =0.01 (learning rate),
 === P881.S0 ===
-$\lambda =1$ (regularization parameter),
+\lambda =1 (regularization parameter),
 === P882.S0 ===
-$m=50$ (number of training examples).
+m=50 (number of training examples).
 === P883.S0 ===
 The shrinking term is:
 === P884.S0 ===
-$$1-\alpha \frac{\lambda }{m}=1-\frac{0.01\times 1}{50}=0.9998$$
+1-\alpha \frac{\lambda}{m}=1-\frac{0.01\times 1}{50}=0.9998
 === P885.S0 ===
-This means that, on each iteration, ${w}_{j}$ is multiplied by 0.9998, slightly reducing its value.
+This means that, on each iteration, {w}_{j} is multiplied by 0.9998, slightly reducing its value.
 === P886.S0 ===
 By applying this regularization strategy, we reduce the risk of overfitting, especially when dealing
 === P888.S0 ===
@@ -1875,47 +1881,47 @@ Logistic regression can overfit when trained on models with many features, such 
 === P892.S0 ===
 Overfitting can lead to overly complex decision boundaries, which do not generalize well to unseen data.
 === P893.S0 ===
-To reduce overfitting, we introduce regularization, which penalizes large parameter values ${w}_{j}$ .
+To reduce overfitting, we introduce regularization, which penalizes large parameter values {w}_{j}.
 === P897.S0 ===
 Regularized Cost Function for Logistic Regression
 === P898.S0 ===
 The original cost function for logistic regression (without regularization) is:
 === P899.S0 ===
-$$J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m}\left[-{y}^{\left(i\right)}log\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)-\left(1-{y}^{\left(i\right)}\right)log\left(1-{f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)\right]$$
+J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m} \left[-{y}^{\left(i\right)}log\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)-\left(1-{y}^{\left(i\right)}\right)log\left(1-{f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)\right]
 === P900.S0 ===
-Where: ${f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)$ is the sigmoid function applied to $z=w\cdot x+b$ .
+Where: {f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right) is the sigmoid function applied to z=w·x+b.
 === P901.S0 ===
-To add regularization, we modify the cost function by including a penalty term for the weights ${w}_{1},{w}_{2},…,{w}_{n}$ (but not $b$ ):
+To add regularization, we modify the cost function by including a penalty term for the weights {w}_{1},{w}_{2},…,{w}_{n} (but not b):
 === P902.S0 ===
-$$J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m}\left[-{y}^{\left(i\right)}log\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)-\left(1-{y}^{\left(i\right)}\right)log\left(1-{f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)\right)\right]+\frac{\lambda }{2m}\sum_{j=1}^{n}{w}_{j}^{2}$$
+J\left(w,b\right)=\frac{1}{m}\sum_{i=1}^{m} \left[-{y}^{\left(i\right)}log\left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)-\left(1-{y}^{\left(i\right)}\right)log\left(1-{f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)\right)\right]+\frac{\lambda}{2m}\sum_{j=1}^{n} {w}_{j}^{2}
 === P903.S0 ===
 Here:
 === P904.S0 ===
-$\lambda$ is the regularization parameter that controls the strength of the penalty.
+\lambda is the regularization parameter that controls the strength of the penalty.
 === P905.S0 ===
-The term $\frac{\lambda }{2m}\sum_{j=1}^{n}{w}_{j}^{2}$ penalizes large weights, encouraging smaller ${w}_{j}$ values and thereby reducing overfitting.
+The term \frac{\lambda}{2m}\sum_{j=1}^{n} {w}_{j}^{2} penalizes large weights, encouraging smaller {w}_{j} values and thereby reducing overfitting.
 === P907.S0 ===
 Gradient Descent for Regularized Logistic Regression
 === P908.S0 ===
 To minimize this regularized cost function, we use gradient descent.
 === P908.S1 ===
-The update rules for the parameters ${w}_{j}$ and $b$ are derived similarly to how we did for linear regression, but with an additional regularization term for ${w}_{j}$ .
+The update rules for the parameters {w}_{j} and b are derived similarly to how we did for linear regression, but with an additional regularization term for {w}_{j}.
 === P909.S0 ===
-For ${w}_{j}$ (for $j=1$ to $n$ ):
+For {w}_{j} (for j=1 to n):
 === P910.S0 ===
-${w}_{j}≝{w}_{j}-\alpha \left(\frac{1}{m}\sum_{i=1}^{m}\left({f}_{\vec{w},b}\left({\vec{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}+\frac{\lambda }{m}{w}_{j}\right)$
+{w}_{j}≝{w}_{j}-\alpha \left(\frac{1}{m}\sum_{i=1}^{m} \left({f}_{\overrightarrow{w},b}\left({\overrightarrow{x}}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right){x}_{j}^{\left(i\right)}+\frac{\lambda}{m}{w}_{j}\right)
 === P911.S0 ===
-The term $\frac{\lambda }{m}{w}_{j}$ comes from the regularization penalty.
+The term \frac{\lambda}{m}{w}_{j} comes from the regularization penalty.
 === P912.S0 ===
-This additional term shrinks the weights ${w}_{j}$ , helping to prevent overfitting.
+This additional term shrinks the weights {w}_{j}, helping to prevent overfitting.
 === P913.S0 ===
-For $b$ :
+For b:
 === P914.S0 ===
-$b≝b-\alpha \left(\frac{1}{m}\sum_{i=1}^{m}\left({h}_{w}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)\right)$
+b≝b-\alpha \left(\frac{1}{m}\sum_{i=1}^{m} \left({h}_{w}\left({x}^{\left(i\right)}\right)-{y}^{\left(i\right)}\right)\right)
 === P915.S0 ===
-The update for $b$ does not change with regularization, because we do not penalize $b$ .
+The update for b does not change with regularization, because we do not penalize b.
 === P916.S0 ===
-The regularization term penalizes the model if the weights ${w}_{j}$ grow too large, thus controlling the complexity of the model.
+The regularization term penalizes the model if the weights {w}_{j} grow too large, thus controlling the complexity of the model.
 === P917.S0 ===
 Regularization encourages the model to simplify by shrinking weights, which helps it generalize better to unseen data.
 === P919.S0 ===

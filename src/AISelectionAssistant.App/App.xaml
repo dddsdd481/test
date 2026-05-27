@@ -1,0 +1,12 @@
+﻿<Application x:Class="AISelectionAssistant.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AISelectionAssistant.App">
+    <Application.Resources>
+        <SolidColorBrush x:Key="AssistantBackgroundBrush" Color="#F8FAFC" />
+        <SolidColorBrush x:Key="AssistantSurfaceBrush" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="AssistantPrimaryBrush" Color="#2563EB" />
+        <SolidColorBrush x:Key="AssistantTextBrush" Color="#111827" />
+        <SolidColorBrush x:Key="AssistantMutedTextBrush" Color="#6B7280" />
+    </Application.Resources>
+</Application>

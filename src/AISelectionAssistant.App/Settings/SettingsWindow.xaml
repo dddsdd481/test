@@ -1,0 +1,15 @@
+<Window x:Class="AISelectionAssistant.App.Settings.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings"
+        Height="420"
+        Width="560">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Settings" FontSize="24" FontWeight="SemiBold" />
+            <CheckBox Content="Enable clipboard fallback" Margin="0,18,0,0" />
+            <CheckBox Content="Sensitive mode" Margin="0,8,0,0" />
+            <CheckBox Content="Start with Windows" Margin="0,8,0,0" />
+        </StackPanel>
+    </Grid>
+</Window>
